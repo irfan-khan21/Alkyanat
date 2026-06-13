@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Palmtree, Globe, ArrowRight } from 'lucide-react';
-import { navigationData } from '../data/navigationData';
+import navigationData from '../data/navigationData.json';
 
 export const Header: React.FC = () => {
   const { logo, headerLinks } = navigationData;

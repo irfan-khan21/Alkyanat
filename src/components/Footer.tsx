@@ -1,6 +1,6 @@
 import React from 'react';
 import { MapPin, Phone, Mail, Clock, Palmtree, ArrowUp } from 'lucide-react';
-import { navigationData } from '../data/navigationData';
+import navigationData from '../data/navigationData.json';
 
 export const Footer: React.FC = () => {
   const { logo, footerSections, contactInfo, socialLinks, copyright } = navigationData;
