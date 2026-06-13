@@ -1,17 +1,31 @@
 <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100" height="100" rx="22" fill="url(#grad)" />
+  <!-- Rounded dark background with a gold border -->
+  <rect width="100" height="100" rx="24" fill="#09090b" stroke="url(#goldGrad)" stroke-width="2.5" />
+  
   <defs>
-    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#34d399" />
-      <stop offset="100%" stop-color="#059669" />
+    <!-- Gold Gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+    <!-- Indigo Gradient -->
+    <linearGradient id="indigoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#4f46e5" />
     </linearGradient>
   </defs>
-  <path d="M45 85 h10 v-18 h-10 z" fill="#09090b" />
-  <path d="M42 62 h16 v-14 h-16 z" fill="#09090b" opacity="0.95" />
-  <path d="M38 43 h24 v-10 h-24 z" fill="#09090b" opacity="0.9" />
-  <path d="M50 30 C50 18, 32 16, 20 28 C32 24, 46 26, 48 30 Z" fill="#09090b" />
-  <path d="M50 30 C50 18, 68 16, 80 28 C68 24, 54 26, 52 30 Z" fill="#09090b" />
-  <path d="M49 28 C45 15, 25 22, 12 40 C25 32, 42 32, 47 30 Z" fill="#09090b" />
-  <path d="M51 28 C55 15, 75 22, 88 40 C75 32, 58 32, 53 30 Z" fill="#09090b" />
-  <path d="M50 26 C50 10, 50 10, 50 8 C50 10, 50 10, 50 26 Z" stroke="#09090b" stroke-width="4" stroke-linecap="round" />
+  
+  <!-- Interconnected geometric blocks representing the 'Entities' (Kayanat) -->
+  <g transform="translate(50, 50)">
+    <!-- Indigo base structural blocks -->
+    <path d="M-22,-22 L-6,-22 L-6,-6 L-22,-6 Z" fill="url(#indigoGrad)" />
+    <path d="M6,6 L22,6 L22,22 L6,22 Z" fill="url(#indigoGrad)" />
+    
+    <!-- Diagonal golden link beam -->
+    <path d="M-14,-14 L14,14" stroke="url(#goldGrad)" stroke-width="6" stroke-linecap="round" />
+    
+    <!-- Golden highlight structural blocks -->
+    <path d="M6,-22 L22,-22 L22,-6 L6,-6 Z" fill="url(#goldGrad)" />
+    <path d="M-22,6 L-6,6 L-6,22 L-22,22 Z" fill="url(#goldGrad)" />
+  </g>
 </svg>

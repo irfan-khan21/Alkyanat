@@ -16,9 +16,12 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange }) => {
       <Header currentLang={currentLang} onLangChange={onLangChange} />
 
       {/* Main Content Area (Clean Slate) */}
-      <main className="flex-grow flex items-center justify-center pt-32 pb-20">
-        <div className="text-center space-y-4 max-w-md px-4">
-          <h2 className="text-2xl font-bold uppercase tracking-wider text-emerald-500 font-sans">
+      <main className="flex-grow flex items-center justify-center pt-32 pb-20 relative">
+        {/* Ambient glow */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(99,102,241,0.03),transparent_50%)] pointer-events-none" />
+        
+        <div className="text-center space-y-4 max-w-md px-4 relative z-10">
+          <h2 className="text-2xl font-bold uppercase tracking-wider bg-gradient-to-r from-indigo-400 via-amber-400 to-amber-500 bg-clip-text text-transparent font-sans">
             {currentLang === 'AR' ? 'مجموعة الكيانات' : 'Al Kayanat'}
           </h2>
           <p className="text-sm text-zinc-500 leading-relaxed font-sans font-light">
