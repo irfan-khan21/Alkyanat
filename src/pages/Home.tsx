@@ -162,7 +162,13 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-brand-navy max-w-2xl">
                   {currentLang === 'AR' ? 'خبراء رياديون في' : 'Leading Experts in'}{' '}
-                  <span className="text-brand-blue inline-block transition-all duration-300 transform translate-y-0 opacity-100 min-h-[48px] md:min-h-[60px] lg:min-h-[72px]">
+                  <span className={`text-brand-blue inline-block transition-all duration-300 transform translate-y-0 opacity-100 min-h-[48px] md:min-h-[60px] lg:min-h-[72px] ${
+                    rotatorWords[rotatorIndex].length > 24
+                      ? 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl'
+                      : rotatorWords[rotatorIndex].length > 18
+                      ? 'text-3xl sm:text-4xl md:text-5xl lg:text-5xl'
+                      : ''
+                  }`}>
                     {rotatorWords[rotatorIndex]}
                   </span>
                 </h1>
