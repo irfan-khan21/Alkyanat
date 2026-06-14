@@ -1,0 +1,250 @@
+{
+  "en": {
+    "hero": {
+      "subtitle": "Al Kyanat KSA",
+      "title": "Leading Experts in Heavy Duty",
+      "textRotator": [
+        "Elgin Road Sweepers",
+        "Johnston Road Sweepers",
+        "ScaraB Road Sweepers",
+        "Boom Trucks (10/12/15T)",
+        "Forklifts & Heavy Cranes"
+      ],
+      "paragraph": "Al Kyanat KSA is the premier provider of reliable heavy-duty vehicles, cranes, forklifts, and sweepers, supporting municipal road cleaning, garden maintenance, and construction projects across Saudi Arabia.",
+      "cta": "Contact Now",
+      "trustedLabel": "Trusted By 5000+ Governmental & Private Partners"
+    },
+    "strengths": [
+      {
+        "title": "Many Years of Trusted Experience",
+        "description": "Delivering reliable heavy equipment rental and industrial services across various municipal and corporate sectors."
+      },
+      {
+        "title": "Skilled & Professional Team",
+        "description": "Providing certified machinery operators, drivers, and technical staff to ensure safe and efficient execution."
+      },
+      {
+        "title": "Government & Private Sector",
+        "description": "Supplying any type of machines involved in infrastructure, civil construction, and landscaping projects."
+      }
+    ],
+    "about": {
+      "subtitle": "About Our Holding Group",
+      "title": "Delivering Integrated Heavy Fleet Excellence",
+      "paragraph": "Al Kyanat KSA supports industrial, municipal, and commercial clients by providing reliable, safe, and cost-efficient vehicle and machinery rental. With our specialized fleet of Elgin, Johnston, and ScaraB sweepers, we maintain public roads and gardens with exceptional precision. Our heavy lifting division supplies premium forklifts, boom trucks (10, 12, 15 Tons), and high-capacity cranes to major construction projects across the Kingdom.",
+      "cta": "Explore Services",
+      "stats": [
+        { "value": "1650+", "label": "Projects Completed" },
+        { "value": "15+", "label": "Years of Excellence" },
+        { "value": "450+", "label": "Fleet Units" }
+      ]
+    },
+    "servicesSection": {
+      "subtitle": "What We Provide",
+      "title": "Our Fleet & Equipment Solutions",
+      "paragraph": "We offer top-of-the-line vehicles and machinery managed by certified experts to handle infrastructure and municipal operations.",
+      "cta": "Request Quote",
+      "items": [
+        {
+          "id": "elgin",
+          "title": "Elgin Road Sweepers",
+          "category": "Road Cleaning Services",
+          "description": "Premium Elgin sweeper trucks designed for heavy-duty street cleaning, municipal roads, and large industrial compounds."
+        },
+        {
+          "id": "johnston",
+          "title": "Johnston Road Sweepers",
+          "category": "Road Cleaning Services",
+          "description": "Reliable Johnston sweepers offering superior dust filtration and efficient debris pickup for main highways and local streets."
+        },
+        {
+          "id": "scarab",
+          "title": "ScaraB Road Sweepers",
+          "category": "Road Cleaning Services",
+          "description": "Advanced ScaraB truck sweepers featuring high suction power and precise operations for municipal road cleaning projects."
+        },
+        {
+          "id": "gardens",
+          "title": "Garden Sweepers & Small Equipment",
+          "category": "Garden Cleaning & Care",
+          "description": "Compact sweeper models and specialized small equipment designed for parkways, gardens, walks, and public squares."
+        },
+        {
+          "id": "boomtrucks",
+          "title": "Boom Trucks (10, 12, 15 Tons)",
+          "category": "Material Handling & Lifting",
+          "description": "Versatile hydraulic boom trucks in 10-Ton, 12-Ton, and 15-Ton capacities to handle transport, logistics, and erection tasks."
+        },
+        {
+          "id": "forklifts",
+          "title": "Industrial Forklifts",
+          "category": "Material Handling & Lifting",
+          "description": "High-performance forklifts ranging from 3 to 15 tons, suitable for cargo loading, warehousing, and site logistics."
+        },
+        {
+          "id": "cranes",
+          "title": "Heavy Construction Cranes",
+          "category": "Heavy Equipment & Lift",
+          "description": "Mobile cranes and crawler cranes engineered to support massive concrete lifting, steel erection, and heavy industrial tasks."
+        },
+        {
+          "id": "heavyduty",
+          "title": "Construction Vehicles & Machinery",
+          "category": "Infrastructure Support",
+          "description": "Comprehensive range of heavy-duty construction vehicles for government and non-governmental infrastructure works."
+        }
+      ]
+    },
+    "leadForm": {
+      "subtitle": "Start a Project",
+      "title": "Request Fleet Inquiry",
+      "paragraph": "Submit your requirements, and our regional operations desk will dispatch quotation details within 24 hours.",
+      "nameLabel": "Your Full Name",
+      "emailLabel": "Email Address",
+      "phoneLabel": "Phone Number",
+      "selectLabel": "Select Equipment Type",
+      "messageLabel": "Project / Rental Details",
+      "placeholderName": "e.g. Abdullah Al-Fahd",
+      "placeholderEmail": "name@company.com",
+      "placeholderPhone": "+966 50 000 0000",
+      "placeholderMessage": "Specify tonnage, sweeper type, duration, and site location...",
+      "options": [
+        { "id": "elgin", "label": "Elgin Road Sweeper" },
+        { "id": "johnston", "label": "Johnston Road Sweeper" },
+        { "id": "scarab", "label": "ScaraB Road Sweeper" },
+        { "id": "gardens", "label": "Garden Sweepers" },
+        { "id": "boomtrucks", "label": "Boom Truck (10T / 12T / 15T)" },
+        { "id": "forklifts", "label": "Forklifts" },
+        { "id": "cranes", "label": "Cranes" },
+        { "id": "general", "label": "Other Heavy Vehicles" }
+      ],
+      "submitBtn": "Send Inquiry Request",
+      "success": "Inquiry sent successfully! Our operations desk will get in touch soon.",
+      "reset": "Send another inquiry"
+    }
+  },
+  "ar": {
+    "hero": {
+      "subtitle": "الكيانات بالمملكة العربية السعودية",
+      "title": "الرواد في مجال الآليات والمعدات الثقيلة",
+      "textRotator": [
+        "شاحنات كنس الطرق إلجين (Elgin)",
+        "شاحنات كنس الطرق جونستون (Johnston)",
+        "شاحنات كنس الطرق سكاراب (ScaraB)",
+        "شاحنات ذراع الرافعة (10/12/15 طن)",
+        "الرافعات الشوكية والمعدات الثقيلة"
+      ],
+      "paragraph": "مجموعة الكيانات هي المزود الرائد للمركبات الثقيلة، والرافعات، والرافعات الشوكية، وكنّاسات الطرق المخصصة لمشاريع النظافة البلدية والحدائق العامة والبناء الإنشائي في جميع أنحاء المملكة.",
+      "cta": "اتصل بنا الآن",
+      "trustedLabel": "موضع ثقة أكثر من 5000 شريك حكومي وخاص"
+    },
+    "strengths": [
+      {
+        "title": "سنوات من الخبرة والموثوقية",
+        "description": "تقديم خدمات موثوقة في تأجير المعدات الثقيلة وتلبية الاحتياجات الصناعية والبلدية."
+      },
+      {
+        "title": "فريق عمل فني مؤهل",
+        "description": "توفير مشغلي آلات وسائقين معتمدين لضمان تنفيذ المهام بأمان ودقة تشغيلية عالية."
+      },
+      {
+        "title": "مشاريع حكومية وخاصة",
+        "description": "تزويد مشاريع البنية التحتية والتشييد والحدائق العامة بجميع الآلات الضرورية للتنفيذ."
+      }
+    ],
+    "about": {
+      "subtitle": "عن المجموعة القابضة",
+      "title": "نقدم خدمات متميزة للأسطول والمعدات الثقيلة",
+      "paragraph": "تدعم مجموعة الكيانات عملاءها في القطاعات الصناعية والبلدية والتجارية عبر توفير حلول تأجير معدات آمنة وموفرة للتكلفة. من خلال أسطولنا المخصص من كناسات الطرق إلجين وجونستون وسكاراب، نقوم بتنظيف الطرق والحدائق بدقة متناهية. كما نوفر الرافعات الشوكية وشاحنات البوم (10، 12، 15 طن) والرافعات الضخمة لدعم مشاريع البناء والتشييد الكبرى بالمملكة.",
+      "cta": "استكشف الخدمات",
+      "stats": [
+        { "value": "+١٦٥٠", "label": "مشروع مكتمل" },
+        { "value": "+١٥", "label": "سنة من التميز" },
+        { "value": "+٤٥٠", "label": "آلية في الأسطول" }
+      ]
+    },
+    "servicesSection": {
+      "subtitle": "ما نقدمه لشركائنا",
+      "title": "حلول الأسطول والآليات المتقدمة",
+      "paragraph": "نوفر أحدث المركبات والمعدات المدارة من قبل خبراء معتمدين لتسهيل أعمال البنية التحتية والعمليات البلدية.",
+      "cta": "طلب عرض أسعار",
+      "items": [
+        {
+          "id": "elgin",
+          "title": "كنّاسات الطرق إلجين",
+          "category": "خدمات نظافة الطرق والبلديات",
+          "description": "شاحنات إلجين (Elgin) مصممة لأعمال كنس الشوارع الثقيلة، والطرق السريعة، والمجمعات الصناعية الضخمة."
+        },
+        {
+          "id": "johnston",
+          "title": "كنّاسات الطرق جونستون",
+          "category": "خدمات نظافة الطرق والبلديات",
+          "description": "شاحنات جونستون (Johnston) تمتاز بنظام فلترة غبار متقدم وقدرة فائقة على التقاط الأنقاض والأتربة بالشوارع."
+        },
+        {
+          "id": "scarab",
+          "title": "كنّاسات الطرق سكاراب",
+          "category": "خدمات نظافة الطرق والبلديات",
+          "description": "شاحنات سكاراب (ScaraB) متطورة لامتصاص المخلفات بدقة وكفاءة عالية تناسب مشاريع تنظيف الطرق البلدية."
+        },
+        {
+          "id": "gardens",
+          "title": "كنّاسات ومعدات الحدائق الصغيرة",
+          "category": "تجميل ونظافة الحدائق",
+          "description": "مركبات كنس مدمجة ومعدات حدائق صغيرة مصممة للأرصفة والمتنزهات والميادين العامة."
+        },
+        {
+          "id": "boomtrucks",
+          "title": "شاحنات البوم (10، 12، 15 طن)",
+          "category": "المناولة والرفع الهيدروليكي",
+          "description": "شاحنات ذراع هيدروليكية بسعات 10 و12 و15 طنًا لتسهيل عمليات نقل البضائع، والخدمات اللوجستية، والتركيب."
+        },
+        {
+          "id": "الرافعات الشوكية",
+          "title": "الرافعات الشوكية الصناعية",
+          "category": "المناولة والرفع الهيدروليكي",
+          "description": "رافعات شوكية بقدرات عالية تتراوح من 3 إلى 15 طنًا لمناولة الشحنات بالمستودعات والمواقع اللوجستية."
+        },
+        {
+          "id": "cranes",
+          "title": "رافعات البناء الإنشائية الثقيلة",
+          "category": "الرافعات والمعدات الثقيلة",
+          "description": "رافعات متحركة وجنزير مخصصة لرفع الكتل الخرسانية والهياكل المعدنية الثقيلة بالمشاريع الكبرى."
+        },
+        {
+          "id": "heavyduty",
+          "title": "آليات ومركبات التشييد الإنشائي",
+          "category": "دعم البنية التحتية",
+          "description": "مجموعة واسعة من مركبات التشييد وآليات الحفر الثقيلة لتنفيذ العقود الحكومية وغير الحكومية."
+        }
+      ]
+    },
+    "leadForm": {
+      "subtitle": "ابدأ العمل معنا",
+      "title": "طلب استفسار عن الأسطول",
+      "paragraph": "سجل متطلبات مشروعك، وسيقوم مكتب العمليات الإقليمي التابع لنا بإرسال عرض الأسعار المناسب خلال ٢٤ ساعة.",
+      "nameLabel": "الاسم الكريم بالكامل",
+      "emailLabel": "البريد الإلكتروني",
+      "phoneLabel": "رقم الجوال",
+      "selectLabel": "اختر فئة الآلية المطلوبة",
+      "messageLabel": "تفاصيل المشروع / مدة الاستئجار",
+      "placeholderName": "مثال: عبد الله الفهد",
+      "placeholderEmail": "name@company.com",
+      "placeholderPhone": "+٩٦٦ ٥٠ ٠٠٠ ٠٠٠٠",
+      "placeholderMessage": "يرجى تحديد الحمولة المطلوبة، نوع الكناسة، مدة الإيجار وموقع العمل...",
+      "options": [
+        { "id": "elgin", "label": "كنّاسة طرق إلجين" },
+        { "id": "johnston", "label": "كنّاسة طرق جونستون" },
+        { "id": "scarab", "label": "كنّاسة طرق سكاراب" },
+        { "id": "gardens", "label": "كنّاسة حدائق" },
+        { "id": "boomtrucks", "label": "شاحنة بوم (10/12/15 طن)" },
+        { "id": "forklifts", "label": "رافعات شوكية" },
+        { "id": "cranes", "label": "رافعات إنشائية" },
+        { "id": "general", "label": "آليات ثقيلة أخرى" }
+      ],
+      "submitBtn": "إرسال طلب الاستفسار",
+      "success": "تم إرسال طلبك بنجاح! سيتواصل معك مكتب العمليات لدينا قريبًا.",
+      "reset": "إرسال طلب آخر"
+    }
+  }
+}
