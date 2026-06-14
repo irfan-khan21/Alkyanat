@@ -28,7 +28,7 @@ export const Blog: React.FC<BlogProps> = ({ currentLang, onLangChange, onPageCha
       <Header currentLang={currentLang} onLangChange={onLangChange} activePage="blog" onPageChange={onPageChange} />
 
       {/* Main Content */}
-      <main className="flex-grow pt-[104px]">
+      <main className="flex-grow pt-[88px]">
         
         {/* Breadcrumb Header Banner (Light Blue/Ice-Blue Theme) */}
         <section className="bg-brand-bg-light text-brand-navy py-16 md:py-20 relative overflow-hidden border-b border-brand-bg-light/80">
