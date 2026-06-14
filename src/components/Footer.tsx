@@ -61,11 +61,11 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onPageChange }) => 
   const isRtl = currentLang === 'AR';
 
   return (
-    <footer className="bg-brand-bg-lighter border-t border-zinc-200/60 pt-16 pb-10 text-zinc-500 relative overflow-hidden">
+    <footer className="bg-brand-bg-lighter border-t border-zinc-200/60 pt-12 pb-8 text-zinc-500 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Tier 1: Directory Columns */}
-        <div className={`grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16 ${isRtl ? 'text-right' : 'text-left'}`}>
+        <div className={`grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10 ${isRtl ? 'text-right' : 'text-left'}`}>
           
           {/* Section 1: Logo & Info */}
           <div className="space-y-6">
@@ -112,11 +112,11 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onPageChange }) => 
 
           {/* Section 2: Quick Links */}
           {footer.sections.map((section: { title: string; links: { label: string; href: string }[] }) => (
-            <div key={section.title} className={`${isRtl ? 'lg:pr-20' : 'lg:pl-20'}`}>
-              <h3 className="text-xs font-black uppercase tracking-widest text-brand-navy mb-6">
+            <div key={section.title} className={`${isRtl ? 'lg:pr-12' : 'lg:pl-12'}`}>
+              <h3 className="text-xs font-black uppercase tracking-widest text-brand-navy mb-4">
                 {section.title}
               </h3>
-              <ul className="space-y-4">
+              <ul className="space-y-2.5">
                 {section.links.map((link) => (
                   <li key={link.label}>
                     <a
@@ -134,30 +134,30 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onPageChange }) => 
           ))}
 
           {/* Section 3: Headquarters & Contacts */}
-          <div className="space-y-4">
+          <div className="space-y-3">
             <h3 className="text-xs font-black uppercase tracking-widest text-brand-navy mb-2">
               {footer.contactInfo.title}
             </h3>
             
             {/* Address Card */}
-            <div className="flex gap-4 p-4 bg-white border border-zinc-200/80 rounded-2xl hover:border-brand-blue transition-all duration-300 shadow-sm">
-              <div className="p-2.5 bg-brand-bg-light text-brand-blue rounded-xl h-10 w-10 shrink-0 flex items-center justify-center">
-                <MapPin className="h-4.5 w-4.5" />
+            <div className="flex gap-3.5 p-3 bg-white border border-zinc-200/80 rounded-xl hover:border-brand-blue transition-all duration-300 shadow-sm">
+              <div className="p-2 bg-brand-bg-light text-brand-blue rounded-lg h-9 w-9 shrink-0 flex items-center justify-center">
+                <MapPin className="h-4 w-4" />
               </div>
               <div className="flex flex-col">
                 <span className="text-[8px] uppercase tracking-wider font-extrabold text-zinc-400">
                   {currentLang === 'AR' ? 'العنوان' : 'Location'}
                 </span>
-                <span className="text-xs text-brand-navy font-bold mt-1 leading-normal">
+                <span className="text-xs text-brand-navy font-bold mt-0.5 leading-normal">
                   {footer.contactInfo.address}
                 </span>
               </div>
             </div>
 
             {/* Phone Card */}
-            <div className="flex gap-4 p-4 bg-white border border-zinc-200/80 rounded-2xl hover:border-brand-blue transition-all duration-300 shadow-sm">
-              <div className="p-2.5 bg-brand-bg-light text-brand-blue rounded-xl h-10 w-10 shrink-0 flex items-center justify-center">
-                <Phone className="h-4.5 w-4.5" />
+            <div className="flex gap-3.5 p-3 bg-white border border-zinc-200/80 rounded-xl hover:border-brand-blue transition-all duration-300 shadow-sm">
+              <div className="p-2 bg-brand-bg-light text-brand-blue rounded-lg h-9 w-9 shrink-0 flex items-center justify-center">
+                <Phone className="h-4 w-4" />
               </div>
               <div className="flex flex-col">
                 <span className="text-[8px] uppercase tracking-wider font-extrabold text-zinc-400">
@@ -165,7 +165,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onPageChange }) => 
                 </span>
                 <a
                   href={`tel:${footer.contactInfo.phone}`}
-                  className="text-xs text-brand-navy font-extrabold hover:text-brand-blue mt-1 transition-colors"
+                  className="text-xs text-brand-navy font-extrabold hover:text-brand-blue mt-0.5 transition-colors"
                 >
                   {footer.contactInfo.phone}
                 </a>
@@ -173,9 +173,9 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onPageChange }) => 
             </div>
 
             {/* Email Card */}
-            <div className="flex gap-4 p-4 bg-white border border-zinc-200/80 rounded-2xl hover:border-brand-blue transition-all duration-300 shadow-sm">
-              <div className="p-2.5 bg-brand-bg-light text-brand-blue rounded-xl h-10 w-10 shrink-0 flex items-center justify-center">
-                <Mail className="h-4.5 w-4.5" />
+            <div className="flex gap-3.5 p-3 bg-white border border-zinc-200/80 rounded-xl hover:border-brand-blue transition-all duration-300 shadow-sm">
+              <div className="p-2 bg-brand-bg-light text-brand-blue rounded-lg h-9 w-9 shrink-0 flex items-center justify-center">
+                <Mail className="h-4 w-4" />
               </div>
               <div className="flex flex-col">
                 <span className="text-[8px] uppercase tracking-wider font-extrabold text-zinc-400">
@@ -183,7 +183,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onPageChange }) => 
                 </span>
                 <a
                   href={`mailto:${footer.contactInfo.email}`}
-                  className="text-xs text-brand-navy font-extrabold hover:text-brand-blue mt-1 transition-colors"
+                  className="text-xs text-brand-navy font-extrabold hover:text-brand-blue mt-0.5 transition-colors"
                 >
                   {footer.contactInfo.email}
                 </a>
@@ -195,7 +195,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onPageChange }) => 
         </div>
 
         {/* Tier 2: Bottom Compliance bar */}
-        <div className={`pt-8 border-t border-zinc-200/60 flex flex-col md:flex-row items-center justify-between gap-6 ${isRtl ? 'md:flex-row-reverse' : ''}`}>
+        <div className={`pt-6 border-t border-zinc-200/60 flex flex-col md:flex-row items-center justify-between gap-4 ${isRtl ? 'md:flex-row-reverse' : ''}`}>
           <span className="text-xs text-zinc-500 font-bold uppercase tracking-wider">
             &copy; {new Date().getFullYear()} {footer.copyright}
           </span>
