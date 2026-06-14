@@ -144,18 +144,18 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
       {/* Header */}
       <Header currentLang={currentLang} onLangChange={onLangChange} activePage="home" onPageChange={onPageChange} />
 
-      {/* Main Content */}
-      <main className="flex-grow pt-[104px]">
+      {/* Main Content with Tighter Padding Top */}
+      <main className="flex-grow pt-[88px]">
 
-        {/* Section 1: Hero Banner (Pastel Gradient Background & Circular Frame Cutout Slider) */}
-        <section className="relative bg-gradient-to-tr from-purple-100/30 via-yellow-100/20 to-teal-100/30 text-zinc-850 py-24 lg:py-32 overflow-hidden border-b border-zinc-100">
+        {/* Section 1: Hero Banner (Pastel Gradient Background & Circular Frame Cutout Slider - py-16 lg:py-20) */}
+        <section className="relative bg-gradient-to-tr from-purple-100/30 via-yellow-100/20 to-teal-100/30 text-zinc-850 py-16 lg:py-20 overflow-hidden border-b border-zinc-100">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:5rem_5rem] opacity-30 pointer-events-none" />
           
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className={`grid grid-cols-1 lg:grid-cols-12 gap-12 items-center ${isRtl ? 'lg:flex-row-reverse' : ''}`}>
               
               {/* Hero Left Column (Title & Rotator) */}
-              <div className="lg:col-span-7 flex flex-col space-y-6">
+              <div className="lg:col-span-7 flex flex-col space-y-5">
                 <span className="text-xs font-black uppercase tracking-widest text-brand-blue bg-white border border-zinc-200/80 px-4 py-1.5 rounded-full w-fit shadow-sm">
                   {data.hero.subtitle}
                 </span>
@@ -171,7 +171,7 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
                   {data.hero.paragraph}
                 </p>
 
-                <div className={`flex items-center gap-4 pt-4 ${isRtl ? 'flex-row-reverse' : ''}`}>
+                <div className={`flex items-center gap-4 pt-2 ${isRtl ? 'flex-row-reverse' : ''}`}>
                   <button
                     onClick={(e) => handleLinkClick(e, '#/contact')}
                     className="inline-flex items-center justify-center px-8 py-4 text-xs font-black uppercase tracking-widest rounded-full text-white bg-brand-blue hover:bg-brand-blue-hover shadow-lg shadow-brand-blue/15 hover:shadow-brand-blue/25 transition-all cursor-pointer gap-1.5"
@@ -198,7 +198,7 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
                 </div>
 
                 {/* Overlapping Avatars "Trusted By" info */}
-                <div className={`flex items-center gap-4 pt-8 border-t border-zinc-200/80 max-w-lg ${isRtl ? 'flex-row-reverse text-right' : 'text-left'}`}>
+                <div className={`flex items-center gap-4 pt-6 border-t border-zinc-200/80 max-w-lg ${isRtl ? 'flex-row-reverse text-right' : 'text-left'}`}>
                   <div className={`flex overflow-hidden ${isRtl ? '-space-x-3 space-x-reverse' : '-space-x-3'}`}>
                     <div className="inline-block h-9 w-9 rounded-full ring-2 ring-white bg-gradient-to-tr from-blue-400 to-indigo-500 flex items-center justify-center text-[10px] font-black text-white shadow-sm">K</div>
                     <div className="inline-block h-9 w-9 rounded-full ring-2 ring-white bg-gradient-to-tr from-amber-400 to-orange-500 flex items-center justify-center text-[10px] font-black text-white shadow-sm">S</div>
@@ -278,8 +278,8 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
           </div>
         </section>
 
-        {/* Section 2: Core Strengths (3 columns) */}
-        <section className="py-20 bg-white border-b border-zinc-150">
+        {/* Section 2: Core Strengths (3 columns - py-14) */}
+        <section className="py-14 bg-white border-b border-zinc-150">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {data.strengths.map((item, index) => (
@@ -303,8 +303,8 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
           </div>
         </section>
 
-        {/* Section 3: About Holding Group (Side-by-side) */}
-        <section className="py-24 bg-white border-b border-zinc-150">
+        {/* Section 3: About Holding Group (Side-by-side - py-16) */}
+        <section className="py-16 bg-white border-b border-zinc-150">
           <div className="max-w-7xl mx-auto px-6">
             <div className={`grid grid-cols-1 lg:grid-cols-12 gap-12 items-center ${isRtl ? 'lg:flex-row-reverse' : ''}`}>
               
@@ -354,11 +354,11 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
           </div>
         </section>
 
-        {/* Section 4: Services Offered */}
-        <section className="py-24 bg-brand-bg-lighter/40 border-b border-zinc-150">
+        {/* Section 4: Services Offered (py-16) */}
+        <section className="py-16 bg-brand-bg-lighter/40 border-b border-zinc-150">
           <div className="max-w-7xl mx-auto px-6">
             
-            <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+            <div className="text-center max-w-2xl mx-auto mb-10 space-y-4">
               <span className="text-xs font-black uppercase tracking-widest text-brand-blue bg-white border border-zinc-200 px-3 py-1.5 rounded-lg shadow-sm">
                 {data.servicesSection.subtitle}
               </span>
@@ -409,8 +409,8 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
           </div>
         </section>
 
-        {/* Section 5: Experience / Our Professional Journey Timeline */}
-        <section id="journey-section" className="py-24 bg-brand-bg-lighter/30 border-b border-zinc-150">
+        {/* Section 5: Experience / Our Professional Journey Timeline (py-16) */}
+        <section id="journey-section" className="py-16 bg-brand-bg-lighter/30 border-b border-zinc-150">
           <div className="max-w-7xl mx-auto px-6">
             <div className={`grid grid-cols-1 lg:grid-cols-12 gap-12 items-start ${isRtl ? 'lg:flex-row-reverse' : ''}`}>
               
@@ -462,7 +462,7 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
                       </div>
                       
                       {/* Item Details */}
-                      <div className="space-y-2 pb-8">
+                      <div className="space-y-2 pb-6">
                         <h4 className="text-lg font-bold text-brand-navy group-hover:text-brand-blue transition-colors duration-250">
                           {item.title}
                         </h4>
@@ -479,8 +479,8 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
           </div>
         </section>
 
-        {/* Section 6: Our Expertise progress bars */}
-        <section id="expertise-section" className="py-24 bg-white border-b border-zinc-150">
+        {/* Section 6: Our Expertise progress bars (py-16) */}
+        <section id="expertise-section" className="py-16 bg-white border-b border-zinc-150">
           <div className="max-w-7xl mx-auto px-6">
             <div className={`grid grid-cols-1 lg:grid-cols-12 gap-12 items-center ${isRtl ? 'lg:flex-row-reverse' : ''}`}>
               
@@ -527,11 +527,11 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
           </div>
         </section>
 
-        {/* Section 7: Testimonials Slider */}
-        <section className="py-24 bg-brand-bg-lighter/40 border-b border-zinc-150">
+        {/* Section 7: Testimonials Slider (py-16) */}
+        <section className="py-16 bg-brand-bg-lighter/40 border-b border-zinc-150">
           <div className="max-w-7xl mx-auto px-6">
             
-            <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+            <div className="text-center max-w-2xl mx-auto mb-12 space-y-4">
               <span className="text-xs font-black uppercase tracking-widest text-brand-blue bg-white border border-zinc-200 px-3 py-1.5 rounded-lg shadow-sm">
                 {data.testimonials.subtitle}
               </span>
@@ -541,7 +541,7 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
             </div>
 
             {/* Testimonials Slider Body */}
-            <div className="relative max-w-4xl mx-auto text-center px-6 mt-12 group">
+            <div className="relative max-w-4xl mx-auto text-center px-6 mt-8 group">
               <div className="text-6xl text-brand-blue/15 font-serif absolute -top-8 left-10 pointer-events-none">“</div>
               
               <div className="min-h-[140px] flex items-center justify-center">
@@ -566,7 +566,7 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
               </div>
 
               {/* Dots indicators */}
-              <div className="flex items-center justify-center gap-2 mt-8">
+              <div className="flex items-center justify-center gap-2 mt-6">
                 {data.testimonials.items.map((_, idx) => (
                   <button
                     key={idx}
