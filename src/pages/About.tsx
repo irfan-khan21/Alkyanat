@@ -50,7 +50,7 @@ export const About: React.FC<AboutProps> = ({ currentLang, onLangChange, onPageC
       <Header currentLang={currentLang} onLangChange={onLangChange} activePage="about" onPageChange={onPageChange} />
 
       {/* Main Content */}
-      <main className="flex-grow pt-[104px]">
+      <main className="flex-grow pt-[88px]">
         
         {/* Breadcrumb Header Banner (Navy theme) */}
         <section className="bg-brand-navy text-white py-16 relative overflow-hidden">
