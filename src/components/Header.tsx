@@ -108,12 +108,12 @@ export const Header: React.FC<HeaderProps> = ({ currentLang, onLangChange, activ
                     onMouseLeave={() => setIsServicesOpen(false)}
                   >
                     <button
-                      className={`text-xs font-bold uppercase tracking-widest transition-colors flex items-center gap-1 cursor-pointer ${
-                        isActive ? 'text-brand-blue' : 'text-brand-navy hover:text-brand-blue'
+                      className={`text-[15px] font-semibold transition-colors flex items-center gap-1 cursor-pointer ${
+                        isActive ? 'text-brand-blue' : 'text-slate-800 hover:text-brand-blue'
                       }`}
                     >
                       <span>{link.label}</span>
-                      <ChevronDown className="h-3 w-3 transition-transform duration-200 group-hover:rotate-180" />
+                      <ChevronDown className="h-4 w-4 transition-transform duration-200 group-hover:rotate-180" />
                     </button>
 
                     {/* Services Dropdown */}
@@ -152,8 +152,8 @@ export const Header: React.FC<HeaderProps> = ({ currentLang, onLangChange, activ
                   key={link.label}
                   href={link.href}
                   onClick={(e) => handleLinkClick(e, link.href)}
-                  className={`text-xs font-bold uppercase tracking-widest transition-colors relative py-2 group ${
-                    isActive ? 'text-brand-blue' : 'text-brand-navy hover:text-brand-blue'
+                  className={`text-[15px] font-semibold transition-colors relative py-2 ${
+                    isActive ? 'text-brand-blue' : 'text-slate-800 hover:text-brand-blue'
                   }`}
                 >
                   {link.label}
@@ -167,7 +167,7 @@ export const Header: React.FC<HeaderProps> = ({ currentLang, onLangChange, activ
             {/* Language Switcher */}
             <button
               onClick={() => onLangChange(currentLang === 'EN' ? 'AR' : 'EN')}
-              className="flex items-center gap-1.5 px-4.5 py-2.5 border border-zinc-200 hover:border-brand-blue hover:bg-brand-bg-lighter rounded-full text-brand-navy transition-all text-xs font-bold cursor-pointer"
+              className="flex items-center gap-1.5 px-4.5 py-2.5 border border-zinc-200 hover:border-brand-blue hover:bg-brand-bg-lighter rounded-full text-slate-800 transition-all text-xs font-bold cursor-pointer"
             >
               <Globe className="h-3.5 w-3.5 text-brand-blue" />
               <span>{data.langSwitcher}</span>
@@ -175,10 +175,10 @@ export const Header: React.FC<HeaderProps> = ({ currentLang, onLangChange, activ
  
             <button
               onClick={(e) => handleLinkClick(e, '#/contact')}
-              className="inline-flex items-center justify-center px-7 py-3 text-xs font-extrabold uppercase tracking-widest rounded-full text-white bg-brand-blue hover:bg-brand-blue-hover shadow-md shadow-brand-blue/10 hover:shadow-brand-blue/20 transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer gap-1"
+              className="inline-flex items-center justify-center px-8 py-3.5 text-[15px] font-semibold rounded-full text-white bg-brand-blue hover:bg-brand-blue-hover shadow-md shadow-brand-blue/10 hover:shadow-brand-blue/20 transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer gap-1.5"
             >
               <span>{data.ctaBtn}</span>
-              <ArrowUpRight className="h-4 w-4 stroke-[2.5]" />
+              <ArrowUpRight className="h-4.5 w-4.5 stroke-[2.5]" />
             </button>
           </div>
  
