@@ -16,7 +16,7 @@ export const Header: React.FC<HeaderProps> = ({ currentLang, onLangChange, activ
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  // Handle scroll to add background opacity / shadow
+  // Handle scroll state to transition transparent to solid white background
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 20) {
@@ -29,7 +29,7 @@ export const Header: React.FC<HeaderProps> = ({ currentLang, onLangChange, activ
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Prevent scroll when mobile menu is open
+  // Prevent background scroll when mobile drawer is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -57,8 +57,8 @@ export const Header: React.FC<HeaderProps> = ({ currentLang, onLangChange, activ
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 border-b ${
       isScrolled 
-        ? 'bg-brand-dark/95 backdrop-blur-md py-3 border-zinc-800/80 shadow-lg' 
-        : 'bg-brand-dark py-5 border-zinc-900 shadow-md'
+        ? 'bg-white/95 backdrop-blur-md py-3 border-zinc-200/80 shadow-md' 
+        : 'bg-brand-bg-lighter/40 backdrop-blur-sm py-5 border-transparent shadow-sm'
     }`}>
       <div className="max-w-7xl mx-auto px-6">
         <div className={`flex items-center justify-between h-16 ${isRtl ? 'flex-row-reverse' : ''}`}>
@@ -70,30 +70,30 @@ export const Header: React.FC<HeaderProps> = ({ currentLang, onLangChange, activ
             className={`flex items-center gap-3 group relative z-50 ${isRtl ? 'flex-row-reverse' : ''}`}
           >
             {/* Inline Interlocking Diamonds SVG Logo */}
-            <div className="p-1.5 bg-zinc-950 border border-zinc-800 group-hover:border-brand-yellow rounded-xl transition-all duration-300">
+            <div className="p-1.5 bg-white border border-zinc-200 group-hover:border-brand-blue rounded-xl transition-all duration-300 shadow-sm">
               <svg viewBox="0 0 100 100" className="w-9 h-9">
-                {/* Top Diamond (Yellow) */}
-                <path d="M 50,12 L 66,28 L 50,44 L 34,28 Z" fill="#F4B41A" />
-                {/* Left Diamond (White) */}
-                <path d="M 32,30 L 48,46 L 32,62 L 16,46 Z" fill="#ffffff" />
-                {/* Right Diamond (White) */}
-                <path d="M 68,30 L 84,46 L 68,62 L 52,46 Z" fill="#ffffff" />
-                {/* Bottom Diamond (Yellow) */}
-                <path d="M 50,48 L 66,64 L 50,80 L 34,64 Z" fill="#F4B41A" />
+                {/* Top Diamond (Blue) */}
+                <path d="M 50,12 L 66,28 L 50,44 L 34,28 Z" fill="#5777FF" />
+                {/* Left Diamond (Dark Navy) */}
+                <path d="M 32,30 L 48,46 L 32,62 L 16,46 Z" fill="#152A40" />
+                {/* Right Diamond (Dark Navy) */}
+                <path d="M 68,30 L 84,46 L 68,62 L 52,46 Z" fill="#152A40" />
+                {/* Bottom Diamond (Blue) */}
+                <path d="M 50,48 L 66,64 L 50,80 L 34,64 Z" fill="#5777FF" />
               </svg>
             </div>
             
             <div className={`flex flex-col leading-none ${isRtl ? 'items-end text-right' : 'items-start text-left'}`}>
-              <span className="text-xl font-extrabold tracking-wider text-white uppercase font-sans pb-0.5 group-hover:text-brand-yellow transition-colors duration-300">
+              <span className="text-xl font-extrabold tracking-wider text-brand-navy uppercase font-sans pb-0.5 group-hover:text-brand-blue transition-colors duration-300">
                 {data.logo.brandName}
               </span>
-              <span className="text-[8px] tracking-[0.25em] text-brand-yellow font-black uppercase">
+              <span className="text-[8px] tracking-[0.25em] text-brand-blue font-black uppercase">
                 {data.logo.subtitle}
               </span>
             </div>
           </a>
  
-          {/* Desktop Navigation Links */}
+          {/* Desktop Navigation Menu Links */}
           <nav className={`hidden md:flex items-center gap-8 ${isRtl ? 'flex-row-reverse' : ''}`}>
             {data.headerLinks.map((link) => {
               const pageName = link.href.replace('#/', '') as 'home' | 'about' | 'services' | 'blog' | 'contact';
@@ -109,36 +109,36 @@ export const Header: React.FC<HeaderProps> = ({ currentLang, onLangChange, activ
                   >
                     <button
                       className={`text-xs font-black uppercase tracking-widest transition-colors flex items-center gap-1 cursor-pointer ${
-                        isActive ? 'text-brand-yellow' : 'text-white/90 hover:text-brand-yellow'
+                        isActive ? 'text-brand-blue' : 'text-brand-navy/85 hover:text-brand-blue'
                       }`}
                     >
                       <span>{link.label}</span>
                       <ChevronDown className="h-3 w-3 transition-transform duration-200 group-hover:rotate-180" />
                     </button>
 
-                    {/* Services Mega Dropdown */}
-                    <div className={`absolute left-1/2 -translate-x-1/2 top-full w-72 bg-brand-dark-card border border-zinc-850 rounded-2xl p-4 shadow-xl transition-all duration-300 origin-top ${
+                    {/* Services Dropdown */}
+                    <div className={`absolute left-1/2 -translate-x-1/2 top-full w-72 bg-white border border-zinc-200 rounded-2xl p-4 shadow-xl transition-all duration-300 origin-top ${
                       isServicesOpen 
                         ? 'opacity-100 visible scale-100 translate-y-0' 
                         : 'opacity-0 invisible scale-95 -translate-y-2 pointer-events-none'
                     }`}>
-                      <h4 className={`text-[10px] font-black text-brand-yellow uppercase tracking-widest border-b border-zinc-800 pb-2 mb-2 ${
+                      <h4 className={`text-[10px] font-black text-brand-blue uppercase tracking-widest border-b border-zinc-150 pb-2 mb-2 ${
                         isRtl ? 'text-right' : 'text-left'
                       }`}>
                         {data.servicesDropdown.title}
                       </h4>
-                      <div className="flex flex-col gap-1.5">
+                      <div className="flex flex-col gap-1">
                         {data.servicesDropdown.items.map((item: { label: string; href: string }) => (
                           <a
                             key={item.label}
                             href={item.href}
                             onClick={(e) => handleLinkClick(e, item.href)}
-                            className={`text-[11px] font-bold text-zinc-300 hover:text-brand-yellow py-1.5 px-2.5 rounded-lg hover:bg-zinc-900 transition-all flex items-center justify-between ${
+                            className={`text-[11px] font-bold text-brand-navy/80 hover:text-brand-blue py-1.5 px-2.5 rounded-lg hover:bg-brand-bg-lighter transition-all flex items-center justify-between ${
                               isRtl ? 'flex-row-reverse text-right' : 'text-left'
                             }`}
                           >
                             <span>{item.label}</span>
-                            <ChevronRight className={`h-3 w-3 text-zinc-650 group-hover:text-brand-yellow ${isRtl ? 'rotate-180' : ''}`} />
+                            <ChevronRight className={`h-3 w-3 text-zinc-400 group-hover:text-brand-blue ${isRtl ? 'rotate-180' : ''}`} />
                           </a>
                         ))}
                       </div>
@@ -153,11 +153,11 @@ export const Header: React.FC<HeaderProps> = ({ currentLang, onLangChange, activ
                   href={link.href}
                   onClick={(e) => handleLinkClick(e, link.href)}
                   className={`text-xs font-black uppercase tracking-widest transition-colors relative py-2 group ${
-                    isActive ? 'text-brand-yellow' : 'text-white/95 hover:text-brand-yellow'
+                    isActive ? 'text-brand-blue' : 'text-brand-navy/85 hover:text-brand-blue'
                   }`}
                 >
                   {link.label}
-                  <span className={`absolute bottom-0 left-0 h-0.5 bg-brand-yellow transition-all duration-300 ${
+                  <span className={`absolute bottom-0 left-0 h-0.5 bg-brand-blue transition-all duration-300 ${
                     isActive ? 'w-full' : 'w-0 group-hover:w-full'
                   }`} />
                 </a>
@@ -165,24 +165,24 @@ export const Header: React.FC<HeaderProps> = ({ currentLang, onLangChange, activ
             })}
           </nav>
  
-          {/* Action button */}
+          {/* Action Button & Language Switcher */}
           <div className={`hidden md:flex items-center gap-4 ${isRtl ? 'flex-row-reverse' : ''}`}>
             {/* Language Switcher */}
             <button
               onClick={() => onLangChange(currentLang === 'EN' ? 'AR' : 'EN')}
-              className="flex items-center gap-1.5 px-3 py-2 border border-zinc-800 hover:border-brand-yellow hover:bg-zinc-900 rounded-xl text-white transition-all text-xs font-bold cursor-pointer"
+              className="flex items-center gap-1.5 px-3 py-2 border border-zinc-200 hover:border-brand-blue hover:bg-brand-bg-lighter rounded-xl text-brand-navy transition-all text-xs font-bold cursor-pointer"
             >
-              <Globe className="h-3.5 w-3.5 text-brand-yellow" />
+              <Globe className="h-3.5 w-3.5 text-brand-blue" />
               <span>{data.langSwitcher}</span>
             </button>
  
             <a
               href="#/contact"
               onClick={(e) => handleLinkClick(e, '#/contact')}
-              className="inline-flex items-center justify-center px-6 py-3.5 text-xs font-black uppercase tracking-widest rounded-xl text-brand-dark bg-brand-yellow hover:bg-brand-yellow-hover shadow-md hover:shadow-brand-yellow/10 transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer"
+              className="inline-flex items-center justify-center px-6 py-3.5 text-xs font-black uppercase tracking-widest rounded-xl text-white bg-brand-blue hover:bg-brand-blue-hover shadow-md hover:shadow-brand-blue/15 transition-all duration-300 transform hover:-translate-y-0.5 cursor-pointer"
             >
               <span>{data.ctaBtn}</span>
-              <ChevronRight className={`ml-1.5 h-3.5 w-3.5 stroke-[3.5] text-brand-dark ${isRtl ? 'rotate-180 mr-1.5 ml-0' : ''}`} />
+              <ChevronRight className={`ml-1.5 h-3.5 w-3.5 stroke-[3.5] text-white ${isRtl ? 'rotate-180 mr-1.5 ml-0' : ''}`} />
             </a>
           </div>
  
@@ -190,13 +190,13 @@ export const Header: React.FC<HeaderProps> = ({ currentLang, onLangChange, activ
           <div className={`md:hidden flex items-center gap-2.5 ${isRtl ? 'flex-row-reverse' : ''}`}>
             <button
               onClick={() => onLangChange(currentLang === 'EN' ? 'AR' : 'EN')}
-              className="p-2 border border-zinc-800 rounded-lg text-white hover:bg-zinc-900 transition-all flex items-center cursor-pointer"
+              className="p-2 border border-zinc-200 rounded-lg text-brand-navy hover:bg-brand-bg-lighter transition-all flex items-center cursor-pointer"
             >
-              <Globe className="h-4 w-4 text-brand-yellow" />
+              <Globe className="h-4 w-4 text-brand-blue" />
             </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 border border-zinc-800 rounded-lg text-white hover:bg-zinc-900 transition-colors focus:outline-none cursor-pointer"
+              className="p-2 border border-zinc-200 rounded-lg text-brand-navy hover:bg-brand-bg-lighter transition-colors focus:outline-none cursor-pointer"
               aria-label="Toggle menu"
             >
               {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -208,12 +208,12 @@ export const Header: React.FC<HeaderProps> = ({ currentLang, onLangChange, activ
  
       {/* Mobile Drawer */}
       <div
-        className={`md:hidden fixed inset-0 z-40 bg-brand-dark transition-all duration-300 ease-in-out ${
+        className={`md:hidden fixed inset-0 z-40 bg-white transition-all duration-300 ease-in-out ${
           isOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-4 pointer-events-none'
         }`}
         style={{ top: '64px' }}
       >
-        <div className="flex flex-col h-[calc(100vh-64px)] justify-between pb-16 pt-8 px-6 bg-brand-dark border-t border-zinc-900 overflow-y-auto">
+        <div className="flex flex-col h-[calc(100vh-64px)] justify-between pb-16 pt-8 px-6 bg-white border-t border-zinc-100 overflow-y-auto">
           <nav className="flex flex-col space-y-5">
             {data.headerLinks.map((link) => {
               const pageName = link.href.replace('#/', '') as 'home' | 'about' | 'services' | 'blog' | 'contact';
@@ -224,12 +224,12 @@ export const Header: React.FC<HeaderProps> = ({ currentLang, onLangChange, activ
                   <div key={link.label} className="flex flex-col">
                     <button
                       onClick={() => setIsServicesOpen(!isServicesOpen)}
-                      className={`text-lg font-black uppercase tracking-wider transition-all duration-200 border-b border-zinc-900 pb-3 flex items-center justify-between cursor-pointer ${
-                        isActive ? 'text-brand-yellow' : 'text-white hover:text-brand-yellow'
+                      className={`text-lg font-black uppercase tracking-wider transition-all duration-200 border-b border-zinc-100 pb-3 flex items-center justify-between cursor-pointer ${
+                        isActive ? 'text-brand-blue' : 'text-brand-navy hover:text-brand-blue'
                       }`}
                     >
                       <span>{link.label}</span>
-                      <ChevronDown className={`h-4 w-4 transform transition-transform duration-200 ${isServicesOpen ? 'rotate-180 text-brand-yellow' : 'text-zinc-500'}`} />
+                      <ChevronDown className={`h-4 w-4 transform transition-transform duration-200 ${isServicesOpen ? 'rotate-180 text-brand-blue' : 'text-zinc-400'}`} />
                     </button>
                     
                     <div className={`flex flex-col pl-4 gap-2.5 overflow-hidden transition-all duration-300 ${
@@ -240,7 +240,7 @@ export const Header: React.FC<HeaderProps> = ({ currentLang, onLangChange, activ
                           key={item.label}
                           href={item.href}
                           onClick={(e) => handleLinkClick(e, item.href)}
-                          className={`text-xs font-semibold text-zinc-450 hover:text-brand-yellow transition-all flex items-center justify-between py-1 ${
+                          className={`text-xs font-semibold text-zinc-500 hover:text-brand-blue transition-all flex items-center justify-between py-1 ${
                             isRtl ? 'text-right' : 'text-left'
                           }`}
                         >
@@ -257,8 +257,8 @@ export const Header: React.FC<HeaderProps> = ({ currentLang, onLangChange, activ
                   key={link.label}
                   href={link.href}
                   onClick={(e) => handleLinkClick(e, link.href)}
-                  className={`text-lg font-black uppercase tracking-wider transition-all duration-200 border-b border-zinc-900 pb-3 ${
-                    isActive ? 'text-brand-yellow' : 'text-white hover:text-brand-yellow'
+                  className={`text-lg font-black uppercase tracking-wider transition-all duration-200 border-b border-zinc-100 pb-3 ${
+                    isActive ? 'text-brand-blue' : 'text-brand-navy hover:text-brand-blue'
                   } ${isRtl ? 'text-right' : 'text-left'}`}
                 >
                   {link.label}
@@ -270,7 +270,7 @@ export const Header: React.FC<HeaderProps> = ({ currentLang, onLangChange, activ
           <a
             href="#/contact"
             onClick={(e) => handleLinkClick(e, '#/contact')}
-            className="block w-full text-center py-4 px-6 text-xs font-black uppercase tracking-widest rounded-xl text-brand-dark bg-brand-yellow hover:bg-brand-yellow-hover transition-all duration-300"
+            className="block w-full text-center py-4 px-6 text-xs font-black uppercase tracking-widest rounded-xl text-white bg-brand-blue hover:bg-brand-blue-hover transition-all duration-300"
           >
             {data.ctaBtn}
           </a>

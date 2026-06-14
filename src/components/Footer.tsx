@@ -61,7 +61,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onPageChange }) => 
   const isRtl = currentLang === 'AR';
 
   return (
-    <footer className="bg-brand-dark border-t border-zinc-900 pt-16 pb-10 text-zinc-400 relative overflow-hidden">
+    <footer className="bg-brand-bg-lighter border-t border-zinc-200/60 pt-16 pb-10 text-zinc-500 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Tier 1: Directory Columns */}
@@ -70,23 +70,23 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onPageChange }) => 
           {/* Section 1: Logo & Info */}
           <div className="space-y-6">
             <div className={`flex items-center gap-3.5 ${isRtl ? 'flex-row-reverse' : ''}`}>
-              <div className="p-1.5 bg-zinc-950 border border-zinc-800 rounded-xl shadow-sm">
+              <div className="p-1.5 bg-white border border-zinc-200 rounded-xl shadow-sm">
                 <svg viewBox="0 0 100 100" className="w-9 h-9">
-                  {/* Top Diamond (Yellow) */}
-                  <path d="M 50,12 L 66,28 L 50,44 L 34,28 Z" fill="#F4B41A" />
-                  {/* Left Diamond (White) */}
-                  <path d="M 32,30 L 48,46 L 32,62 L 16,46 Z" fill="#ffffff" />
-                  {/* Right Diamond (White) */}
-                  <path d="M 68,30 L 84,46 L 68,62 L 52,46 Z" fill="#ffffff" />
-                  {/* Bottom Diamond (Yellow) */}
-                  <path d="M 50,48 L 66,64 L 50,80 L 34,64 Z" fill="#F4B41A" />
+                  {/* Top Diamond (Blue) */}
+                  <path d="M 50,12 L 66,28 L 50,44 L 34,28 Z" fill="#5777FF" />
+                  {/* Left Diamond (Dark Navy) */}
+                  <path d="M 32,30 L 48,46 L 32,62 L 16,46 Z" fill="#152A40" />
+                  {/* Right Diamond (Dark Navy) */}
+                  <path d="M 68,30 L 84,46 L 68,62 L 52,46 Z" fill="#152A40" />
+                  {/* Bottom Diamond (Blue) */}
+                  <path d="M 50,48 L 66,64 L 50,80 L 34,64 Z" fill="#5777FF" />
                 </svg>
               </div>
               <div className="flex flex-col leading-none">
-                <span className="text-lg font-black tracking-wider text-white uppercase font-sans pb-0.5">
+                <span className="text-lg font-black tracking-wider text-brand-navy uppercase font-sans pb-0.5">
                   {data.logo.brandName}
                 </span>
-                <span className="text-[8px] tracking-[0.25em] text-brand-yellow font-black uppercase">
+                <span className="text-[8px] tracking-[0.25em] text-brand-blue font-black uppercase">
                   {data.logo.subtitle}
                 </span>
               </div>
@@ -101,7 +101,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onPageChange }) => 
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-xl bg-zinc-950 border border-zinc-900 text-zinc-400 hover:text-brand-dark hover:bg-brand-yellow hover:border-brand-yellow hover:scale-105 transition-all duration-300 cursor-pointer"
+                  className="p-3 rounded-xl bg-white border border-zinc-200 text-zinc-650 hover:text-white hover:bg-brand-blue hover:border-brand-blue hover:scale-105 transition-all duration-300 cursor-pointer shadow-sm"
                   aria-label={social.platform}
                 >
                   {renderSocialIcon(social.platform)}
@@ -113,7 +113,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onPageChange }) => 
           {/* Section 2: Quick Links */}
           {footer.sections.map((section: { title: string; links: { label: string; href: string }[] }) => (
             <div key={section.title} className={`${isRtl ? 'lg:pr-20' : 'lg:pl-20'}`}>
-              <h3 className="text-xs font-black uppercase tracking-widest text-brand-yellow mb-6">
+              <h3 className="text-xs font-black uppercase tracking-widest text-brand-navy mb-6">
                 {section.title}
               </h3>
               <ul className="space-y-4">
@@ -122,9 +122,9 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onPageChange }) => 
                     <a
                       href={link.href}
                       onClick={(e) => handleLinkClick(e, link.href)}
-                      className="text-xs font-bold uppercase tracking-widest text-zinc-450 hover:text-white transition-colors duration-250 flex items-center group cursor-pointer"
+                      className="text-xs font-bold uppercase tracking-widest text-zinc-500 hover:text-brand-blue transition-colors duration-250 flex items-center group cursor-pointer"
                     >
-                      <span className={`h-1.5 w-1.5 rounded-full bg-zinc-800 group-hover:bg-brand-yellow transition-all duration-250 ${isRtl ? 'ml-2.5' : 'mr-2.5'}`} />
+                      <span className={`h-1.5 w-1.5 rounded-full bg-zinc-300 group-hover:bg-brand-blue transition-all duration-250 ${isRtl ? 'ml-2.5' : 'mr-2.5'}`} />
                       {link.label}
                     </a>
                   </li>
@@ -135,37 +135,37 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onPageChange }) => 
 
           {/* Section 3: Headquarters & Contacts */}
           <div className="space-y-4">
-            <h3 className="text-xs font-black uppercase tracking-widest text-brand-yellow mb-2">
+            <h3 className="text-xs font-black uppercase tracking-widest text-brand-navy mb-2">
               {footer.contactInfo.title}
             </h3>
             
             {/* Address Card */}
-            <div className="flex gap-4 p-4 bg-zinc-950/60 border border-zinc-900 rounded-2xl hover:border-zinc-800 transition-all duration-300">
-              <div className="p-2.5 bg-brand-dark text-brand-yellow border border-zinc-900 rounded-xl h-10 w-10 shrink-0 flex items-center justify-center">
+            <div className="flex gap-4 p-4 bg-white border border-zinc-200/80 rounded-2xl hover:border-brand-blue transition-all duration-300 shadow-sm">
+              <div className="p-2.5 bg-brand-bg-light text-brand-blue rounded-xl h-10 w-10 shrink-0 flex items-center justify-center">
                 <MapPin className="h-4.5 w-4.5" />
               </div>
               <div className="flex flex-col">
-                <span className="text-[8px] uppercase tracking-wider font-extrabold text-zinc-600">
+                <span className="text-[8px] uppercase tracking-wider font-extrabold text-zinc-400">
                   {currentLang === 'AR' ? 'العنوان' : 'Location'}
                 </span>
-                <span className="text-xs text-zinc-300 font-bold mt-1 leading-normal">
+                <span className="text-xs text-brand-navy font-bold mt-1 leading-normal">
                   {footer.contactInfo.address}
                 </span>
               </div>
             </div>
 
             {/* Phone Card */}
-            <div className="flex gap-4 p-4 bg-zinc-950/60 border border-zinc-900 rounded-2xl hover:border-zinc-800 transition-all duration-300">
-              <div className="p-2.5 bg-brand-dark text-brand-yellow border border-zinc-900 rounded-xl h-10 w-10 shrink-0 flex items-center justify-center">
+            <div className="flex gap-4 p-4 bg-white border border-zinc-200/80 rounded-2xl hover:border-brand-blue transition-all duration-300 shadow-sm">
+              <div className="p-2.5 bg-brand-bg-light text-brand-blue rounded-xl h-10 w-10 shrink-0 flex items-center justify-center">
                 <Phone className="h-4.5 w-4.5" />
               </div>
               <div className="flex flex-col">
-                <span className="text-[8px] uppercase tracking-wider font-extrabold text-zinc-600">
+                <span className="text-[8px] uppercase tracking-wider font-extrabold text-zinc-400">
                   {currentLang === 'AR' ? 'رقم الاتصال' : 'Operations Desk'}
                 </span>
                 <a
                   href={`tel:${footer.contactInfo.phone}`}
-                  className="text-xs text-zinc-300 font-extrabold hover:text-brand-yellow mt-1 transition-colors"
+                  className="text-xs text-brand-navy font-extrabold hover:text-brand-blue mt-1 transition-colors"
                 >
                   {footer.contactInfo.phone}
                 </a>
@@ -173,17 +173,17 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onPageChange }) => 
             </div>
 
             {/* Email Card */}
-            <div className="flex gap-4 p-4 bg-zinc-950/60 border border-zinc-900 rounded-2xl hover:border-zinc-800 transition-all duration-300">
-              <div className="p-2.5 bg-brand-dark text-brand-yellow border border-zinc-900 rounded-xl h-10 w-10 shrink-0 flex items-center justify-center">
+            <div className="flex gap-4 p-4 bg-white border border-zinc-200/80 rounded-2xl hover:border-brand-blue transition-all duration-300 shadow-sm">
+              <div className="p-2.5 bg-brand-bg-light text-brand-blue rounded-xl h-10 w-10 shrink-0 flex items-center justify-center">
                 <Mail className="h-4.5 w-4.5" />
               </div>
               <div className="flex flex-col">
-                <span className="text-[8px] uppercase tracking-wider font-extrabold text-zinc-600">
+                <span className="text-[8px] uppercase tracking-wider font-extrabold text-zinc-400">
                   {currentLang === 'AR' ? 'البريد الإلكتروني' : 'Official Inquiry'}
                 </span>
                 <a
                   href={`mailto:${footer.contactInfo.email}`}
-                  className="text-xs text-zinc-300 font-extrabold hover:text-brand-yellow mt-1 transition-colors"
+                  className="text-xs text-brand-navy font-extrabold hover:text-brand-blue mt-1 transition-colors"
                 >
                   {footer.contactInfo.email}
                 </a>
@@ -195,25 +195,25 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onPageChange }) => 
         </div>
 
         {/* Tier 2: Bottom Compliance bar */}
-        <div className={`pt-8 border-t border-zinc-900 flex flex-col md:flex-row items-center justify-between gap-6 ${isRtl ? 'md:flex-row-reverse' : ''}`}>
+        <div className={`pt-8 border-t border-zinc-200/60 flex flex-col md:flex-row items-center justify-between gap-6 ${isRtl ? 'md:flex-row-reverse' : ''}`}>
           <span className="text-xs text-zinc-500 font-bold uppercase tracking-wider">
             &copy; {new Date().getFullYear()} {footer.copyright}
           </span>
 
           {/* Vision 2030 Badge */}
-          <div className="flex items-center gap-2.5 py-1.5 px-4 bg-zinc-950 border border-zinc-900 rounded-full">
-            <span className="h-2 w-2 rounded-full bg-brand-yellow animate-pulse" />
-            <span className="text-[9px] font-black tracking-widest text-zinc-400 uppercase">
+          <div className="flex items-center gap-2.5 py-1.5 px-4 bg-white border border-zinc-200 rounded-full shadow-sm">
+            <span className="h-2 w-2 rounded-full bg-brand-blue animate-pulse" />
+            <span className="text-[9px] font-black tracking-widest text-zinc-500 uppercase">
               {currentLang === 'AR' ? 'متوافق مع رؤية المملكة ٢٠٣٠' : 'Vision 2030 Aligned'}
             </span>
           </div>
 
           <button
             onClick={scrollToTop}
-            className={`flex items-center gap-2.5 text-xs font-black uppercase tracking-widest text-zinc-600 hover:text-white transition-colors group cursor-pointer ${isRtl ? 'flex-row-reverse' : ''}`}
+            className={`flex items-center gap-2.5 text-xs font-black uppercase tracking-widest text-zinc-500 hover:text-brand-blue transition-colors group cursor-pointer ${isRtl ? 'flex-row-reverse' : ''}`}
           >
             <span>{footer.backToTop}</span>
-            <div className="p-2.5 bg-zinc-950 border border-zinc-900 rounded-xl group-hover:bg-brand-yellow group-hover:text-brand-dark transition-all duration-300 shadow-sm">
+            <div className="p-2.5 bg-white border border-zinc-200 rounded-xl group-hover:bg-brand-blue group-hover:text-white transition-all duration-300 shadow-sm">
               <ArrowUp className="h-4.5 w-4.5 stroke-[2.5]" />
             </div>
           </button>
