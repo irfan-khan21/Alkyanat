@@ -1,0 +1,114 @@
+{
+  "en": {
+    "logo": {
+      "brandName": "Al Kyanat",
+      "subtitle": "KSA Holding"
+    },
+    "headerLinks": [
+      { "label": "Home", "href": "#/home" },
+      { "label": "About", "href": "#/about" },
+      { "label": "Services", "href": "#/services" },
+      { "label": "Blog", "href": "#/blog" },
+      { "label": "Contact", "href": "#/contact" }
+    ],
+    "servicesDropdown": {
+      "title": "Services Offered",
+      "items": [
+        { "label": "Road Sweeper Elgin", "href": "#/services?type=elgin" },
+        { "label": "Road Sweeper Johnston", "href": "#/services?type=johnston" },
+        { "label": "Road Sweeper ScaraB", "href": "#/services?type=scarab" },
+        { "label": "Garden Sweeping Equipment", "href": "#/services?type=gardens" },
+        { "label": "Boom Trucks (10/12/15 Tons)", "href": "#/services?type=boomtrucks" },
+        { "label": "Forklifts & Lifting Solutions", "href": "#/services?type=forklifts" },
+        { "label": "Heavy Cranes & Material Handling", "href": "#/services?type=cranes" },
+        { "label": "Heavy Duty Construction Vehicles", "href": "#/services?type=heavyduty" }
+      ]
+    },
+    "socialLinks": [
+      { "platform": "LinkedIn", "url": "https://linkedin.com" },
+      { "platform": "Twitter / X", "url": "https://x.com" },
+      { "platform": "Instagram", "url": "https://instagram.com" }
+    ],
+    "ctaBtn": "Let's Talk",
+    "langSwitcher": "العربية",
+    "footer": {
+      "aboutText": "Al Kyanat KSA is a premier industrial holding group supplying heavy duty vehicles, road sweepers (Elgin, Johnston, ScaraB), small garden sweepers, boom trucks, forklifts, and cranes to public and private sector projects across the Kingdom.",
+      "sections": [
+        {
+          "title": "Navigation Links",
+          "links": [
+            { "label": "Home", "href": "#/home" },
+            { "label": "About", "href": "#/about" },
+            { "label": "Services", "href": "#/services" },
+            { "label": "Blog", "href": "#/blog" },
+            { "label": "Contact", "href": "#/contact" }
+          ]
+        }
+      ],
+      "contactInfo": {
+        "title": "Operations & Fleet Hub",
+        "address": "King Fahd Road, Al Rahmaniyah, Riyadh 12341, Kingdom of Saudi Arabia",
+        "phone": "+966 11 456 7890",
+        "email": "info@alkyanat.com"
+      },
+      "copyright": "Al Kyanat KSA. All rights reserved.",
+      "backToTop": "Back to Top"
+    }
+  },
+  "ar": {
+    "logo": {
+      "brandName": "الكيانات",
+      "subtitle": "مجموعة قابضة"
+    },
+    "headerLinks": [
+      { "label": "الرئيسية", "href": "#/home" },
+      { "label": "من نحن", "href": "#/about" },
+      { "label": "الخدمات", "href": "#/services" },
+      { "label": "المدونة", "href": "#/blog" },
+      { "label": "اتصل بنا", "href": "#/contact" }
+    ],
+    "servicesDropdown": {
+      "title": "الخدمات المقدمة",
+      "items": [
+        { "label": "عربات كنس الطرق إلجين (Elgin)", "href": "#/services?type=elgin" },
+        { "label": "عربات كنس الطرق جونستون (Johnston)", "href": "#/services?type=johnston" },
+        { "label": "عربات كنس الطرق سكاراب (ScaraB)", "href": "#/services?type=scarab" },
+        { "label": "معدات كنس وتجميل الحدائق", "href": "#/services?type=gardens" },
+        { "label": "شاحنات ذراع الرافعة (10/12/15 طن)", "href": "#/services?type=boomtrucks" },
+        { "label": "الرافعات الشوكية ومناول المواد", "href": "#/services?type=forklifts" },
+        { "label": "الرافعات الثقيلة للمشاريع الكبرى", "href": "#/services?type=cranes" },
+        { "label": "معدات وآليات البناء الثقيلة", "href": "#/services?type=heavyduty" }
+      ]
+    },
+    "socialLinks": [
+      { "platform": "LinkedIn", "url": "https://linkedin.com" },
+      { "platform": "Twitter / X", "url": "https://x.com" },
+      { "platform": "Instagram", "url": "https://instagram.com" }
+    ],
+    "ctaBtn": "لنبدأ الحوار",
+    "langSwitcher": "English",
+    "footer": {
+      "aboutText": "مجموعة الكيانات هي تكتل صناعي رائد يوفر آليات ومعدات ثقيلة لمشاريع البناء والبنية التحتية، بالإضافة إلى مركبات الخدمات العامة وصيانة الطرق كعربات كنس الطرق إلجين وجونستون وسكاراب ومعدات الحدائق والرافعات المتنوعة بالمملكة.",
+      "sections": [
+        {
+          "title": "خريطة الموقع",
+          "links": [
+            { "label": "الرئيسية", "href": "#/home" },
+            { "label": "من نحن", "href": "#/about" },
+            { "label": "الخدمات", "href": "#/services" },
+            { "label": "المدونة", "href": "#/blog" },
+            { "label": "اتصل بنا", "href": "#/contact" }
+          ]
+        }
+      ],
+      "contactInfo": {
+        "title": "مقر العمليات والأسطول",
+        "address": "طريق الملك فهد، حي الرحمانية، الرياض 12341، المملكة العربية السعودية",
+        "phone": "+٩٦٦ ١١ ٤٥٦ ٧٨٩٠",
+        "email": "info@alkyanat.com"
+      },
+      "copyright": "مجموعة الكيانات القابضة. جميع الحقوق محفوظة.",
+      "backToTop": "العودة للأعلى"
+    }
+  }
+}
