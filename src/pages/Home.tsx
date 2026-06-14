@@ -139,7 +139,7 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
   };
 
   return (
-    <div className={`min-h-screen bg-gradient-to-b from-brand-bg-lighter via-white to-brand-bg-light/35 text-zinc-650 flex flex-col justify-between font-sans overflow-x-hidden ${isRtl ? 'text-right' : 'text-left'}`}>
+    <div className={`min-h-screen bg-gradient-to-b from-brand-bg-light via-white to-brand-bg-light text-zinc-650 flex flex-col justify-between font-sans overflow-x-hidden ${isRtl ? 'text-right' : 'text-left'}`}>
       
       {/* Header */}
       <Header currentLang={currentLang} onLangChange={onLangChange} activePage="home" onPageChange={onPageChange} />
