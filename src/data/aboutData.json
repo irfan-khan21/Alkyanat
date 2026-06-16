@@ -1,0 +1,118 @@
+{
+  "en": {
+    "hero": {
+      "title": "Who We Are",
+      "subtitle": "Al Kyanat KSA holding group history, HSE policies, quality standards, and corporate capabilities.",
+      "breadcrumbHome": "Home",
+      "breadcrumbCurrent": "About"
+    },
+    "history": {
+      "subtitle": "Our Corporate History",
+      "title": "Empowering KSA Municipal & Construction Sectors",
+      "paragraph1": "Al Kyanat KSA is a premier industrial holding group dedicated to supporting infrastructure growth, road hygiene, and logistics operations. Over the years, we have built a massive fleet of heavy duty vehicles, heavy cranes, forklifts, boom trucks, and specialized sweeper trucks (Elgin, Johnston, ScaraB) to execute critical regional developments.",
+      "paragraph2": "Aligning our operations with Saudi Vision 2030, we partner with both government ministries and private developers. Our divisions deliver high-performance equipment alongside qualified, certified operators to guarantee safety, operational precision, and compliance with the highest civil standards."
+    },
+    "policiesSection": {
+      "subtitle": "HSE & Quality Standards",
+      "title": "Our Operational Foundations",
+      "items": [
+        {
+          "title": "Uncompromising Safety",
+          "description": "Zero-harm workplace practices, rigorous operator checkups, and telematics-tracked heavy vehicles ensure maximum safety."
+        },
+        {
+          "title": "Quality Assured Fleet",
+          "description": "All sweepers, boom trucks, forklifts, and cranes undergo periodic preventative maintenance at our regional repair hubs."
+        },
+        {
+          "title": "Vision 2030 Alignment",
+          "description": "Providing eco-efficient street sweeper models and route optimizations to decrease carbon footprints and support green spaces."
+        },
+        {
+          "title": "Government Approvals",
+          "description": "Licensed and registered under civil authorities to execute municipal cleaning, road sweeping, and landscaping projects."
+        }
+      ]
+    },
+    "faqsSection": {
+      "subtitle": "Frequently Asked Questions",
+      "title": "Answering Client Queries",
+      "items": [
+        {
+          "question": "What types of road sweepers do you supply?",
+          "answer": "We provide three industry-leading sweeper truck brands: Elgin, Johnston, and ScaraB. Each type is optimized for specific road cleaning, highway sweeping, or municipal parkway tasks."
+        },
+        {
+          "question": "Are machinery operators included with equipment rentals?",
+          "answer": "Yes. Every crane, forklift, boom truck, and sweeper vehicle is dispatched with a certified, experienced operator. Our operators are trained to coordinate with site supervisors for safe execution."
+        },
+        {
+          "question": "What capacities of boom trucks do you operate?",
+          "answer": "We maintain hydraulic boom trucks in three distinct capacities: 10-Ton, 12-Ton, and 15-Ton models. They are fully equipped to load, transport, and unload structural cargo."
+        },
+        {
+          "question": "Do you work with government and private companies?",
+          "answer": "Absolutely. We supply heavy machines and road/garden sweepers for both government tenders (municipalities, ministries) and non-governmental corporate construction projects."
+        }
+      ]
+    }
+  },
+  "ar": {
+    "hero": {
+      "title": "من نحن",
+      "subtitle": "تاريخ مجموعة الكيانات بالمملكة، سياسات السلامة والصحة المهنية، معايير الجودة، والقدرات المؤسسية.",
+      "breadcrumbHome": "الرئيسية",
+      "breadcrumbCurrent": "من نحن"
+    },
+    "history": {
+      "subtitle": "تاريخ المجموعة",
+      "title": "تمكين قطاعات الإنشاء والخدمات البلدية بالمملكة",
+      "paragraph1": "مجموعة الكيانات هي تكتل صناعي وطني رائد مخصص لدعم توسع البنية التحتية، ونظافة الطرق، والعمليات اللوجستية. على مدار السنوات، قمنا بتأسيس أسطول ضخم من الآليات الثقيلة، والرافعات الشوكية، وشاحنات البوم، وكناسات الطرق المتخصصة (إلجين، وجونستون، وسكاراب) لتنفيذ مشاريع إقليمية حيوية.",
+      "paragraph2": "تماشيًا مع رؤية المملكة ٢٠٣٠، نتعاون مع الوزارات الحكومية ومطوري القطاع الخاص. تقدم أقسامنا معدات عالية الأداء إلى جانب مشغلين معتمدين وذوي خبرة لضمان السلامة التشغيلية والدقة المطلقة والامتثال لأعلى المعايير المدنية."
+    },
+    "policiesSection": {
+      "subtitle": "الجودة والسلامة المهنية",
+      "title": "الركائز التشغيلية لعملياتنا",
+      "items": [
+        {
+          "title": "سلامة تشغيلية مطلقة",
+          "description": "تطبيق سياسات خلو الحوادث، والفحوصات الدورية للمشغلين، ومراقبة مسارات الشاحنات الثقيلة لضمان أعلى مستويات الأمان."
+        },
+        {
+          "title": "جودة صيانة الأسطول",
+          "description": "تخضع جميع الكناسات، وشاحنات البوم، والرافعات لصيانة وقائية دورية في مراكز الدعم التابعة لنا."
+        },
+        {
+          "title": "التوافق مع رؤية ٢٠٣٠",
+          "description": "توفير كناسات طرق صديقة للبيئة وأنظمة تحسين المسارات لتقليل الانبعاثات الكربونية ودعم المسطحات الخضراء."
+        },
+        {
+          "title": "تراخيص حكومية معتمدة",
+          "description": "مرخصون بالكامل لتنفيذ مشاريع النظافة البلدية، وكنس الطرق، وتجميل الحدائق والمخططات الإنشائية."
+        }
+      ]
+    },
+    "faqsSection": {
+      "subtitle": "الأسئلة الشائعة",
+      "title": "الإجابة على استفسارات العملاء",
+      "items": [
+        {
+          "question": "ما هي أنواع كناسات الطرق المتوفرة لديكم؟",
+          "answer": "نوفر ثلاث علامات تجارية رائدة عالميًا: إلجين (Elgin)، وجونستون (Johnston)، وسكاراب (ScaraB). تناسب كل فئة منها تنظيف شوارع المدن، أو الطرق السريعة، أو الميادين العامة."
+        },
+        {
+          "question": "هل تتوفر المعدات المستأجرة مع مشغلين؟",
+          "answer": "نعم، يتم توفير جميع الرافعات، والرافعات الشوكية، وشاحنات البوم، وكناسات الطرق مع مشغلين مؤهلين وحاصلين على الرخص الرسمية اللازمة لضمان سلامة التنفيذ."
+        },
+        {
+          "question": "ما هي حمولات شاحنات البوم (ذراع الرافعة) المتاحة؟",
+          "answer": "نمتلك شاحنات بوم هيدروليكية بثلاث حمولات مختلفة تلبي كافة الاحتياجات: شاحنات ١٠ أطنان، و١٢ طنًا، و١٥ طنًا."
+        },
+        {
+          "question": "هل تقدمون خدماتكم للجهات الحكومية والشركات الخاصة؟",
+          "answer": "نعم بالكامل. نقوم بتوريد الآليات الثقيلة وكناسات الشوارع والحدائق للمناقصات الحكومية (الأمانات والبلديات) وكذلك لشركات التطوير العقاري والمقاولات الخاصة."
+        }
+      ]
+    }
+  }
+}
