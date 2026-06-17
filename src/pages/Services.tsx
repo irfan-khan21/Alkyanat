@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
-import { CheckCircle, ChevronRight } from 'lucide-react';
+import { CheckCircle, ChevronRight, Clock, Wrench, MapPin, BookOpen, HelpCircle } from 'lucide-react';
 import servicesData from '../data/servicesData.json';
 
 interface ServicesProps {
@@ -14,6 +14,21 @@ export const Services: React.FC<ServicesProps> = ({ currentLang, onLangChange, o
   const langKey = currentLang.toLowerCase() as 'en' | 'ar';
   const data = servicesData[langKey];
   const isRtl = currentLang === 'AR';
+
+  const renderSupportIcon = (index: number) => {
+    switch (index) {
+      case 0:
+        return <Clock className="h-6 w-6 text-brand-blue" />;
+      case 1:
+        return <Wrench className="h-6 w-6 text-brand-blue" />;
+      case 2:
+        return <MapPin className="h-6 w-6 text-brand-blue" />;
+      case 3:
+        return <BookOpen className="h-6 w-6 text-brand-blue" />;
+      default:
+        return <HelpCircle className="h-6 w-6 text-brand-blue" />;
+    }
+  };
 
   // Form States
   const [formData, setFormData] = useState({
@@ -195,6 +210,45 @@ export const Services: React.FC<ServicesProps> = ({ currentLang, onLangChange, o
                   </h3>
                   <p className="text-xs text-slate-300 font-medium mt-3.5 leading-relaxed">
                     {step.description}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+          </div>
+        </section>
+
+        {/* Customer Support Section */}
+        <section className="py-24 bg-brand-bg-lighter border-b border-zinc-100">
+          <div className="max-w-7xl mx-auto px-6">
+            
+            <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+              <span className="text-xs font-black uppercase tracking-widest text-brand-blue bg-brand-bg-light px-3.5 py-1.5 rounded-xl inline-block">
+                {data.supportSection.subtitle}
+              </span>
+              <h2 className="text-2xl md:text-4xl font-extrabold text-brand-navy tracking-tight">
+                {data.supportSection.title}
+              </h2>
+              <p className="text-xs md:text-sm text-slate-500 font-medium leading-relaxed">
+                {data.supportSection.paragraph}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {data.supportSection.items.map((item, index) => (
+                <div 
+                  key={index}
+                  className="bg-white border border-slate-100 rounded-2xl p-6 transition-all duration-300 hover:border-brand-blue hover:shadow-lg hover:shadow-brand-blue/5 relative overflow-hidden group"
+                >
+                  <div className="absolute top-0 left-0 w-1.5 h-full bg-brand-blue transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
+                  <div className="p-3 bg-brand-bg-light rounded-xl w-fit mb-5 shadow-sm">
+                    {renderSupportIcon(index)}
+                  </div>
+                  <h3 className="text-base font-bold text-brand-navy tracking-tight">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs text-slate-500 font-medium mt-3 leading-relaxed">
+                    {item.description}
                   </p>
                 </div>
               ))}

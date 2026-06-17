@@ -81,6 +81,29 @@
         }
       ]
     },
+    "supportSection": {
+      "subtitle": "Customer Support",
+      "title": "Professional Assistance Day & Night",
+      "paragraph": "We provide fast, reliable, and professional support for all rental services. Our support desk ensures that your operations run smoothly and without downtime.",
+      "items": [
+        {
+          "title": "24/7 Assistance",
+          "description": "Our team is available day and night to assist you."
+        },
+        {
+          "title": "Technical Support",
+          "description": "Professional guidance for rented equipment usage."
+        },
+        {
+          "title": "On-Site Help",
+          "description": "Quick on-site support to avoid downtime."
+        },
+        {
+          "title": "Rental Guidance",
+          "description": "Clear instructions, pricing, and rental procedures."
+        }
+      ]
+    },
     "quoteForm": {
       "title": "Request Custom Quotation",
       "subtitle": "Get a quote for road sweeping or machinery rental",
@@ -173,6 +196,29 @@
           "number": "04",
           "title": "الدعم والمراقبة",
           "description": "نوفر صيانة تشغيلية طارئة على مدار الساعة لضمان استمرارية العمل بدون أي تعطل للآليات."
+        }
+      ]
+    },
+    "supportSection": {
+      "subtitle": "دعم العملاء",
+      "title": "مساعدة مهنية على مدار الساعة",
+      "paragraph": "نحن نقدم دعماً سريعاً وموثوقاً ومحترفاً لجميع خدمات الاستئجار والتشغيل. يضمن مكتب الدعم لدينا سير عملياتك بسلاسة وبدون أي تعطل.",
+      "items": [
+        {
+          "title": "مساعدة ٢٤/٧",
+          "description": "فريقنا متواجد ليلاً ونهاراً لمساعدتكم وتلبية متطلباتكم."
+        },
+        {
+          "title": "الدعم الفني",
+          "description": "إرشادات وتوجيهات احترافية لاستخدام المعدات المستأجرة."
+        },
+        {
+          "title": "مساعدة في الموقع",
+          "description": "دعم فوري وسريع في موقع العمل لتجنب أي توقف."
+        },
+        {
+          "title": "توجيهات الاستئجار",
+          "description": "إرشادات واضحة للأسعار وإجراءات وعقود الاستئجار."
         }
       ]
     },
