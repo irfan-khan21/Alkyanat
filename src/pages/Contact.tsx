@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
-import { CheckCircle, ChevronRight, Phone, Mail, MapPin } from 'lucide-react';
+import { CheckCircle, ChevronRight, Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
 import contactData from '../data/contactData.json';
 
 interface ContactProps {
@@ -151,6 +151,26 @@ export const Contact: React.FC<ContactProps> = ({ currentLang, onLangChange, onP
                       </a>
                     </div>
                   </div>
+
+                  {/* WhatsApp Card */}
+                  <div className="flex gap-4 p-5 bg-slate-50/50 border border-slate-100 rounded-2xl hover:border-emerald-500/30 hover:bg-white hover:shadow-md hover:shadow-emerald-500/2 transition-all duration-300 group">
+                    <div className="p-3 bg-emerald-50 text-emerald-600 rounded-xl h-11 w-11 shrink-0 flex items-center justify-center shadow-sm group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300">
+                      <MessageCircle className="h-5 w-5" />
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="text-[9px] uppercase tracking-wider font-extrabold text-slate-400">
+                        {currentLang === 'AR' ? 'واتساب' : 'WhatsApp Support'}
+                      </span>
+                      <a 
+                        href="https://wa.me/966557062353"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-xs md:text-sm text-brand-navy font-extrabold hover:text-emerald-500 mt-1.5 transition-colors"
+                      >
+                        {currentLang === 'AR' ? 'تواصل معنا مباشرة' : 'Chat with Operations'}
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -280,6 +300,43 @@ export const Contact: React.FC<ContactProps> = ({ currentLang, onLangChange, onP
                 )}
               </div>
 
+            </div>
+          </div>
+        </section>
+
+        {/* Map Section */}
+        <section className="pb-24 bg-white">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="bg-brand-bg-lighter border border-slate-100 rounded-3xl p-4 md:p-6 shadow-md overflow-hidden relative group">
+              {/* Decorative background grid */}
+              <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:2rem_2rem] opacity-25 pointer-events-none" />
+              
+              <div className="relative w-full h-80 rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 flex flex-col items-center justify-center text-center p-6 space-y-4">
+                <div className="p-4 bg-white text-brand-blue rounded-full shadow-md z-10 animate-pulse">
+                  <MapPin className="h-8 w-8" />
+                </div>
+                <div className="z-10 max-w-md">
+                  <h4 className="text-lg font-extrabold text-brand-navy tracking-tight">
+                    {currentLang === 'AR' ? 'مقر العمليات والأسطول' : 'Operations & Fleet Hub'}
+                  </h4>
+                  <p className="text-xs text-slate-500 font-semibold mt-2 leading-relaxed">
+                    {data.info.address}
+                  </p>
+                  <p className="text-[10px] text-zinc-400 font-bold uppercase tracking-widest mt-4">
+                    {currentLang === 'AR' ? 'منفوحة الجديدة، الرياض، المملكة العربية السعودية' : 'Manfuhah Jadeedah, Riyadh, KSA'}
+                  </p>
+                </div>
+                {/* Styled map background graphics (mockup) */}
+                <div className="absolute inset-0 opacity-[0.06] pointer-events-none flex items-center justify-center">
+                  <svg viewBox="0 0 800 400" className="w-full h-full stroke-brand-navy stroke-[2.5] fill-none">
+                    <path d="M 0,50 L 800,50 M 0,150 L 800,150 M 0,250 L 800,250 M 0,350 L 800,350" />
+                    <path d="M 100,0 L 100,400 M 300,0 L 300,400 M 500,0 L 500,400 M 700,0 L 700,400" />
+                    <path d="M 50,0 Q 150,100 250,0 T 450,0 T 650,0" strokeDasharray="5 5" />
+                    <circle cx="300" cy="150" r="40" className="fill-brand-blue/20 stroke-brand-blue" />
+                    <circle cx="500" cy="250" r="60" className="fill-brand-navy/10" />
+                  </svg>
+                </div>
+              </div>
             </div>
           </div>
         </section>
