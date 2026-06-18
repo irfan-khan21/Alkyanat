@@ -179,7 +179,7 @@ export const Contact: React.FC<ContactProps> = ({ currentLang, onLangChange, onP
                     </div>
                     <div className="flex flex-col">
                       <span className="text-[9px] uppercase tracking-wider font-extrabold text-slate-400">
-                        {currentLang === 'AR' ? 'واتساب' : 'WhatsApp Support'}
+                        {data.info.whatsappLabel}
                       </span>
                       <a 
                         href="https://wa.me/966557062353"
@@ -187,7 +187,7 @@ export const Contact: React.FC<ContactProps> = ({ currentLang, onLangChange, onP
                         rel="noopener noreferrer"
                         className="text-xs md:text-sm text-brand-navy font-extrabold hover:text-emerald-500 mt-1.5 transition-colors"
                       >
-                        {currentLang === 'AR' ? 'تواصل معنا مباشرة' : 'Chat with Operations'}
+                        {data.info.whatsappCta}
                       </a>
                     </div>
                   </div>
@@ -337,13 +337,13 @@ export const Contact: React.FC<ContactProps> = ({ currentLang, onLangChange, onP
                 </div>
                 <div className="z-10 max-w-md">
                   <h4 className="text-lg font-extrabold text-brand-navy tracking-tight">
-                    {currentLang === 'AR' ? 'مقر العمليات والأسطول' : 'Operations & Fleet Hub'}
+                    {data.info.mapTitle}
                   </h4>
                   <p className="text-xs text-slate-500 font-semibold mt-2 leading-relaxed">
                     {data.info.address}
                   </p>
                   <p className="text-[10px] text-zinc-400 font-bold uppercase tracking-widest mt-4">
-                    {currentLang === 'AR' ? 'منفوحة الجديدة، الرياض، المملكة العربية السعودية' : 'Manfuhah Jadeedah, Riyadh, KSA'}
+                    {data.info.mapAddress}
                   </p>
                 </div>
                 {/* Styled map background graphics (mockup) */}

@@ -161,7 +161,7 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
                 </span>
 
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-brand-navy max-w-2xl">
-                  {currentLang === 'AR' ? 'خبراء رياديون في' : 'Leading Experts in'}{' '}
+                  {data.hero.rotatorPrefix}{' '}
                   <span className={`text-brand-blue inline-block transition-all duration-300 transform translate-y-0 opacity-100 min-h-[48px] md:min-h-[60px] lg:min-h-[72px] ${
                     rotatorWords[rotatorIndex].length > 24
                       ? 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl'
@@ -182,7 +182,7 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
                     onClick={(e) => handleLinkClick(e, '#/contact')}
                     className="inline-flex items-center justify-center px-8 py-4 text-xs font-black uppercase tracking-widest rounded-full text-white bg-brand-blue hover:bg-brand-blue-hover shadow-lg shadow-brand-blue/15 hover:shadow-brand-blue/25 transition-all cursor-pointer gap-1.5"
                   >
-                    <span>{currentLang === 'AR' ? 'اتصل الآن' : 'Contact Now'}</span>
+                    <span>{data.hero.cta}</span>
                     <ArrowUpRight className="h-4 w-4 stroke-[2.5]" />
                   </button>
 
@@ -213,10 +213,10 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
                   </div>
                   <div className="flex flex-col">
                     <span className="text-xs font-extrabold text-brand-navy">
-                      {currentLang === 'AR' ? 'موثوق من أكثر من ٥٠٠٠+' : 'Trusted By 5000+'}
+                      {data.hero.trustedTitle}
                     </span>
                     <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-wider">
-                      {currentLang === 'AR' ? 'شريك وعميل' : 'Brand & Customers'}
+                      {data.hero.trustedSubtitle}
                     </span>
                   </div>
                 </div>
@@ -505,9 +505,7 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
                   {data.expertise.title}
                 </h2>
                 <p className="text-xs md:text-sm text-zinc-500 font-semibold leading-relaxed">
-                  {currentLang === 'AR' 
-                    ? 'نعمل باستمرار على تطوير قدراتنا الفنية لنقدم شاحنات نظافة متقدمة ورافعات ثقيلة للمشاريع البلدية والإعمار بالمملكة بمهنية وأمان.'
-                    : 'We continuously improve our technical capabilities and fleet systems to deliver reliable, high-capacity road cleaning, heavy lifting, and material dispatch solutions across KSA.'}
+                  {data.expertise.description}
                 </p>
               </div>
 

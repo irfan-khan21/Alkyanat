@@ -12,7 +12,10 @@
       ],
       "paragraph": "Al Kyanat KSA is the premier provider of reliable heavy-duty vehicles, cranes, forklifts, and sweepers, supporting municipal road cleaning, garden maintenance, and construction projects across Saudi Arabia.",
       "cta": "Contact Now",
-      "trustedLabel": "Trusted By 5000+ Governmental & Private Partners"
+      "trustedLabel": "Trusted By 5000+ Governmental & Private Partners",
+      "rotatorPrefix": "Leading Experts in",
+      "trustedTitle": "Trusted By 5000+",
+      "trustedSubtitle": "Brand & Customers"
     },
     "strengths": [
       {
@@ -120,6 +123,7 @@
     "expertise": {
       "subtitle": "Our Technical Capacities",
       "title": "Operational Standards & Core Expertise",
+      "description": "We continuously improve our technical capabilities and fleet systems to deliver reliable, high-capacity road cleaning, heavy lifting, and material dispatch solutions across KSA.",
       "items": [
         { "label": "Municipal Sweeping & Sanitation Contracts", "value": 100 },
         { "label": "Heavy Crane & Lifting Operations", "value": 100 },
@@ -164,7 +168,10 @@
       ],
       "paragraph": "مجموعة الكيانات هي المزود الرائد للمركبات الثقيلة، والرافعات، والرافعات الشوكية، وكنّاسات الطرق المخصصة لمشاريع النظافة البلدية والحدائق العامة والبناء الإنشائي في جميع أنحاء المملكة.",
       "cta": "اتصل بنا الآن",
-      "trustedLabel": "موضع ثقة أكثر من 5000 شريك حكومي وخاص"
+      "trustedLabel": "موضع ثقة أكثر من 5000 شريك حكومي وخاص",
+      "rotatorPrefix": "خبراء رياديون في",
+      "trustedTitle": "موثوق من أكثر من ٥٠٠٠+",
+      "trustedSubtitle": "شريك وعميل"
     },
     "strengths": [
       {
@@ -272,6 +279,7 @@
     "expertise": {
       "subtitle": "قدراتنا الفنية",
       "title": "المعايير التشغيلية والخبرات الأساسية",
+      "description": "نعمل باستمرار على تطوير قدراتنا الفنية لنقدم شاحنات نظافة متقدمة ورافعات ثقيلة للمشاريع البلدية والإعمار بالمملكة بمهنية وأمان.",
       "items": [
         { "label": "عقود النظافة وكنس الطرق البلدية", "value": 100 },
         { "label": "عمليات الرافعات والرفع الثقيل", "value": 100 },

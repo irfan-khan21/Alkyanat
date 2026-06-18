@@ -126,7 +126,7 @@ export const Services: React.FC<ServicesProps> = ({ currentLang, onLangChange, o
                     onClick={(e) => handleLinkClick(e, 'contact')}
                     className="inline-flex items-center gap-1.5 mt-8 text-xs font-bold uppercase tracking-widest text-brand-navy hover:text-brand-blue transition-all w-fit cursor-pointer"
                   >
-                    <span>{currentLang === 'AR' ? 'طلب عرض سعر' : 'Get a Quote'}</span>
+                    <span>{data.intro.getQuote}</span>
                     <ChevronRight className={`h-4 w-4 stroke-[3] ${isRtl ? 'rotate-180' : ''}`} />
                   </a>
                 </div>

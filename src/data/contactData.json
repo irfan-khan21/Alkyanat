@@ -14,7 +14,11 @@
       "emailLabel": "Inquiry Email",
       "email": "info@alkyanat-almushtarika.com",
       "addressLabel": "Headquarters Location",
-      "address": "Manfuhah jadeedah shara al amm, Riyadh, Kingdom of Saudi Arabia"
+      "address": "Manfuhah jadeedah shara al amm, Riyadh, Kingdom of Saudi Arabia",
+      "whatsappLabel": "WhatsApp Support",
+      "whatsappCta": "Chat with Operations",
+      "mapTitle": "Operations & Fleet Hub",
+      "mapAddress": "Manfuhah Jadeedah, Riyadh, KSA"
     },
     "form": {
       "subtitle": "Send Message",
@@ -58,7 +62,11 @@
       "emailLabel": "البريد الإلكتروني",
       "email": "info@alkyanat-almushtarika.com",
       "addressLabel": "الموقع الرئيسي",
-      "address": "منفوحة الجديدة، الشارع العام، الرياض، المملكة العربية السعودية"
+      "address": "منفوحة الجديدة، الشارع العام، الرياض، المملكة العربية السعودية",
+      "whatsappLabel": "واتساب",
+      "whatsappCta": "تواصل معنا مباشرة",
+      "mapTitle": "مقر العمليات والأسطول",
+      "mapAddress": "منفوحة الجديدة، الرياض، المملكة العربية السعودية"
     },
     "form": {
       "subtitle": "أرسل رسالة",
