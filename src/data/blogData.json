@@ -1,0 +1,70 @@
+{
+  "en": {
+    "hero": {
+      "title": "Corporate News & Insights",
+      "subtitle": "Stay updated with Al Kyanat KSA fleet developments, safety guidelines, and municipal cleaning operations across KSA.",
+      "breadcrumbHome": "Home",
+      "breadcrumbCurrent": "Blog"
+    },
+    "posts": [
+      {
+        "id": 1,
+        "title": "Elgin & Johnston Sweepers Deployed for Riyadh Road Cleaning",
+        "category": "Municipal Operations",
+        "date": "June 12, 2026",
+        "excerpt": "Our street sweeping division has successfully dispatched 45 new Elgin and Johnston sweeper trucks to support local municipality roads and public garden cleaning contracts.",
+        "readMore": "Read Article"
+      },
+      {
+        "id": 2,
+        "title": "Heavy Duty Safety: Operating Cranes & Forklifts with Zero Accidents",
+        "category": "HSE Standards",
+        "date": "June 08, 2026",
+        "excerpt": "Safety is our primary foundation. Learn about Al Kyanat KSA's strict telemetry tracking, training audits, and certification protocols for all crane and forklift operators.",
+        "readMore": "Read Article"
+      },
+      {
+        "id": 3,
+        "title": "Vision 2030 Infrastructure: Role of Heavy Construction Equipment",
+        "category": "Corporate Projects",
+        "date": "May 28, 2026",
+        "excerpt": "How Al Kyanat KSA is supplying boom trucks (10T, 12T, 15T), heavy construction machinery, and sweepers to speed up governmental and private sectors infrastructure works.",
+        "readMore": "Read Article"
+      }
+    ]
+  },
+  "ar": {
+    "hero": {
+      "title": "أخبار وآراء المجموعة",
+      "subtitle": "ابقَ على اطلاع بأحدث مستجدات أسطول الكيانات، لوائح السلامة المهنية، وعمليات النظافة البلدية بالمملكة.",
+      "breadcrumbHome": "الرئيسية",
+      "breadcrumbCurrent": "المدونة"
+    },
+    "posts": [
+      {
+        "id": 1,
+        "title": "نشر كناسات إلجين وجونستون لتنظيف الطرق العامة بالرياض",
+        "category": "العمليات البلدية",
+        "date": "١٢ يونيو ٢٠٢٦",
+        "excerpt": "نجح قسم كنس الطرق لدينا في نشر ٤٥ كناسة طرق جديدة من طرازي إلجين وجونستون لتغطية عقود تنظيف الطرق وصيانة الحدائق التابعة للأمانة.",
+        "readMore": "اقرأ المقال"
+      },
+      {
+        "id": 2,
+        "title": "السلامة المهنية: تشغيل الرافعات الشوكية والرافعة المتنقلة بدون حوادث",
+        "category": "معايير السلامة والأمان",
+        "date": "٠٨ يونيو ٢٠٢٦",
+        "excerpt": "السلامة هي ركيزتنا الأولى. تعرف على معايير مجموعة الكيانات الصارمة في تتبع الشاحنات، والتدريب المستمر لمشغلي الرافعات والرافعات الشوكية.",
+        "readMore": "اقرأ المقال"
+      },
+      {
+        "id": 3,
+        "title": "رؤية المملكة ٢٠٣٠: دور المعدات الثقيلة في تطوير البنية التحتية",
+        "category": "مشاريع المجموعة",
+        "date": "٢٨ مايو ٢٠٢٦",
+        "excerpt": "كيف تساهم مجموعة الكيانات في توفير شاحنات البوم (١٠، ١٢، ١٥ طن)، وآليات البناء الثقيلة، وكناسات الشوارع للمشاريع الحكومية والخاصة الكبرى.",
+        "readMore": "اقرأ المقال"
+      }
+    ]
+  }
+}
