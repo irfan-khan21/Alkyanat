@@ -61,7 +61,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onPageChange }) => 
   const isRtl = currentLang === 'AR';
 
   return (
-    <footer className="bg-gradient-to-tr from-purple-100/30 via-yellow-100/20 to-teal-100/30 border-t border-zinc-200/60 pt-12 pb-8 text-zinc-500 relative overflow-hidden">
+    <footer className="bg-gradient-to-tr from-purple-100/50 via-yellow-100/40 to-teal-100/50 border-t border-zinc-200/60 pt-12 pb-8 text-zinc-500 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Tier 1: Directory Columns */}
