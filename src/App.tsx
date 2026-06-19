@@ -18,6 +18,11 @@ function App() {
     document.documentElement.lang = isAr ? 'ar' : 'en';
   }, [lang]);
 
+  // Scroll to top on page change
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [page]);
+
   // Sync page state with window.location.hash for back button / refresh support
   useEffect(() => {
     const handleHashChange = () => {
