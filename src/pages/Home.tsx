@@ -110,13 +110,13 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
   const renderStrengthIcon = (index: number) => {
     switch (index) {
       case 0:
-        return <Sliders className="h-6 w-6 text-brand-blue" />;
+        return <Sliders className="h-6 w-6 text-brand-orange" />;
       case 1:
-        return <Wrench className="h-6 w-6 text-brand-blue" />;
+        return <Wrench className="h-6 w-6 text-brand-orange" />;
       case 2:
-        return <Building className="h-6 w-6 text-brand-blue" />;
+        return <Building className="h-6 w-6 text-brand-orange" />;
       default:
-        return <Shield className="h-6 w-6 text-brand-blue" />;
+        return <Shield className="h-6 w-6 text-brand-orange" />;
     }
   };
 
@@ -126,20 +126,20 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
       case 'elgin':
       case 'johnston':
       case 'scarab':
-        return <Truck className="h-6 w-6 text-brand-blue animate-pulse" />;
+        return <Truck className="h-6 w-6 text-brand-orange animate-pulse" />;
       case 'gardens':
-        return <Leaf className="h-6 w-6 text-brand-blue" />;
+        return <Leaf className="h-6 w-6 text-brand-orange" />;
       case 'boomtrucks':
       case 'forklifts':
       case 'cranes':
-        return <Activity className="h-6 w-6 text-brand-blue" />;
+        return <Activity className="h-6 w-6 text-brand-orange" />;
       default:
-        return <Shield className="h-6 w-6 text-brand-blue" />;
+        return <Shield className="h-6 w-6 text-brand-orange" />;
     }
   };
 
   return (
-    <div className={`min-h-screen bg-brand-navy-dark text-slate-300 flex flex-col justify-between font-sans overflow-x-hidden ${isRtl ? 'text-right' : 'text-left'}`}>
+    <div className={`min-h-screen bg-slate-50 text-slate-700 flex flex-col justify-between font-sans overflow-x-hidden ${isRtl ? 'text-right' : 'text-left'}`}>
       
       {/* Header */}
       <Header currentLang={currentLang} onLangChange={onLangChange} activePage="home" onPageChange={onPageChange} />
@@ -148,25 +148,25 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
       <main className="flex-grow pt-[88px] relative">
         
         {/* Glow decoration */}
-        <div className="absolute top-10 right-0 w-96 h-96 bg-brand-blue/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute top-80 left-0 w-[500px] h-[500px] bg-brand-indigo/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-10 right-0 w-96 h-96 bg-brand-orange/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-80 left-0 w-[500px] h-[500px] bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
 
         {/* Section 1: Hero Banner */}
-        <section className="relative text-white py-20 lg:py-28 overflow-hidden">
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:6rem_6rem] opacity-[0.02] pointer-events-none" />
+        <section className="relative py-20 lg:py-28 overflow-hidden">
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:6rem_6rem] opacity-[0.4] pointer-events-none" />
           
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             <div className={`grid grid-cols-1 lg:grid-cols-12 gap-12 items-center ${isRtl ? 'lg:flex-row-reverse' : ''}`}>
               
               {/* Hero Left Column (Title & Rotator) */}
               <div className="lg:col-span-7 flex flex-col space-y-6">
-                <span className="text-xs font-black uppercase tracking-widest text-brand-blue bg-white/[0.02] border border-white/[0.08] px-4 py-1.5 rounded-full w-fit shadow-lg">
+                <span className="text-xs font-black uppercase tracking-widest text-brand-orange bg-brand-orange/10 border border-brand-orange/20 px-4 py-1.5 rounded-full w-fit shadow-sm">
                   {data.hero.subtitle}
                 </span>
 
-                <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight leading-tight text-white max-w-2xl font-display">
+                <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight leading-tight text-slate-900 max-w-2xl font-display">
                   {data.hero.rotatorPrefix}{' '}
-                  <span className={`text-brand-blue inline-block transition-all duration-300 transform translate-y-0 opacity-100 min-h-[48px] md:min-h-[60px] lg:min-h-[72px] drop-shadow-[0_0_15px_rgba(0,229,255,0.3)] ${
+                  <span className={`text-brand-orange inline-block transition-all duration-300 transform translate-y-0 opacity-100 min-h-[48px] md:min-h-[60px] lg:min-h-[72px] drop-shadow-[0_0_10px_rgba(255,107,0,0.15)] ${
                     rotatorWords[rotatorIndex].length > 24
                       ? 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl'
                       : rotatorWords[rotatorIndex].length > 18
@@ -177,14 +177,14 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
                   </span>
                 </h1>
 
-                <p className="text-sm md:text-base text-slate-400 leading-relaxed max-w-xl font-medium">
+                <p className="text-sm md:text-base text-slate-600 leading-relaxed max-w-xl font-medium">
                   {data.hero.paragraph}
                 </p>
 
                 <div className={`flex items-center gap-4 pt-3 ${isRtl ? 'flex-row-reverse' : ''}`}>
                   <button
                     onClick={(e) => handleLinkClick(e, '#/contact')}
-                    className="inline-flex items-center justify-center px-8 py-4 text-xs font-black uppercase tracking-widest rounded-full text-brand-navy bg-brand-blue hover:bg-brand-blue-hover shadow-lg shadow-brand-blue/15 hover:shadow-brand-blue/30 transition-all cursor-pointer gap-1.5"
+                    className="inline-flex items-center justify-center px-8 py-4 text-xs font-black uppercase tracking-widest rounded-full text-white bg-brand-orange hover:bg-brand-orange-hover shadow-lg shadow-brand-orange/15 hover:shadow-brand-orange/30 transition-all cursor-pointer gap-1.5 font-display"
                   >
                     <span>{data.hero.cta}</span>
                     <ArrowUpRight className="h-4 w-4 stroke-[3]" />
@@ -193,14 +193,14 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
                   {/* Circular contact/social buttons */}
                   <a 
                     href="tel:+966557062353"
-                    className="p-3.5 bg-white/[0.02] border border-white/[0.08] hover:border-brand-blue hover:text-brand-blue text-slate-300 rounded-full transition-all flex items-center justify-center shadow-lg"
+                    className="p-3.5 bg-white border border-slate-200 hover:border-brand-orange hover:text-brand-orange text-slate-700 rounded-full transition-all flex items-center justify-center shadow-sm"
                     aria-label="Call Us"
                   >
                     <Phone className="h-4.5 w-4.5" />
                   </a>
                   <a 
                     href="mailto:info@alkyanat-almushtarika.com"
-                    className="p-3.5 bg-white/[0.02] border border-white/[0.08] hover:border-brand-blue hover:text-brand-blue text-slate-300 rounded-full transition-all flex items-center justify-center border border-brand-bg-light shadow-lg"
+                    className="p-3.5 bg-white border border-slate-200 hover:border-brand-orange hover:text-brand-orange text-slate-700 rounded-full transition-all flex items-center justify-center shadow-sm"
                     aria-label="Email Us"
                   >
                     <Mail className="h-4.5 w-4.5" />
@@ -208,15 +208,15 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
                 </div>
 
                 {/* Overlapping Avatars "Trusted By" info */}
-                <div className={`flex items-center gap-4 pt-6 border-t border-white/[0.06] max-w-lg ${isRtl ? 'flex-row-reverse text-right' : 'text-left'}`}>
+                <div className={`flex items-center gap-4 pt-6 border-t border-slate-200 max-w-lg ${isRtl ? 'flex-row-reverse text-right' : 'text-left'}`}>
                   <div className={`flex overflow-hidden ${isRtl ? '-space-x-3 space-x-reverse' : '-space-x-3'}`}>
-                    <div className="inline-block h-9 w-9 rounded-full ring-2 ring-brand-navy-dark bg-gradient-to-tr from-cyan-400 to-indigo-500 flex items-center justify-center text-[10px] font-black text-white shadow-lg">K</div>
-                    <div className="inline-block h-9 w-9 rounded-full ring-2 ring-brand-navy-dark bg-gradient-to-tr from-amber-400 to-orange-500 flex items-center justify-center text-[10px] font-black text-white shadow-lg">S</div>
-                    <div className="inline-block h-9 w-9 rounded-full ring-2 ring-brand-navy-dark bg-gradient-to-tr from-emerald-400 to-teal-500 flex items-center justify-center text-[10px] font-black text-white shadow-lg">A</div>
-                    <div className="inline-block h-9 w-9 rounded-full ring-2 ring-brand-navy-dark bg-gradient-to-tr from-purple-400 to-indigo-500 flex items-center justify-center text-[10px] font-black text-white shadow-lg">2030</div>
+                    <div className="inline-block h-9 w-9 rounded-full ring-2 ring-slate-50 bg-gradient-to-tr from-orange-400 to-amber-500 flex items-center justify-center text-[10px] font-black text-white shadow-md">K</div>
+                    <div className="inline-block h-9 w-9 rounded-full ring-2 ring-slate-50 bg-gradient-to-tr from-amber-400 to-orange-500 flex items-center justify-center text-[10px] font-black text-white shadow-md">S</div>
+                    <div className="inline-block h-9 w-9 rounded-full ring-2 ring-slate-50 bg-gradient-to-tr from-emerald-400 to-teal-500 flex items-center justify-center text-[10px] font-black text-white shadow-md">A</div>
+                    <div className="inline-block h-9 w-9 rounded-full ring-2 ring-slate-50 bg-gradient-to-tr from-purple-400 to-indigo-500 flex items-center justify-center text-[10px] font-black text-white shadow-md">2030</div>
                   </div>
                   <div className="flex flex-col">
-                    <span className="text-xs font-extrabold text-white">
+                    <span className="text-xs font-extrabold text-slate-900">
                       {data.hero.trustedTitle}
                     </span>
                     <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">
@@ -230,25 +230,25 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
               <div className="lg:col-span-5 flex justify-center relative select-none">
                 
                 {/* Floating SVGs / Badges around the circle cutout */}
-                <div className="absolute top-10 left-4 bg-brand-navy/80 backdrop-blur border border-white/[0.08] p-3 rounded-2xl shadow-xl z-20 animate-bounce">
-                  <Activity className="h-6 w-6 text-brand-blue" />
+                <div className="absolute top-10 left-4 bg-white/95 backdrop-blur border border-slate-200 p-3 rounded-2xl shadow-xl z-20 animate-bounce">
+                  <Activity className="h-6 w-6 text-brand-orange" />
                 </div>
-                <div className="absolute bottom-12 right-2 bg-brand-navy/80 backdrop-blur border border-white/[0.08] p-3 rounded-2xl shadow-xl z-20">
-                  <AlertTriangle className="h-6 w-6 text-amber-400 animate-pulse" />
+                <div className="absolute bottom-12 right-2 bg-white/95 backdrop-blur border border-slate-200 p-3 rounded-2xl shadow-xl z-20">
+                  <AlertTriangle className="h-6 w-6 text-amber-500 animate-pulse" />
                 </div>
-                <div className="absolute top-1/2 -right-6 bg-brand-navy/80 backdrop-blur border border-white/[0.08] p-3 rounded-full shadow-xl z-20">
-                  <Truck className="h-5 w-5 text-brand-blue" />
+                <div className="absolute top-1/2 -right-6 bg-white/95 backdrop-blur border border-slate-200 p-3 rounded-full shadow-xl z-20">
+                  <Truck className="h-5 w-5 text-brand-orange" />
                 </div>
 
                 {/* Main Cutout Container */}
                 <div className="relative w-full max-w-[420px] aspect-square flex items-center justify-center">
                   
                   {/* Decorative Gradient crescent behind the main cutout */}
-                  <div className="absolute right-0 bottom-0 w-[88%] h-[88%] rounded-br-[210px] rounded-bl-[105px] rounded-tr-[105px] bg-gradient-to-tr from-brand-blue via-brand-indigo to-purple-600 z-0 shadow-2xl opacity-90 blur-sm" />
+                  <div className="absolute right-0 bottom-0 w-[88%] h-[88%] rounded-br-[210px] rounded-bl-[105px] rounded-tr-[105px] bg-gradient-to-tr from-brand-orange via-amber-500 to-yellow-500 z-0 shadow-xl opacity-90 blur-sm" />
                   
                   {/* Centered Circular Cutout Frame for Image Slider */}
-                  <div className="relative w-[90%] h-[90%] rounded-full overflow-hidden border-[6px] border-white/[0.08] shadow-2xl bg-brand-navy-dark z-10 aspect-square group">
-                    <div className="absolute inset-0 bg-gradient-to-t from-brand-navy-dark/40 via-transparent to-transparent z-10 pointer-events-none" />
+                  <div className="relative w-[90%] h-[90%] rounded-full overflow-hidden border-[6px] border-white shadow-2xl bg-slate-100 z-10 aspect-square group">
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent z-10 pointer-events-none" />
                     
                     {/* Sliding Images */}
                     <div className="relative w-full h-full">
@@ -256,7 +256,7 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
                         <img 
                           key={idx}
                           src={img} 
-                          alt="Al Kyanat KSA Fleet" 
+                          alt="Al Kayanat KSA Fleet" 
                           className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out transform ${
                             idx === activeImage 
                               ? 'opacity-100 scale-100 z-0' 
@@ -289,22 +289,22 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
         </section>
 
         {/* Section 2: Core Strengths */}
-        <section className="py-16 bg-transparent border-b border-white/[0.06]">
+        <section className="py-16 bg-transparent border-b border-slate-200/80">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {data.strengths.map((item, index) => (
                 <div 
                   key={index}
-                  className="bg-white/[0.02] border border-white/[0.06] hover:border-brand-blue/30 rounded-3xl p-8 hover:bg-white/[0.03] transition-all duration-300 shadow-xl relative overflow-hidden group hover:shadow-[0_10px_30px_-15px_rgba(0,229,255,0.08)]"
+                  className="bg-white border border-slate-200/80 hover:border-brand-orange/30 rounded-3xl p-8 hover:bg-slate-50/50 transition-all duration-300 shadow-sm relative overflow-hidden group hover:shadow-[0_10px_30px_-15px_rgba(255,107,0,0.08)]"
                 >
-                  <div className="absolute top-0 left-0 w-2 h-full bg-brand-blue transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
-                  <div className="p-3 bg-white/[0.02] border border-white/[0.08] rounded-2xl w-fit mb-6 shadow-md">
+                  <div className="absolute top-0 left-0 w-2 h-full bg-brand-orange transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
+                  <div className="p-3 bg-slate-50 border border-slate-200 rounded-2xl w-fit mb-6 shadow-sm">
                     {renderStrengthIcon(index)}
                   </div>
-                  <h3 className="text-lg font-bold text-white tracking-tight font-display">
+                  <h3 className="text-lg font-bold text-slate-900 tracking-tight font-display">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-slate-400 font-medium mt-3.5 leading-relaxed">
+                  <p className="text-xs text-slate-650 font-medium mt-3.5 leading-relaxed">
                     {item.description}
                   </p>
                 </div>
@@ -314,24 +314,24 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
         </section>
 
         {/* Section 3: About Holding Group */}
-        <section className="py-20 bg-transparent border-b border-white/[0.06]">
+        <section className="py-20 bg-transparent border-b border-slate-200/80">
           <div className="max-w-7xl mx-auto px-6">
             <div className={`grid grid-cols-1 lg:grid-cols-12 gap-12 items-center ${isRtl ? 'lg:flex-row-reverse' : ''}`}>
               
               {/* About Text Column */}
               <div className="lg:col-span-7 flex flex-col space-y-5">
-                <span className="text-xs font-black uppercase tracking-widest text-brand-blue bg-white/[0.02] border border-white/[0.08] px-3.5 py-1.5 rounded-xl w-fit">
+                <span className="text-xs font-black uppercase tracking-widest text-brand-orange bg-brand-orange/10 border border-brand-orange/20 px-3.5 py-1.5 rounded-xl w-fit shadow-sm">
                   {data.about.subtitle}
                 </span>
-                <h2 className="text-2xl md:text-4xl font-extrabold text-white tracking-tight leading-tight font-display">
+                <h2 className="text-2xl md:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight font-display">
                   {data.about.title}
                 </h2>
-                <p className="text-xs md:text-sm text-slate-400 leading-relaxed font-medium">
+                <p className="text-xs md:text-sm text-slate-600 leading-relaxed font-medium">
                   {data.about.paragraph}
                 </p>
                 <button
                   onClick={(e) => handleLinkClick(e, '#/services')}
-                  className="inline-flex items-center justify-center px-6 py-3.5 text-xs font-black uppercase tracking-widest rounded-xl text-brand-navy bg-brand-blue hover:bg-brand-blue-hover transition-all w-fit cursor-pointer shadow-md shadow-brand-blue/10 font-display"
+                  className="inline-flex items-center justify-center px-6 py-3.5 text-xs font-black uppercase tracking-widest rounded-xl text-white bg-brand-orange hover:bg-brand-orange-hover transition-all w-fit cursor-pointer shadow-md shadow-brand-orange/10 font-display"
                 >
                   <span>{data.about.cta}</span>
                   <ChevronRight className={`ml-1.5 h-4 w-4 stroke-[3.5] ${isRtl ? 'rotate-180 mr-1.5 ml-0' : ''}`} />
@@ -344,15 +344,15 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
                   {data.about.stats.map((stat, index) => (
                     <div 
                       key={index}
-                      className="bg-white/[0.02] border border-white/[0.06] rounded-2xl p-6 shadow-xl relative overflow-hidden flex flex-col justify-center group hover:border-brand-blue/20 transition-colors"
+                      className="bg-white border border-slate-200/80 rounded-2xl p-6 shadow-sm relative overflow-hidden flex flex-col justify-center group hover:border-brand-orange/20 transition-colors"
                     >
-                      <div className="absolute right-4 bottom-4 text-brand-blue/[0.02] transform translate-y-6 translate-x-4">
+                      <div className="absolute right-4 bottom-4 text-brand-orange/[0.02] transform translate-y-6 translate-x-4">
                         <Truck className="h-32 w-32" />
                       </div>
-                      <span className="text-3xl md:text-4xl font-black text-brand-blue block font-display drop-shadow-[0_0_8px_rgba(0,229,255,0.15)]">
+                      <span className="text-3xl md:text-4xl font-black text-brand-orange block font-display drop-shadow-[0_0_8px_rgba(255,107,0,0.15)]">
                         {stat.value}
                       </span>
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400 block mt-1 font-display">
+                      <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500 block mt-1 font-display">
                         {stat.label}
                       </span>
                     </div>
@@ -365,17 +365,17 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
         </section>
 
         {/* Section 4: Services Offered */}
-        <section className="py-20 bg-transparent border-b border-white/[0.06]">
+        <section className="py-20 bg-transparent border-b border-slate-200/80">
           <div className="max-w-7xl mx-auto px-6">
             
             <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-              <span className="text-xs font-black uppercase tracking-widest text-brand-blue bg-white/[0.02] border border-white/[0.08] px-3.5 py-1.5 rounded-xl shadow-lg inline-block">
+              <span className="text-xs font-black uppercase tracking-widest text-brand-orange bg-brand-orange/10 border border-brand-orange/20 px-3.5 py-1.5 rounded-xl shadow-sm inline-block">
                 {data.servicesSection.subtitle}
               </span>
-              <h2 className="text-2xl md:text-4xl font-extrabold text-white tracking-tight font-display">
+              <h2 className="text-2xl md:text-4xl font-extrabold text-slate-900 tracking-tight font-display">
                 {data.servicesSection.title}
               </h2>
-              <p className="text-xs md:text-sm text-slate-450 font-medium leading-relaxed">
+              <p className="text-xs md:text-sm text-slate-600 font-medium leading-relaxed">
                 {data.servicesSection.paragraph}
               </p>
             </div>
@@ -384,11 +384,11 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
               {data.servicesSection.items.map((item) => (
                 <div 
                   key={item.id}
-                  className="bg-white/[0.02] border border-white/[0.06] hover:border-brand-blue/30 rounded-3xl p-7 hover:bg-white/[0.03] transition-all duration-300 shadow-2xl flex flex-col justify-between group"
+                  className="bg-white border border-slate-200/80 hover:border-brand-orange/30 rounded-3xl p-7 hover:bg-slate-50/50 transition-all duration-300 shadow-sm flex flex-col justify-between group"
                 >
                   <div className="space-y-5">
-                    <div className="p-3 bg-white/[0.02] border border-white/[0.08] rounded-xl w-fit group-hover:bg-brand-blue group-hover:border-brand-blue transition-all duration-300">
-                      <div className="group-hover:text-brand-navy text-brand-blue transition-all">
+                    <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl w-fit group-hover:bg-brand-orange group-hover:border-brand-orange transition-all duration-300">
+                      <div className="group-hover:text-white text-brand-orange transition-all">
                         {renderServiceIcon(item.id)}
                       </div>
                     </div>
@@ -396,18 +396,18 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
                       <span className="text-[9px] font-bold text-slate-500 uppercase tracking-wider block">
                         {item.category}
                       </span>
-                      <h3 className="text-base font-bold text-white tracking-tight mt-1 group-hover:text-brand-blue transition-colors duration-200 font-display">
+                      <h3 className="text-base font-bold text-slate-900 tracking-tight mt-1 group-hover:text-brand-orange transition-colors duration-200 font-display">
                         {item.title}
                       </h3>
                     </div>
-                    <p className="text-[11px] text-slate-400 font-medium leading-relaxed">
+                    <p className="text-[11px] text-slate-600 font-medium leading-relaxed">
                       {item.description}
                     </p>
                   </div>
 
                   <button
                     onClick={(e) => handleLinkClick(e, '#/services')}
-                    className="inline-flex items-center gap-1.5 mt-6 text-[10px] font-black uppercase tracking-widest text-slate-300 hover:text-brand-blue transition-colors cursor-pointer w-fit font-display"
+                    className="inline-flex items-center gap-1.5 mt-6 text-[10px] font-black uppercase tracking-widest text-slate-500 hover:text-brand-orange transition-colors cursor-pointer w-fit font-display"
                   >
                     <span>{data.servicesSection.cta}</span>
                     <ChevronRight className={`h-3.5 w-3.5 stroke-[3] ${isRtl ? 'rotate-180' : ''}`} />
@@ -420,7 +420,7 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
         </section>
 
         {/* Section 5: Experience Timeline */}
-        <section id="journey-section" className="py-20 bg-transparent border-b border-white/[0.06]">
+        <section id="journey-section" className="py-20 bg-transparent border-b border-slate-200/80">
           <div className="max-w-7xl mx-auto px-6">
             <div className={`grid grid-cols-1 lg:grid-cols-12 gap-12 items-start ${isRtl ? 'lg:flex-row-reverse' : ''}`}>
               
@@ -432,13 +432,13 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
                     : 'opacity-0 -translate-x-12 pointer-events-none'
                 }`}
               >
-                <span className="text-xs font-black uppercase tracking-widest text-brand-blue bg-white/[0.02] border border-white/[0.08] px-4 py-1.5 rounded-full w-fit shadow-lg">
+                <span className="text-xs font-black uppercase tracking-widest text-brand-orange bg-brand-orange/10 border border-brand-orange/20 px-4 py-1.5 rounded-full w-fit shadow-sm font-display">
                   {data.journey.subtitle}
                 </span>
-                <h2 className="text-2xl md:text-4xl font-extrabold text-white tracking-tight leading-tight font-display">
+                <h2 className="text-2xl md:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight font-display">
                   {data.journey.title}
                 </h2>
-                <div className="w-16 h-1 bg-brand-blue rounded-full mt-2" />
+                <div className="w-16 h-1 bg-brand-orange rounded-full mt-2" />
               </div>
 
               {/* Right Column (Vertical Timeline) */}
@@ -462,20 +462,20 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
                     >
                       {/* Vertical connecting line */}
                       {idx < data.journey.items.length - 1 && (
-                        <div className={`absolute ${isRtl ? 'right-6' : 'left-6'} top-12 bottom-0 w-0.5 bg-white/[0.08] group-hover:bg-brand-blue/30 transition-colors`} />
+                        <div className={`absolute ${isRtl ? 'right-6' : 'left-6'} top-12 bottom-0 w-0.5 bg-slate-200 group-hover:bg-brand-orange/30 transition-colors`} />
                       )}
                       
                       {/* Circular Step Badge */}
-                      <div className="flex-shrink-0 h-12 w-12 rounded-full bg-white/[0.02] text-brand-blue border border-white/[0.08] font-bold text-sm flex items-center justify-center z-10 group-hover:bg-brand-blue group-hover:text-brand-navy group-hover:border-brand-blue shadow-lg transition-all duration-300">
+                      <div className="flex-shrink-0 h-12 w-12 rounded-full bg-slate-50 text-brand-orange border border-slate-200 font-bold text-sm flex items-center justify-center z-10 group-hover:bg-brand-orange group-hover:text-white group-hover:border-brand-orange shadow-sm transition-all duration-300">
                         {`0${idx + 1}`}
                       </div>
                       
                       {/* Item Details */}
                       <div className="space-y-2 pb-6">
-                        <h4 className="text-lg font-bold text-white group-hover:text-brand-blue transition-colors duration-200 font-display">
+                        <h4 className="text-lg font-bold text-slate-900 group-hover:text-brand-orange transition-colors duration-200 font-display">
                           {item.title}
                         </h4>
-                        <p className="text-xs md:text-sm text-slate-400 font-medium leading-relaxed">
+                        <p className="text-xs md:text-sm text-slate-650 font-medium leading-relaxed">
                           {item.description}
                         </p>
                       </div>
@@ -489,7 +489,7 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
         </section>
 
         {/* Section 6: Our Expertise progress bars */}
-        <section id="expertise-section" className="py-20 bg-transparent border-b border-white/[0.06]">
+        <section id="expertise-section" className="py-20 bg-transparent border-b border-slate-200/80">
           <div className="max-w-7xl mx-auto px-6">
             <div className={`grid grid-cols-1 lg:grid-cols-12 gap-12 items-center ${isRtl ? 'lg:flex-row-reverse' : ''}`}>
               
@@ -501,13 +501,13 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
                     : 'opacity-0 -translate-x-12 pointer-events-none'
                 }`}
               >
-                <span className="text-xs font-black uppercase tracking-widest text-brand-blue bg-white/[0.02] border border-white/[0.08] px-3.5 py-1.5 rounded-xl w-fit">
+                <span className="text-xs font-black uppercase tracking-widest text-brand-orange bg-brand-orange/10 border border-brand-orange/20 px-3.5 py-1.5 rounded-xl w-fit">
                   {data.expertise.subtitle}
                 </span>
-                <h2 className="text-2xl md:text-4xl font-extrabold text-white tracking-tight leading-tight font-display">
+                <h2 className="text-2xl md:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight font-display">
                   {data.expertise.title}
                 </h2>
-                <p className="text-xs md:text-sm text-slate-400 font-medium leading-relaxed">
+                <p className="text-xs md:text-sm text-slate-650 font-medium leading-relaxed">
                   {data.expertise.description}
                 </p>
               </div>
@@ -516,13 +516,13 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
               <div className="lg:col-span-7 flex flex-col space-y-6">
                 {data.expertise.items.map((item, index) => (
                   <div key={index} className="space-y-2">
-                    <div className={`flex justify-between text-xs font-extrabold text-white ${isRtl ? 'flex-row-reverse' : ''} font-display`}>
+                    <div className={`flex justify-between text-xs font-extrabold text-slate-800 ${isRtl ? 'flex-row-reverse' : ''} font-display`}>
                       <span>{item.label}</span>
-                      <span className="text-brand-blue">{item.value}%</span>
+                      <span className="text-brand-orange">{item.value}%</span>
                     </div>
-                    <div className="h-2.5 w-full bg-white/[0.03] border border-white/[0.04] rounded-full overflow-hidden">
+                    <div className="h-2.5 w-full bg-slate-100 border border-slate-200/60 rounded-full overflow-hidden">
                       <div 
-                        className="h-full bg-gradient-to-r from-brand-blue to-brand-indigo rounded-full transition-all duration-[1500ms] ease-out shadow-[0_0_8px_rgba(0,229,255,0.4)]" 
+                        className="h-full bg-gradient-to-r from-brand-orange to-amber-500 rounded-full transition-all duration-[1500ms] ease-out shadow-[0_0_8px_rgba(255,107,0,0.3)]" 
                         style={{ width: expertiseVisible ? `${item.value}%` : '0%' }} 
                       />
                     </div>
@@ -535,21 +535,21 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
         </section>
 
         {/* Section 7: Testimonials Slider */}
-        <section className="py-20 bg-transparent border-b border-white/[0.06]">
+        <section className="py-20 bg-transparent border-b border-slate-200/80">
           <div className="max-w-7xl mx-auto px-6">
             
             <div className="text-center max-w-2xl mx-auto mb-12 space-y-4">
-              <span className="text-xs font-black uppercase tracking-widest text-brand-blue bg-white/[0.02] border border-white/[0.08] px-3 py-1.5 rounded-lg shadow-lg">
+              <span className="text-xs font-black uppercase tracking-widest text-brand-orange bg-brand-orange/10 border border-brand-orange/20 px-3 py-1.5 rounded-lg shadow-sm">
                 {data.testimonials.subtitle}
               </span>
-              <h2 className="text-2xl md:text-4xl font-extrabold text-white tracking-tight font-display">
+              <h2 className="text-2xl md:text-4xl font-extrabold text-slate-900 tracking-tight font-display">
                 {data.testimonials.title}
               </h2>
             </div>
 
             {/* Testimonials Slider Body */}
-            <div className="relative max-w-4xl mx-auto text-center px-6 mt-8 group bg-white/[0.01] border border-white/[0.05] rounded-3xl p-10 backdrop-blur-md shadow-2xl">
-              <div className="text-6xl text-brand-blue/10 font-serif absolute -top-4 left-8 pointer-events-none select-none">“</div>
+            <div className="relative max-w-4xl mx-auto text-center px-6 mt-8 group bg-white border border-slate-200/80 rounded-3xl p-10 shadow-lg">
+              <div className="text-6xl text-brand-orange/10 font-serif absolute -top-4 left-8 pointer-events-none select-none">“</div>
               
               <div className="min-h-[140px] flex items-center justify-center">
                 {data.testimonials.items.map((item, idx) => (
@@ -559,10 +559,10 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
                       idx === activeTestimonial ? 'opacity-100 scale-100 block' : 'opacity-0 scale-95 hidden'
                     }`}
                   >
-                    <p className="text-base md:text-lg text-slate-200 font-medium italic leading-relaxed">
+                    <p className="text-base md:text-lg text-slate-700 font-medium italic leading-relaxed">
                       "{item.quote}"
                     </p>
-                    <h4 className="text-sm font-extrabold text-white mt-6 font-display">
+                    <h4 className="text-sm font-extrabold text-slate-950 mt-6 font-display">
                       {item.author}
                     </h4>
                     <span className="text-xs text-slate-500 font-bold uppercase tracking-wider block mt-1 font-display">
@@ -579,7 +579,7 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
                     key={idx}
                     onClick={() => setActiveTestimonial(idx)}
                     className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                      idx === activeTestimonial ? 'w-6 bg-brand-blue' : 'w-2 bg-white/20 hover:bg-white/40'
+                      idx === activeTestimonial ? 'w-6 bg-brand-orange' : 'w-2 bg-slate-250 hover:bg-slate-400'
                     }`}
                     aria-label={`Go to slide ${idx + 1}`}
                   />

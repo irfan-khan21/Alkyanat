@@ -23,7 +23,7 @@ export const Blog: React.FC<BlogProps> = ({ currentLang, onLangChange, onPageCha
   };
 
   return (
-    <div className={`min-h-screen bg-brand-navy-dark text-slate-300 flex flex-col justify-between font-sans overflow-x-hidden ${isRtl ? 'text-right' : 'text-left'}`} dir={isRtl ? 'rtl' : 'ltr'}>
+    <div className={`min-h-screen bg-slate-50 text-slate-700 flex flex-col justify-between font-sans overflow-x-hidden ${isRtl ? 'text-right' : 'text-left'}`} dir={isRtl ? 'rtl' : 'ltr'}>
       
       {/* Header */}
       <Header currentLang={currentLang} onLangChange={onLangChange} activePage="blog" onPageChange={onPageChange} />
@@ -32,26 +32,26 @@ export const Blog: React.FC<BlogProps> = ({ currentLang, onLangChange, onPageCha
       <main className="flex-grow pt-[88px] relative">
         
         {/* Glow decoration */}
-        <div className="absolute top-20 left-0 w-80 h-80 bg-brand-blue/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-40 right-0 w-[500px] h-[500px] bg-brand-indigo/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-20 left-0 w-80 h-80 bg-brand-orange/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-40 right-0 w-[500px] h-[500px] bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
 
-        {/* Breadcrumb Header Banner (Futuristic Navy theme) */}
+        {/* Breadcrumb Header Banner (Futuristic Charcoal/Navy theme) */}
         <section className="bg-brand-navy text-white py-20 relative overflow-hidden border-b border-white/[0.06]">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-[0.02] pointer-events-none" />
           <div className="max-w-7xl mx-auto px-6 relative z-10 text-center space-y-4">
             <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white font-display">
               {data.hero.title}
             </h1>
-            <p className="text-sm md:text-base text-slate-400 max-w-2xl mx-auto leading-relaxed font-medium">
+            <p className="text-sm md:text-base text-slate-450 max-w-2xl mx-auto leading-relaxed font-medium">
               {data.hero.subtitle}
             </p>
             {/* Breadcrumb nav */}
             <div className={`flex items-center justify-center gap-2.5 text-xs font-bold uppercase tracking-widest pt-2`}>
-              <a href="#/home" onClick={(e) => handleLinkClick(e, 'home')} className="text-slate-500 hover:text-brand-blue transition-colors">
+              <a href="#/home" onClick={(e) => handleLinkClick(e, 'home')} className="text-slate-400 hover:text-brand-orange transition-colors">
                 {data.hero.breadcrumbHome}
               </a>
               <span className="text-slate-600">/</span>
-              <span className="text-brand-blue font-extrabold">
+              <span className="text-brand-orange font-extrabold">
                 {data.hero.breadcrumbCurrent}
               </span>
             </div>
@@ -65,31 +65,31 @@ export const Blog: React.FC<BlogProps> = ({ currentLang, onLangChange, onPageCha
               {data.posts.map((post) => (
                 <div 
                   key={post.id}
-                  className="bg-white/[0.02] border border-white/[0.06] hover:border-brand-blue/30 rounded-3xl p-8 hover:bg-white/[0.03] transition-all duration-300 flex flex-col justify-between hover:shadow-xl hover:shadow-brand-blue/5 relative overflow-hidden group"
+                  className="bg-white border border-slate-200/80 hover:border-brand-orange/30 rounded-3xl p-8 hover:bg-slate-50/50 transition-all duration-300 flex flex-col justify-between hover:shadow-xl hover:shadow-[0_10px_30px_-15px_rgba(255,107,0,0.08)] relative overflow-hidden group shadow-sm"
                 >
                   {/* Subtle top indicator bar */}
-                  <div className="absolute top-0 left-0 w-full h-1.5 bg-brand-blue transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center" />
+                  <div className="absolute top-0 left-0 w-full h-1.5 bg-brand-orange transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center" />
                   
                   <div className="space-y-5">
                     {/* Category & Date */}
-                    <div className="flex items-center justify-between text-xs font-bold text-slate-400">
-                      <span className="inline-flex items-center gap-1.5 text-brand-blue bg-white/[0.02] border border-white/[0.08] px-3.5 py-1.5 rounded-full font-extrabold text-[10px] uppercase tracking-wider font-display">
+                    <div className="flex items-center justify-between text-xs font-bold text-slate-500">
+                      <span className="inline-flex items-center gap-1.5 text-brand-orange bg-brand-orange/10 border border-brand-orange/20 px-3.5 py-1.5 rounded-full font-extrabold text-[10px] uppercase tracking-wider font-display shadow-sm">
                         <Tag className="h-3 w-3" />
                         {post.category}
                       </span>
-                      <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-550">
-                        <Calendar className="h-3.5 w-3.5 opacity-80" />
+                      <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-500">
+                        <Calendar className="h-3.5 w-3.5 opacity-85" />
                         {post.date}
                       </span>
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-xl font-bold text-white tracking-tight leading-snug group-hover:text-brand-blue transition-colors duration-200 font-display">
+                    <h3 className="text-xl font-bold text-slate-900 tracking-tight leading-snug group-hover:text-brand-orange transition-colors duration-200 font-display">
                       {post.title}
                     </h3>
 
                     {/* Excerpt */}
-                    <p className="text-sm text-slate-400 font-medium leading-relaxed">
+                    <p className="text-sm text-slate-600 font-medium leading-relaxed">
                       {post.excerpt}
                     </p>
                   </div>
