@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/alkyanat/public_html
-    - /bin/rsync -avz --exclude '.git' dist/ $DEPLOYPATH
+    - export DEPLOYPATH=/home/alkyanat/public_html/
+    - /bin/cp -R dist/. $DEPLOYPATH
