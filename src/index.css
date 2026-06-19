@@ -22,3 +22,8 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Outfit', sans-serif;
 }
 
+.bg-premium-gradient {
+  background: linear-gradient(135deg, #F8FAFC 0%, #FFF5ED 50%, #F1F5F9 100%);
+}
+
+

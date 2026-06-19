@@ -139,7 +139,7 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
   };
 
   return (
-    <div className={`min-h-screen bg-slate-50 text-slate-700 flex flex-col justify-between font-sans overflow-x-hidden ${isRtl ? 'text-right' : 'text-left'}`}>
+    <div className={`min-h-screen bg-premium-gradient text-slate-700 flex flex-col justify-between font-sans overflow-x-hidden ${isRtl ? 'text-right' : 'text-left'}`}>
       
       {/* Header */}
       <Header currentLang={currentLang} onLangChange={onLangChange} activePage="home" onPageChange={onPageChange} />
@@ -210,10 +210,10 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
                 {/* Overlapping Avatars "Trusted By" info */}
                 <div className={`flex items-center gap-4 pt-6 border-t border-slate-200 max-w-lg ${isRtl ? 'flex-row-reverse text-right' : 'text-left'}`}>
                   <div className={`flex overflow-hidden ${isRtl ? '-space-x-3 space-x-reverse' : '-space-x-3'}`}>
-                    <div className="inline-block h-9 w-9 rounded-full ring-2 ring-slate-50 bg-gradient-to-tr from-orange-400 to-amber-500 flex items-center justify-center text-[10px] font-black text-white shadow-md">K</div>
-                    <div className="inline-block h-9 w-9 rounded-full ring-2 ring-slate-50 bg-gradient-to-tr from-amber-400 to-orange-500 flex items-center justify-center text-[10px] font-black text-white shadow-md">S</div>
-                    <div className="inline-block h-9 w-9 rounded-full ring-2 ring-slate-50 bg-gradient-to-tr from-emerald-400 to-teal-500 flex items-center justify-center text-[10px] font-black text-white shadow-md">A</div>
-                    <div className="inline-block h-9 w-9 rounded-full ring-2 ring-slate-50 bg-gradient-to-tr from-purple-400 to-indigo-500 flex items-center justify-center text-[10px] font-black text-white shadow-md">2030</div>
+                    <img src="/images/avatar1.png" alt="Saudi Executive" className="inline-block h-9 w-9 rounded-full ring-2 ring-slate-50 object-cover shadow-md" />
+                    <img src="/images/avatar2.png" alt="Saudi Engineer" className="inline-block h-9 w-9 rounded-full ring-2 ring-slate-50 object-cover shadow-md" />
+                    <img src="/images/avatar3.png" alt="Saudi Manager" className="inline-block h-9 w-9 rounded-full ring-2 ring-slate-50 object-cover shadow-md" />
+                    <img src="/images/avatar4.png" alt="Arab Professional" className="inline-block h-9 w-9 rounded-full ring-2 ring-slate-50 object-cover shadow-md" />
                   </div>
                   <div className="flex flex-col">
                     <span className="text-xs font-extrabold text-slate-900">

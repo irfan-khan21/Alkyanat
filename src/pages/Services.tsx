@@ -38,7 +38,7 @@ export const Services: React.FC<ServicesProps> = ({ currentLang, onLangChange, o
   };
 
   return (
-    <div className={`min-h-screen bg-slate-50 text-slate-700 flex flex-col justify-between font-sans overflow-x-hidden ${isRtl ? 'text-right' : 'text-left'}`}>
+    <div className={`min-h-screen bg-premium-gradient text-slate-700 flex flex-col justify-between font-sans overflow-x-hidden ${isRtl ? 'text-right' : 'text-left'}`}>
       
       {/* Header */}
       <Header currentLang={currentLang} onLangChange={onLangChange} activePage="services" onPageChange={onPageChange} />
