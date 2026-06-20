@@ -4,6 +4,7 @@ import { About } from './pages/About';
 import { Services } from './pages/Services';
 import { Blog } from './pages/Blog';
 import { Contact } from './pages/Contact';
+import { Phone, Mail, MessageCircle } from 'lucide-react';
 
 type PageType = 'home' | 'about' | 'services' | 'blog' | 'contact';
 
@@ -114,6 +115,46 @@ function App() {
         </div>
       )}
       
+      
+      {/* Global Floating Contact Sidebar (Right) */}
+      <div className="fixed right-0 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-0.5 select-none hidden md:flex font-sans">
+        {/* Phone 1 */}
+        <a 
+          href="tel:+966557062353" 
+          className="flex flex-col items-center py-4 px-2.5 text-white bg-brand-red hover:bg-brand-red-dark transition-all duration-300 rounded-l-lg border-l border-t border-b border-white/10 shadow-lg group"
+        >
+          <Phone className="h-4 w-4 text-brand-yellow group-hover:scale-110 transition-transform" />
+          <span className="text-[9.5px] font-black tracking-widest [writing-mode:vertical-rl] select-all mt-2.5">+966 55003 3692</span>
+        </a>
+        {/* Phone 2 */}
+        <a 
+          href="tel:+966557062353" 
+          className="flex flex-col items-center py-4 px-2.5 text-white bg-brand-red hover:bg-brand-red-dark transition-all duration-300 rounded-l-lg border-l border-t border-b border-white/10 shadow-lg group"
+        >
+          <Phone className="h-4 w-4 text-brand-yellow group-hover:scale-110 transition-transform" />
+          <span className="text-[9.5px] font-black tracking-widest [writing-mode:vertical-rl] select-all mt-2.5">+966 58000 6668</span>
+        </a>
+        {/* Email */}
+        <a 
+          href="mailto:info@alkyanat-almushtarika.com" 
+          className="flex flex-col items-center py-4 px-2.5 text-white bg-[#0e271a] hover:bg-[#0b1f14] transition-all duration-300 rounded-l-lg border-l border-t border-b border-white/10 shadow-lg group"
+        >
+          <Mail className="h-4 w-4 text-brand-yellow group-hover:scale-110 transition-transform" />
+          <span className="text-[9.5px] font-black tracking-widest [writing-mode:vertical-rl] select-all mt-2.5">info@alkyanat-almushtarika.com</span>
+        </a>
+      </div>
+
+      {/* Global WhatsApp Floating Button */}
+      <a 
+        href="https://wa.me/966557062353" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="fixed bottom-6 right-6 z-45 bg-[#25D366] hover:bg-[#20ba5a] text-white flex items-center gap-2 px-5 py-3 rounded-full shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer font-bold text-xs"
+      >
+        <MessageCircle className="h-4.5 w-4.5 fill-current" />
+        <span>{lang === 'AR' ? 'كيف يمكنني مساعدتك؟' : 'How can I help you?'}</span>
+      </a>
+
       <div key={page} className="animate-page-in">
         {renderPage()}
       </div>
