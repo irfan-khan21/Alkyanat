@@ -3,6 +3,10 @@
 @theme {
   --color-brand-orange: #FF6B00;
   --color-brand-orange-hover: #D84A00;
+  --color-brand-yellow: #FFC715;
+  --color-brand-yellow-hover: #E5AD00;
+  --color-brand-red: #991B1B;
+  --color-brand-red-dark: #7F1D1D;
   --color-brand-navy: #1E293B;
   --color-brand-navy-dark: #0F172A;
   --color-brand-bg-light: #F1F5F9;

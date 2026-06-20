@@ -2,20 +2,20 @@ import React, { useState, useEffect } from 'react';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { 
+  ArrowRight,
   Shield, 
-  ArrowUpRight,
-  ChevronRight, 
-  Truck,
-  Sliders,
-  Wrench,
-  Building,
-  Leaf,
-  Activity,
-  Phone,
-  Mail,
-  AlertTriangle
+  Settings, 
+  Wrench, 
+  Truck, 
+  CheckCircle2, 
+  Play, 
+  Star,
+  Calendar,
+  User,
+  ArrowUpRight
 } from 'lucide-react';
 import homeData from '../data/homeData.json';
+import blogData from '../data/blogData.json';
 
 interface HomeProps {
   currentLang: 'EN' | 'AR';
@@ -28,17 +28,6 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
   const data = homeData[langKey];
   const isRtl = currentLang === 'AR';
 
-  // Hero Rotator Word index state
-  const [rotatorIndex, setRotatorIndex] = useState(0);
-  const rotatorWords = data.hero.textRotator;
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setRotatorIndex((prev) => (prev + 1) % rotatorWords.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [rotatorWords.length]);
-
   // Hero Image Slider State
   const heroImages = [
     '/images/road_sweeper_riyadh.png',
@@ -50,53 +39,9 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveImage((prev) => (prev + 1) % heroImages.length);
-    }, 4500);
+    }, 5000);
     return () => clearInterval(timer);
   }, [heroImages.length]);
-
-  // Testimonial Carousel State
-  const [activeTestimonial, setActiveTestimonial] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActiveTestimonial((prev) => (prev + 1) % data.testimonials.items.length);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, [data.testimonials.items.length]);
-
-  // Scroll Animations intersection observer states
-  const [journeyVisible, setJourneyVisible] = useState(false);
-  const [expertiseVisible, setExpertiseVisible] = useState(false);
-
-  useEffect(() => {
-    const journeyEl = document.getElementById('journey-section');
-    const expertiseEl = document.getElementById('expertise-section');
-
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.15
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.target.id === 'journey-section' && entry.isIntersecting) {
-          setJourneyVisible(true);
-        }
-        if (entry.target.id === 'expertise-section' && entry.isIntersecting) {
-          setExpertiseVisible(true);
-        }
-      });
-    }, observerOptions);
-
-    if (journeyEl) observer.observe(journeyEl);
-    if (expertiseEl) observer.observe(expertiseEl);
-
-    return () => {
-      if (journeyEl) observer.unobserve(journeyEl);
-      if (expertiseEl) observer.unobserve(expertiseEl);
-    };
-  }, []);
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>, href: string) => {
     const pageName = href.replace('#/', '') as 'home' | 'about' | 'services' | 'blog' | 'contact';
@@ -106,255 +51,599 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
     }
   };
 
-  // Icon mapping helper for strengths
-  const renderStrengthIcon = (index: number) => {
-    switch (index) {
-      case 0:
-        return <Sliders className="h-6 w-6 text-brand-orange" />;
-      case 1:
-        return <Wrench className="h-6 w-6 text-brand-orange" />;
-      case 2:
-        return <Building className="h-6 w-6 text-brand-orange" />;
-      default:
-        return <Shield className="h-6 w-6 text-brand-orange" />;
-    }
-  };
+  // Local translations to match HADI's exact UI design copy while preserving site context
+  const copy = {
+    en: {
+      heroTag: "Your Building, Our Care",
+      heroTitlePart1: "Heavy Duty",
+      heroTitlePart2: "Industrial",
+      heroTitlePart3: "Sweeper",
+      heroDesc: "High performance road sweeping and logistics fleet supporting municipal roads, factories, and construction compounds across Saudi Arabia.",
+      heroBtn1: "Discover More",
+      heroBtn2: "Our Services",
+      
+      card1Title: "Sales & Rental",
+      card1Desc: "Various Brands, Models and Types availability.",
+      card2Title: "SLA Contracts",
+      card2Desc: "Annual maintenance contracts to keep your machinery running.",
+      card3Title: "Maintenance",
+      card3Desc: "Expert technical services for optimal fleet performance.",
+      card4Title: "Spare Parts",
+      card4Desc: "Genuine spare parts for all sweepers and lift vehicles.",
 
-  // Icon mapping helper for services
-  const renderServiceIcon = (id: string) => {
-    switch (id) {
-      case 'elgin':
-      case 'johnston':
-      case 'scarab':
-        return <Truck className="h-6 w-6 text-brand-orange animate-pulse" />;
-      case 'gardens':
-        return <Leaf className="h-6 w-6 text-brand-orange" />;
-      case 'boomtrucks':
-      case 'forklifts':
-      case 'cranes':
-        return <Activity className="h-6 w-6 text-brand-orange" />;
-      default:
-        return <Shield className="h-6 w-6 text-brand-orange" />;
+      aboutTag: "ABOUT US",
+      aboutTitle: "Electric Cleaning Solutions",
+      aboutDesc: "Al Kayanat KSA supports industrial, municipal, and commercial clients by providing reliable, safe, and cost-efficient vehicle and machinery rental. We maintain public roads and gardens with exceptional precision.",
+      
+      servicesTag: "OUR SERVICES",
+      servicesTitle: "The Application We Provide For Our Customer",
+      service1Badge: "Corporation and Factories",
+      service1Desc: "Businesses and factories often have large factory, workshop and storage areas.",
+      service2Badge: "School and Hospital",
+      service2Desc: "Fine cleaning: schools and hospitals require a high standard of hygiene.",
+      service3Badge: "Municipal Sanitation",
+      service3Desc: "Large-scale operation: sanitation work involves a wide range of municipal roads.",
+
+      whyTag: "WHY CHOOSE US",
+      whyTitle: "Choose Excellence, Choose Al Kayanat",
+      whyDesc: "We provide innovative and sustainable cleaning and lifting solutions that meet the highest standards. Our focus is on safety, performance, and efficiency.",
+      whyBullet1: "Seamless Logistics",
+      whyBullet1Desc: "Tailored operations based on specific project needs.",
+      whyBullet2: "Efficient Execution",
+      whyBullet2Desc: "100x improvement in facility operational workflow.",
+      whyBullet3: "Flexible Packages",
+      whyBullet3Desc: "Achieving cost efficiency compared to traditional services.",
+      whyBullet4: "Reliable & Safe Fleet",
+      whyBullet4Desc: "Transparent compliance ensuring you get exactly what you need.",
+      whyStats: "100K+",
+      whyStatsLabel: "Project Finished",
+
+      brandHeading: "Trusted by over 90k+ companies worldwide",
+      
+      testTag: "TESTIMONIALS",
+      testTitle: "Feedback About Their Experience With Us",
+      
+      blogTag: "BLOG & NEWS",
+      blogTitle: "Company News",
+      readMore: "Read More"
+    },
+    ar: {
+      heroTag: "رعايتنا لمبانيكم، هي مهمتنا",
+      heroTitlePart1: "كناسات شوارع",
+      heroTitlePart2: "صناعية",
+      heroTitlePart3: "ثقيلة",
+      heroDesc: "أسطول كنس طرق وخدمات لوجستية ذو أداء عالٍ لدعم الشوارع البلدية، والمصانع، والمجمعات الإنشائية بالمملكة.",
+      heroBtn1: "اكتشف المزيد",
+      heroBtn2: "خدماتنا",
+
+      card1Title: "البيع والتأجير",
+      card1Desc: "توفر مختلف العلامات التجارية والموديلات والأنواع.",
+      card2Title: "عقود الصيانة",
+      card2Desc: "عقود صيانة سنوية للحفاظ على كفاءة آلياتكم باستمرار.",
+      card3Title: "الصيانة الفنية",
+      card3Desc: "خدمات صيانة متخصصة للأداء اللوجستي الأمثل للأسطول.",
+      card4Title: "قطع الغيار",
+      card4Desc: "قطع غيار أصلية لكافة شاحنات الكنس ومعدات الرفع.",
+
+      aboutTag: "من نحن",
+      aboutTitle: "حلول التنظيف الكهربائية والبلدية",
+      aboutDesc: "تدعم مجموعة الكيانات عملاءها في القطاعات الصناعية والبلدية والتجارية عبر توفير حلول تأجير معدات آمنة وموفرة للتكلفة. نقوم بتنظيف الطرق والحدائق بدقة متناهية.",
+      
+      servicesTag: "خدماتنا",
+      servicesTitle: "التطبيقات والحلول التي نوفرها لعملائنا",
+      service1Badge: "الشركات والمصانع",
+      service1Desc: "تحتوي المصانع والشركات غالبًا على ورش عمل ومساحات تخزين كبيرة تتطلب تنظيفًا دوريًا.",
+      service2Badge: "المدارس والمستشفيات",
+      service2Desc: "تنظيف دقيق ومستويات تعقيم عالية تناسب المنشآت الطبية والتعليمية.",
+      service3Badge: "النظافة البلدية",
+      service3Desc: "عمليات واسعة النطاق تشمل نظافة وتطهير الطرق والشوارع الرئيسية.",
+
+      whyTag: "لماذا تختارنا",
+      whyTitle: "اختر التميز والريادة، اختر الكيانات",
+      whyDesc: "نحن نقدم حلول تنظيف ورفع مبتكرة ومستدامة تلبي أعلى المعايير التشغيلية والبيئية مع التركيز على الأمان والكفاءة.",
+      whyBullet1: "عمليات سلسة",
+      whyBullet1Desc: "تنفيذ مخصص بناءً على متطلبات وجداول مشاريعكم الخاصة.",
+      whyBullet2: "كفاءة تشغيلية",
+      whyBullet2Desc: "تحسينات ضخمة لتدفق العمليات اللوجستية والبلدية.",
+      whyBullet3: "باقات مرنة",
+      whyBullet3Desc: "توفير ملموس في التكلفة مقارنة بالحلول التقليدية الأخرى.",
+      whyBullet4: "أسطول آمن وموثوق",
+      whyBullet4Desc: "التزام كامل بمعايير السلامة لضمان تنفيذ آمن وخالٍ من الحوادث.",
+      whyStats: "+١٠٠ ألف",
+      whyStatsLabel: "مشروع مكتمل",
+
+      brandHeading: "موضع ثقة أكثر من ٩٠ ألف شركة حول العالم",
+
+      testTag: "آراء العملاء",
+      testTitle: "التقييمات والآراء حول تجربتهم الفنية معنا",
+
+      blogTag: "المدونة والأخبار",
+      blogTitle: "أخبار وتحديثات الشركة",
+      readMore: "اقرأ المزيد"
     }
-  };
+  }[langKey];
 
   return (
-    <div className={`min-h-screen bg-premium-gradient text-slate-700 flex flex-col justify-between font-sans overflow-x-hidden ${isRtl ? 'text-right' : 'text-left'}`}>
+    <div className={`min-h-screen bg-white text-slate-700 flex flex-col justify-between font-sans overflow-x-hidden ${isRtl ? 'text-right' : 'text-left'}`}>
       
       {/* Header */}
       <Header currentLang={currentLang} onLangChange={onLangChange} activePage="home" onPageChange={onPageChange} />
 
       {/* Main Content */}
-      <main className="flex-grow pt-[88px] relative">
+      <main className="flex-grow pt-[88px] lg:pt-[112px] relative">
         
-        {/* Glow decoration */}
-        <div className="absolute top-10 right-0 w-96 h-96 bg-brand-orange/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute top-80 left-0 w-[500px] h-[500px] bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
+        {/* Section 1: Hero Banner (Full width background image with visual blue overlay) */}
+        <section className="relative min-h-[580px] lg:min-h-[640px] flex items-center overflow-hidden py-20">
+          {/* Backdrop Images Slider */}
+          <div className="absolute inset-0 z-0">
+            {heroImages.map((img, idx) => (
+              <img 
+                key={img}
+                src={img} 
+                alt="Al Kayanat Heavy Fleet" 
+                className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out transform ${
+                  idx === activeImage 
+                    ? 'opacity-100 scale-100' 
+                    : 'opacity-0 scale-105 pointer-events-none'
+                }`}
+              />
+            ))}
+            {/* Blueish-Navy tint overlay */}
+            <div className="absolute inset-0 bg-[#0F172A]/70 mix-blend-multiply" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#070A13]/90 via-[#0F172A]/50 to-transparent" />
+          </div>
 
-        {/* Section 1: Hero Banner */}
-        <section className="relative py-20 lg:py-28 overflow-hidden">
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:6rem_6rem] opacity-[0.4] pointer-events-none" />
-          
-          <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
             <div className={`grid grid-cols-1 lg:grid-cols-12 gap-12 items-center ${isRtl ? 'lg:flex-row-reverse' : ''}`}>
               
-              {/* Hero Left Column (Title & Rotator) */}
-              <div className="lg:col-span-7 flex flex-col space-y-6">
-                <span className="text-xs font-black uppercase tracking-widest text-brand-orange bg-brand-orange/10 border border-brand-orange/20 px-4 py-1.5 rounded-full w-fit shadow-sm">
-                  {data.hero.subtitle}
-                </span>
+              {/* Text Left side */}
+              <div className="lg:col-span-8 flex flex-col space-y-6">
+                <div className={`flex items-center gap-2 ${isRtl ? 'flex-row-reverse' : ''}`}>
+                  <span className="h-0.5 w-10 bg-brand-yellow" />
+                  <span className="text-xs font-black uppercase tracking-widest text-brand-yellow">
+                    {copy.heroTag}
+                  </span>
+                </div>
 
-                <h1 className="text-4xl md:text-5xl lg:text-7xl font-extrabold tracking-tight leading-tight text-slate-900 max-w-2xl font-display">
-                  {data.hero.rotatorPrefix}{' '}
-                  <span className={`text-brand-orange inline-block transition-all duration-300 transform translate-y-0 opacity-100 min-h-[48px] md:min-h-[60px] lg:min-h-[72px] drop-shadow-[0_0_10px_rgba(255,107,0,0.15)] ${
-                    rotatorWords[rotatorIndex].length > 24
-                      ? 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl'
-                      : rotatorWords[rotatorIndex].length > 18
-                      ? 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl'
-                      : ''
-                  }`}>
-                    {rotatorWords[rotatorIndex]}
+                <h1 className="text-4xl md:text-5xl lg:text-7.5xl font-black text-white leading-tight font-display tracking-tight uppercase">
+                  {copy.heroTitlePart1} <br />
+                  {copy.heroTitlePart2} <br />
+                  <span className="relative inline-block text-white">
+                    {copy.heroTitlePart3}
+                    {/* Golden oval sketch border around Sweeper text */}
+                    <svg className="absolute -bottom-2.5 left-0 w-full h-4 text-brand-yellow overflow-visible" viewBox="0 0 100 10" preserveAspectRatio="none">
+                      <path d="M0,5 Q50,9 100,5" stroke="currentColor" strokeWidth="4" fill="none" strokeLinecap="round" />
+                    </svg>
                   </span>
                 </h1>
 
-                <p className="text-sm md:text-base text-slate-600 leading-relaxed max-w-xl font-medium">
-                  {data.hero.paragraph}
+                <p className="text-sm md:text-base text-slate-200 leading-relaxed max-w-xl font-medium">
+                  {copy.heroDesc}
                 </p>
 
-                <div className={`flex items-center gap-4 pt-3 ${isRtl ? 'flex-row-reverse' : ''}`}>
+                {/* Double rounded buttons */}
+                <div className={`flex flex-wrap items-center gap-4 pt-4 ${isRtl ? 'flex-row-reverse' : ''}`}>
                   <button
                     onClick={(e) => handleLinkClick(e, '#/contact')}
-                    className="inline-flex items-center justify-center px-8 py-4 text-xs font-black uppercase tracking-widest rounded-full text-white bg-brand-orange hover:bg-brand-orange-hover shadow-lg shadow-brand-orange/15 hover:shadow-brand-orange/30 transition-all cursor-pointer gap-1.5 font-display"
+                    className="inline-flex items-center justify-center px-8 py-4 text-xs font-black uppercase tracking-widest rounded-full text-slate-900 bg-brand-yellow hover:bg-brand-yellow-hover shadow-lg shadow-brand-yellow/15 transition-all cursor-pointer font-display"
                   >
-                    <span>{data.hero.cta}</span>
-                    <ArrowUpRight className="h-4 w-4 stroke-[3]" />
+                    <span>{copy.heroBtn1}</span>
                   </button>
 
-                  {/* Circular contact/social buttons */}
-                  <a 
-                    href="tel:+966557062353"
-                    className="p-3.5 bg-white border border-slate-200 hover:border-brand-orange hover:text-brand-orange text-slate-700 rounded-full transition-all flex items-center justify-center shadow-sm"
-                    aria-label="Call Us"
+                  <button
+                    onClick={(e) => handleLinkClick(e, '#/services')}
+                    className="inline-flex items-center justify-center px-8 py-4 text-xs font-black uppercase tracking-widest rounded-full text-slate-900 bg-brand-yellow hover:bg-brand-yellow-hover shadow-lg shadow-brand-yellow/15 transition-all cursor-pointer font-display"
                   >
-                    <Phone className="h-4.5 w-4.5" />
-                  </a>
-                  <a 
-                    href="mailto:info@alkyanat-almushtarika.com"
-                    className="p-3.5 bg-white border border-slate-200 hover:border-brand-orange hover:text-brand-orange text-slate-700 rounded-full transition-all flex items-center justify-center shadow-sm"
-                    aria-label="Email Us"
-                  >
-                    <Mail className="h-4.5 w-4.5" />
-                  </a>
-                </div>
-
-                {/* Overlapping Avatars "Trusted By" info */}
-                <div className={`flex items-center gap-4 pt-6 border-t border-slate-200 max-w-lg ${isRtl ? 'flex-row-reverse text-right' : 'text-left'}`}>
-                  <div className={`flex overflow-hidden ${isRtl ? '-space-x-3 space-x-reverse' : '-space-x-3'}`}>
-                    <img src="/images/avatar1.png" alt="Saudi Executive" className="inline-block h-9 w-9 rounded-full ring-2 ring-slate-50 object-cover shadow-md" />
-                    <img src="/images/avatar2.png" alt="Saudi Engineer" className="inline-block h-9 w-9 rounded-full ring-2 ring-slate-50 object-cover shadow-md" />
-                    <img src="/images/avatar3.png" alt="Saudi Manager" className="inline-block h-9 w-9 rounded-full ring-2 ring-slate-50 object-cover shadow-md" />
-                    <img src="/images/avatar4.png" alt="Arab Professional" className="inline-block h-9 w-9 rounded-full ring-2 ring-slate-50 object-cover shadow-md" />
-                  </div>
-                  <div className="flex flex-col">
-                    <span className="text-xs font-extrabold text-slate-900">
-                      {data.hero.trustedTitle}
-                    </span>
-                    <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">
-                      {data.hero.trustedSubtitle}
-                    </span>
-                  </div>
+                    <span>{copy.heroBtn2}</span>
+                  </button>
                 </div>
               </div>
-
-              {/* Hero Right Column (Circular Frame Cutout Image Slider) */}
-              <div className="lg:col-span-5 flex justify-center relative select-none">
-                
-                {/* Floating SVGs / Badges around the circle cutout */}
-                <div className="absolute top-10 left-4 bg-white/95 backdrop-blur border border-slate-200 p-3 rounded-2xl shadow-xl z-20 animate-bounce">
-                  <Activity className="h-6 w-6 text-brand-orange" />
-                </div>
-                <div className="absolute bottom-12 right-2 bg-white/95 backdrop-blur border border-slate-200 p-3 rounded-2xl shadow-xl z-20">
-                  <AlertTriangle className="h-6 w-6 text-amber-500 animate-pulse" />
-                </div>
-                <div className="absolute top-1/2 -right-6 bg-white/95 backdrop-blur border border-slate-200 p-3 rounded-full shadow-xl z-20">
-                  <Truck className="h-5 w-5 text-brand-orange" />
-                </div>
-
-                {/* Main Cutout Container */}
-                <div className="relative w-full max-w-[420px] aspect-square flex items-center justify-center">
-                  
-                  {/* Decorative Gradient crescent behind the main cutout */}
-                  <div className="absolute right-0 bottom-0 w-[88%] h-[88%] rounded-br-[210px] rounded-bl-[105px] rounded-tr-[105px] bg-gradient-to-tr from-brand-orange via-amber-500 to-yellow-500 z-0 shadow-xl opacity-90 blur-sm" />
-                  
-                  {/* Centered Circular Cutout Frame for Image Slider */}
-                  <div className="relative w-[90%] h-[90%] rounded-full overflow-hidden border-[6px] border-white shadow-2xl bg-slate-100 z-10 aspect-square group">
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 via-transparent to-transparent z-10 pointer-events-none" />
-                    
-                    {/* Sliding Images */}
-                    <div className="relative w-full h-full">
-                      {heroImages.map((img, idx) => (
-                        <img 
-                          key={idx}
-                          src={img} 
-                          alt="Al Kayanat KSA Fleet" 
-                          className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-in-out transform ${
-                            idx === activeImage 
-                              ? 'opacity-100 scale-100 z-0' 
-                              : 'opacity-0 scale-105 pointer-events-none'
-                          }`}
-                        />
-                      ))}
-                    </div>
-
-                    {/* Manual controls (Overlay dots on hover) */}
-                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-200 bg-black/40 px-3 py-1.5 rounded-full">
-                      {heroImages.map((_, idx) => (
-                        <button
-                          key={idx}
-                          onClick={() => setActiveImage(idx)}
-                          className={`h-2 rounded-full transition-all duration-200 cursor-pointer ${
-                            idx === activeImage ? 'w-4 bg-white' : 'w-2 bg-white/50'
-                          }`}
-                        />
-                      ))}
-                    </div>
-                  </div>
-
-                </div>
-
-              </div>
-
             </div>
           </div>
         </section>
 
-        {/* Section 2: Core Strengths */}
-        <section className="py-16 bg-transparent border-b border-slate-200/80">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {data.strengths.map((item, index) => (
-                <div 
-                  key={index}
-                  className="bg-white border border-slate-200/80 hover:border-brand-orange/30 rounded-3xl p-8 hover:bg-slate-50/50 transition-all duration-300 shadow-sm relative overflow-hidden group hover:shadow-[0_10px_30px_-15px_rgba(255,107,0,0.08)]"
-                >
-                  <div className="absolute top-0 left-0 w-2 h-full bg-brand-orange transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
-                  <div className="p-3 bg-slate-50 border border-slate-200 rounded-2xl w-fit mb-6 shadow-sm">
-                    {renderStrengthIcon(index)}
-                  </div>
-                  <h3 className="text-lg font-bold text-slate-900 tracking-tight font-display">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs text-slate-650 font-medium mt-3.5 leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-              ))}
+        {/* Section 2: Four Feature Cards (Overlapping hero visually) */}
+        <section className="relative z-25 -mt-10 max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            {/* Card 1: Sales */}
+            <div className="bg-white border border-slate-100 rounded-2xl p-7 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-xl hover:shadow-[0_15px_40px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center">
+              <div className="p-4 bg-slate-50 border border-slate-100 rounded-full text-brand-red group-hover:bg-brand-red group-hover:text-white transition-all duration-300 mb-5">
+                <Truck className="h-6 w-6" />
+              </div>
+              <span className="text-[10px] text-slate-400 font-bold block mb-1">01</span>
+              <h3 className="text-base font-extrabold text-slate-900 tracking-tight font-display">
+                {copy.card1Title}
+              </h3>
+              <p className="text-xs text-slate-500 font-medium mt-3.5 leading-relaxed">
+                {copy.card1Desc}
+              </p>
             </div>
+
+            {/* Card 2: SLA */}
+            <div className="bg-white border border-slate-100 rounded-2xl p-7 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-xl hover:shadow-[0_15px_40px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center">
+              <div className="p-4 bg-slate-50 border border-slate-100 rounded-full text-brand-red group-hover:bg-brand-red group-hover:text-white transition-all duration-300 mb-5">
+                <Shield className="h-6 w-6" />
+              </div>
+              <span className="text-[10px] text-slate-400 font-bold block mb-1">02</span>
+              <h3 className="text-base font-extrabold text-slate-900 tracking-tight font-display">
+                {copy.card2Title}
+              </h3>
+              <p className="text-xs text-slate-500 font-medium mt-3.5 leading-relaxed">
+                {copy.card2Desc}
+              </p>
+            </div>
+
+            {/* Card 3: Maintenance */}
+            <div className="bg-white border border-slate-100 rounded-2xl p-7 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-xl hover:shadow-[0_15px_40px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center">
+              <div className="p-4 bg-slate-50 border border-slate-100 rounded-full text-brand-red group-hover:bg-brand-red group-hover:text-white transition-all duration-300 mb-5">
+                <Wrench className="h-6 w-6" />
+              </div>
+              <span className="text-[10px] text-slate-400 font-bold block mb-1">03</span>
+              <h3 className="text-base font-extrabold text-slate-900 tracking-tight font-display">
+                {copy.card3Title}
+              </h3>
+              <p className="text-xs text-slate-500 font-medium mt-3.5 leading-relaxed">
+                {copy.card3Desc}
+              </p>
+            </div>
+
+            {/* Card 4: Spare Parts */}
+            <div className="bg-white border border-slate-100 rounded-2xl p-7 shadow-[0_8px_30px_rgb(0,0,0,0.03)] hover:shadow-xl hover:shadow-[0_15px_40px_rgba(0,0,0,0.06)] hover:-translate-y-1 transition-all duration-300 group flex flex-col items-center text-center">
+              <div className="p-4 bg-slate-50 border border-slate-100 rounded-full text-brand-red group-hover:bg-brand-red group-hover:text-white transition-all duration-300 mb-5">
+                <Settings className="h-6 w-6" />
+              </div>
+              <span className="text-[10px] text-slate-400 font-bold block mb-1">04</span>
+              <h3 className="text-base font-extrabold text-slate-900 tracking-tight font-display">
+                {copy.card4Title}
+              </h3>
+              <p className="text-xs text-slate-500 font-medium mt-3.5 leading-relaxed">
+                {copy.card4Desc}
+              </p>
+            </div>
+
           </div>
         </section>
 
-        {/* Section 3: About Holding Group */}
-        <section className="py-20 bg-transparent border-b border-slate-200/80">
+        {/* Section 3: About Holding Section (Split grid) */}
+        <section className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className={`grid grid-cols-1 lg:grid-cols-12 gap-12 items-center ${isRtl ? 'lg:flex-row-reverse' : ''}`}>
               
-              {/* About Text Column */}
-              <div className="lg:col-span-7 flex flex-col space-y-5">
-                <span className="text-xs font-black uppercase tracking-widest text-brand-orange bg-brand-orange/10 border border-brand-orange/20 px-3.5 py-1.5 rounded-xl w-fit shadow-sm">
-                  {data.about.subtitle}
-                </span>
-                <h2 className="text-2xl md:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight font-display">
-                  {data.about.title}
+              {/* Left Column Collage */}
+              <div className="lg:col-span-6 relative flex items-center justify-center">
+                <div className="grid grid-cols-12 gap-4 w-full max-w-[480px]">
+                  {/* Top Left Main Image */}
+                  <div className="col-span-8 rounded-3xl overflow-hidden shadow-md aspect-[4/3] border border-slate-100">
+                    <img src="/images/road_sweeper_riyadh.png" alt="Sweeper operations" className="w-full h-full object-cover" />
+                  </div>
+                  {/* Floating Play Video style box */}
+                  <div className="col-span-4 self-end relative rounded-2xl overflow-hidden aspect-square border border-slate-100 bg-[#0F172A] flex items-center justify-center group cursor-pointer shadow-lg">
+                    <img src="/images/boom_truck_crane.png" alt="Play media" className="absolute inset-0 w-full h-full object-cover opacity-45 group-hover:scale-105 transition-all duration-350" />
+                    <div className="relative z-10 w-10 h-10 rounded-full bg-brand-yellow flex items-center justify-center text-slate-900 shadow-md">
+                      <Play className="h-4.5 w-4.5 fill-current ml-0.5" />
+                    </div>
+                  </div>
+                  {/* Bottom Right Secondary Image */}
+                  <div className="col-span-8 col-start-3 rounded-3xl overflow-hidden shadow-md aspect-[4/3] border border-slate-100 relative">
+                    <img src="/images/realestate_banner.png" alt="Holding works" className="w-full h-full object-cover" />
+                  </div>
+                </div>
+
+                {/* Red "15 Years Of" Badge overlay */}
+                <div className={`absolute -bottom-6 ${isRtl ? 'left-6' : 'right-6'} bg-[#A31D1D] rounded-3xl p-5 shadow-2xl flex items-center gap-3 select-none text-white border border-[#b92c2c]`}>
+                  <span className="text-5xl font-black font-display leading-none">15</span>
+                  <div className="flex flex-col text-[10px] font-black uppercase tracking-wider leading-none">
+                    <span className="text-brand-yellow">Years</span>
+                    <span className="mt-1">Of</span>
+                    <span className="mt-1">Excellence</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column Text */}
+              <div className="lg:col-span-6 space-y-6">
+                <div className={`flex items-center gap-2.5 ${isRtl ? 'flex-row-reverse' : ''}`}>
+                  <span className="h-0.5 w-8 bg-brand-red" />
+                  <span className="text-xs font-black uppercase tracking-widest text-brand-red font-display">
+                    {copy.aboutTag}
+                  </span>
+                </div>
+
+                <h2 className="text-3xl lg:text-4.5xl font-black text-slate-900 tracking-tight leading-tight font-display">
+                  {copy.aboutTitle}
                 </h2>
-                <p className="text-xs md:text-sm text-slate-600 leading-relaxed font-medium">
-                  {data.about.paragraph}
+
+                <p className="text-xs md:text-sm text-slate-500 leading-relaxed font-medium">
+                  {copy.aboutDesc}
                 </p>
+
                 <button
-                  onClick={(e) => handleLinkClick(e, '#/services')}
-                  className="inline-flex items-center justify-center px-6 py-3.5 text-xs font-black uppercase tracking-widest rounded-xl text-white bg-brand-orange hover:bg-brand-orange-hover transition-all w-fit cursor-pointer shadow-md shadow-brand-orange/10 font-display"
+                  onClick={(e) => handleLinkClick(e, '#/about')}
+                  className="inline-flex items-center justify-center px-7 py-4 text-xs font-black uppercase tracking-widest rounded-full text-slate-900 bg-brand-yellow hover:bg-brand-yellow-hover shadow-lg transition-all cursor-pointer font-display"
                 >
-                  <span>{data.about.cta}</span>
-                  <ChevronRight className={`ml-1.5 h-4 w-4 stroke-[3.5] ${isRtl ? 'rotate-180 mr-1.5 ml-0' : ''}`} />
+                  <span>{isRtl ? 'اكتشف المزيد' : 'Discover More'}</span>
                 </button>
               </div>
 
-              {/* Stats Counters Column */}
-              <div className="lg:col-span-5 flex flex-col space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-6">
-                  {data.about.stats.map((stat, index) => (
-                    <div 
-                      key={index}
-                      className="bg-white border border-slate-200/80 rounded-2xl p-6 shadow-sm relative overflow-hidden flex flex-col justify-center group hover:border-brand-orange/20 transition-colors"
+            </div>
+          </div>
+        </section>
+
+        {/* Section 4: Our Services (Centered display) */}
+        <section className="py-24 bg-slate-50/50 border-t border-b border-slate-100">
+          <div className="max-w-7xl mx-auto px-6">
+            
+            <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
+              <div className="flex items-center justify-center gap-2">
+                <span className="h-0.5 w-6 bg-brand-red" />
+                <span className="text-xs font-black uppercase tracking-widest text-brand-red">
+                  {copy.servicesTag}
+                </span>
+                <span className="h-0.5 w-6 bg-brand-red" />
+              </div>
+              <h2 className="text-3xl lg:text-4.5xl font-black text-slate-900 tracking-tight font-display">
+                {copy.servicesTitle}
+              </h2>
+            </div>
+
+            {/* 3 cards grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Card 1 */}
+              <div className="bg-white border border-slate-100 rounded-3xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col justify-between group">
+                <div className="relative">
+                  {/* Top Badge */}
+                  <div className={`absolute top-4 left-4 right-4 flex items-center justify-between z-10 ${isRtl ? 'flex-row-reverse' : ''}`}>
+                    <span className="text-[10px] font-black uppercase tracking-wider text-slate-900 bg-brand-yellow px-3.5 py-1.5 rounded-full shadow">
+                      {isRtl ? 'الشركات والمصانع' : 'Corporation and Factories'}
+                    </span>
+                    <button 
+                      onClick={(e) => handleLinkClick(e, '#/services')}
+                      className="h-8 w-8 rounded-full bg-brand-red text-white hover:bg-brand-red-dark flex items-center justify-center shadow-md transition-colors cursor-pointer"
                     >
-                      <div className="absolute right-4 bottom-4 text-brand-orange/[0.02] transform translate-y-6 translate-x-4">
-                        <Truck className="h-32 w-32" />
+                      <ArrowRight className="h-4 w-4" />
+                    </button>
+                  </div>
+                  {/* Card Image */}
+                  <div className="aspect-[16/10] overflow-hidden bg-slate-100">
+                    <img src="/images/road_sweeper_riyadh.png" alt="Corporation" className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500" />
+                  </div>
+                </div>
+                <div className="p-7 space-y-3">
+                  <h3 className="text-lg font-black text-slate-900 font-display">
+                    {isRtl ? 'شاحنات كنس للشركات والمصانع' : 'Corporation and Factories Sweepers'}
+                  </h3>
+                  <p className="text-xs text-slate-500 font-medium leading-relaxed">
+                    {copy.service1Desc}
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 2 */}
+              <div className="bg-white border border-slate-100 rounded-3xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col justify-between group">
+                <div className="relative">
+                  {/* Top Badge */}
+                  <div className={`absolute top-4 left-4 right-4 flex items-center justify-between z-10 ${isRtl ? 'flex-row-reverse' : ''}`}>
+                    <span className="text-[10px] font-black uppercase tracking-wider text-slate-900 bg-brand-yellow px-3.5 py-1.5 rounded-full shadow">
+                      {isRtl ? 'المدارس والمستشفيات' : 'School and Hospital'}
+                    </span>
+                    <button 
+                      onClick={(e) => handleLinkClick(e, '#/services')}
+                      className="h-8 w-8 rounded-full bg-brand-red text-white hover:bg-brand-red-dark flex items-center justify-center shadow-md transition-colors cursor-pointer"
+                    >
+                      <ArrowRight className="h-4 w-4" />
+                    </button>
+                  </div>
+                  {/* Card Image */}
+                  <div className="aspect-[16/10] overflow-hidden bg-slate-100">
+                    <img src="/images/boom_truck_crane.png" alt="School" className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500" />
+                  </div>
+                </div>
+                <div className="p-7 space-y-3">
+                  <h3 className="text-lg font-black text-slate-900 font-display">
+                    {isRtl ? 'المنشآت التعليمية والطبية' : 'School and Hospital Cleaning'}
+                  </h3>
+                  <p className="text-xs text-slate-500 font-medium leading-relaxed">
+                    {copy.service2Desc}
+                  </p>
+                </div>
+              </div>
+
+              {/* Card 3 */}
+              <div className="bg-white border border-slate-100 rounded-3xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden flex flex-col justify-between group">
+                <div className="relative">
+                  {/* Top Badge */}
+                  <div className={`absolute top-4 left-4 right-4 flex items-center justify-between z-10 ${isRtl ? 'flex-row-reverse' : ''}`}>
+                    <span className="text-[10px] font-black uppercase tracking-wider text-slate-900 bg-brand-yellow px-3.5 py-1.5 rounded-full shadow">
+                      {isRtl ? 'النظافة البلدية والطرق' : 'Municipal Sanitation'}
+                    </span>
+                    <button 
+                      onClick={(e) => handleLinkClick(e, '#/services')}
+                      className="h-8 w-8 rounded-full bg-brand-red text-white hover:bg-brand-red-dark flex items-center justify-center shadow-md transition-colors cursor-pointer"
+                    >
+                      <ArrowRight className="h-4 w-4" />
+                    </button>
+                  </div>
+                  {/* Card Image */}
+                  <div className="aspect-[16/10] overflow-hidden bg-slate-100">
+                    <img src="/images/heavy_forklift_ksa.png" alt="Municipal" className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-500" />
+                  </div>
+                </div>
+                <div className="p-7 space-y-3">
+                  <h3 className="text-lg font-black text-slate-900 font-display">
+                    {isRtl ? 'خدمات الكنس ونظافة البلديات' : 'Municipal & Highway Sweeping'}
+                  </h3>
+                  <p className="text-xs text-slate-500 font-medium leading-relaxed">
+                    {copy.service3Desc}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        {/* Section 5: Why Choose Us (Checklist and Stats badge) */}
+        <section className="py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className={`grid grid-cols-1 lg:grid-cols-12 gap-12 items-center ${isRtl ? 'lg:flex-row-reverse' : ''}`}>
+              
+              {/* Left Column Video Pre-view */}
+              <div className="lg:col-span-6 relative flex justify-center">
+                <div className="relative w-full max-w-[480px] aspect-[16/10] rounded-3xl overflow-hidden shadow-2xl bg-black group border border-slate-100">
+                  <img src="/images/realestate_banner.png" alt="Video cover" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-102 transition-all duration-500" />
+                  {/* Big play overlay button */}
+                  <button className="absolute inset-0 flex items-center justify-center cursor-pointer">
+                    <div className="w-16 h-16 rounded-full bg-[#A31D1D] text-white flex items-center justify-center shadow-2xl group-hover:bg-brand-yellow group-hover:text-slate-950 transition-all duration-300">
+                      <Play className="h-6 w-6 fill-current ml-1" />
+                    </div>
+                  </button>
+                </div>
+
+                {/* Floating "100K+ Project Finished" badge on right side */}
+                <div className={`absolute -top-6 ${isRtl ? 'left-6' : 'right-6'} bg-[#121212] border border-[#2c2c2c] rounded-2xl p-5 shadow-2xl text-center flex flex-col items-center justify-center text-white min-w-[130px]`}>
+                  <span className="text-2xl font-black text-brand-yellow font-display leading-none">
+                    {copy.whyStats}
+                  </span>
+                  <span className="text-[9px] uppercase tracking-widest text-slate-400 font-black mt-2 leading-none">
+                    {copy.whyStatsLabel}
+                  </span>
+                </div>
+              </div>
+
+              {/* Right Column bullet list */}
+              <div className="lg:col-span-6 space-y-6">
+                <div className={`flex items-center gap-2.5 ${isRtl ? 'flex-row-reverse' : ''}`}>
+                  <span className="h-0.5 w-8 bg-brand-red" />
+                  <span className="text-xs font-black uppercase tracking-widest text-brand-red font-display">
+                    {copy.whyTag}
+                  </span>
+                </div>
+
+                <h2 className="text-3xl lg:text-4.5xl font-black text-slate-900 tracking-tight leading-tight font-display">
+                  {copy.whyTitle}
+                </h2>
+                
+                <p className="text-xs md:text-sm text-slate-500 leading-relaxed font-medium">
+                  {copy.whyDesc}
+                </p>
+
+                {/* 4 bullet columns */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
+                  <div className={`flex gap-3 items-start ${isRtl ? 'flex-row-reverse' : ''}`}>
+                    <div className="p-1 bg-[#A31D1D] text-white rounded-lg mt-0.5">
+                      <CheckCircle2 className="h-4 w-4" />
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-black text-slate-900 font-display">{copy.whyBullet1}</h4>
+                      <p className="text-[10.5px] text-slate-500 leading-relaxed mt-0.5">{copy.whyBullet1Desc}</p>
+                    </div>
+                  </div>
+
+                  <div className={`flex gap-3 items-start ${isRtl ? 'flex-row-reverse' : ''}`}>
+                    <div className="p-1 bg-[#A31D1D] text-white rounded-lg mt-0.5">
+                      <CheckCircle2 className="h-4 w-4" />
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-black text-slate-900 font-display">{copy.whyBullet2}</h4>
+                      <p className="text-[10.5px] text-slate-500 leading-relaxed mt-0.5">{copy.whyBullet2Desc}</p>
+                    </div>
+                  </div>
+
+                  <div className={`flex gap-3 items-start ${isRtl ? 'flex-row-reverse' : ''}`}>
+                    <div className="p-1 bg-[#A31D1D] text-white rounded-lg mt-0.5">
+                      <CheckCircle2 className="h-4 w-4" />
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-black text-slate-900 font-display">{copy.whyBullet3}</h4>
+                      <p className="text-[10.5px] text-slate-500 leading-relaxed mt-0.5">{copy.whyBullet3Desc}</p>
+                    </div>
+                  </div>
+
+                  <div className={`flex gap-3 items-start ${isRtl ? 'flex-row-reverse' : ''}`}>
+                    <div className="p-1 bg-[#A31D1D] text-white rounded-lg mt-0.5">
+                      <CheckCircle2 className="h-4 w-4" />
+                    </div>
+                    <div>
+                      <h4 className="text-sm font-black text-slate-900 font-display">{copy.whyBullet4}</h4>
+                      <p className="text-[10.5px] text-slate-500 leading-relaxed mt-0.5">{copy.whyBullet4Desc}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* Section 6: Trusted Slider Banner (Vibrant Yellow background) */}
+        <section className="bg-brand-yellow py-10 select-none">
+          <div className="max-w-7xl mx-auto px-6 text-center space-y-6">
+            <h3 className="text-xs font-black uppercase tracking-widest text-slate-900 font-display">
+              {copy.brandHeading}
+            </h3>
+            {/* Logo Slots */}
+            <div className={`flex flex-wrap items-center justify-center gap-10 lg:gap-16 opacity-80 ${isRtl ? 'flex-row-reverse' : ''}`}>
+              <span className="text-sm font-black text-slate-950 uppercase tracking-widest font-display">ELGIN</span>
+              <span className="text-sm font-black text-slate-950 uppercase tracking-widest font-display">JOHNSTON</span>
+              <span className="text-sm font-black text-slate-950 uppercase tracking-widest font-display">SCARAB</span>
+              <span className="text-sm font-black text-slate-950 uppercase tracking-widest font-display">SAUDI ARAMCO</span>
+              <span className="text-sm font-black text-slate-950 uppercase tracking-widest font-display">VISION 2030</span>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 7: Testimonials Feed (Side image & cards stack) */}
+        <section className="py-24 bg-slate-50/30 border-b border-slate-100">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className={`grid grid-cols-1 lg:grid-cols-12 gap-12 items-center ${isRtl ? 'lg:flex-row-reverse' : ''}`}>
+              
+              {/* Left Column Transparent Vehicle Frame */}
+              <div className="lg:col-span-5 hidden lg:flex justify-center relative">
+                <div className="w-full max-w-[380px] aspect-[4/3] rounded-3xl overflow-hidden border border-slate-200/50 bg-white p-3 shadow-md">
+                  <img src="/images/road_sweeper_riyadh.png" alt="Sweeper Truck" className="w-full h-full object-cover rounded-2xl" />
+                </div>
+              </div>
+
+              {/* Right Column Testimonials Slider */}
+              <div className="lg:col-span-7 space-y-6">
+                <div className={`flex items-center gap-2.5 ${isRtl ? 'flex-row-reverse' : ''}`}>
+                  <span className="h-0.5 w-8 bg-brand-red" />
+                  <span className="text-xs font-black uppercase tracking-widest text-brand-red font-display">
+                    {copy.testTag}
+                  </span>
+                </div>
+
+                <h2 className="text-3xl lg:text-4.5xl font-black text-slate-900 tracking-tight leading-tight font-display">
+                  {copy.testTitle}
+                </h2>
+
+                {/* Testimonial List Box */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4">
+                  {data.testimonials.items.map((item, idx) => (
+                    <div key={idx} className="bg-white border border-slate-100 rounded-3xl p-7 shadow-sm hover:shadow-md transition-shadow relative space-y-4">
+                      {/* Rating stars */}
+                      <div className={`flex items-center gap-1 text-brand-yellow ${isRtl ? 'flex-row-reverse' : ''}`}>
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="h-3.5 w-3.5 fill-current" />
+                        ))}
                       </div>
-                      <span className="text-3xl md:text-4xl font-black text-brand-orange block font-display drop-shadow-[0_0_8px_rgba(255,107,0,0.15)]">
-                        {stat.value}
-                      </span>
-                      <span className="text-[10px] font-bold uppercase tracking-widest text-slate-500 block mt-1 font-display">
-                        {stat.label}
-                      </span>
+                      <p className="text-xs text-slate-500 font-medium italic leading-relaxed">
+                        "{item.quote}"
+                      </p>
+                      <div className={`border-t border-slate-50 pt-4 flex items-center gap-3 ${isRtl ? 'flex-row-reverse text-right' : ''}`}>
+                        <div className="w-9 h-9 rounded-full bg-slate-100 border border-slate-200 overflow-hidden flex items-center justify-center">
+                          <User className="h-4.5 w-4.5 text-slate-400" />
+                        </div>
+                        <div>
+                          <h4 className="text-xs font-extrabold text-slate-950 font-display leading-none">
+                            {item.author}
+                          </h4>
+                          <span className="text-[9px] text-slate-400 font-bold uppercase tracking-wider mt-1 block">
+                            {item.role}
+                          </span>
+                        </div>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -364,227 +653,83 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
           </div>
         </section>
 
-        {/* Section 4: Services Offered */}
-        <section className="py-20 bg-transparent border-b border-slate-200/80">
+        {/* Section 8: Blog News (Standard Card Grid) */}
+        <section className="py-24 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             
             <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-              <span className="text-xs font-black uppercase tracking-widest text-brand-orange bg-brand-orange/10 border border-brand-orange/20 px-3.5 py-1.5 rounded-xl shadow-sm inline-block">
-                {data.servicesSection.subtitle}
-              </span>
-              <h2 className="text-2xl md:text-4xl font-extrabold text-slate-900 tracking-tight font-display">
-                {data.servicesSection.title}
-              </h2>
-              <p className="text-xs md:text-sm text-slate-600 font-medium leading-relaxed">
-                {data.servicesSection.paragraph}
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {data.servicesSection.items.map((item) => (
-                <div 
-                  key={item.id}
-                  className="bg-white border border-slate-200/80 hover:border-brand-orange/30 rounded-3xl p-7 hover:bg-slate-50/50 transition-all duration-300 shadow-sm flex flex-col justify-between group"
-                >
-                  <div className="space-y-5">
-                    <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl w-fit group-hover:bg-brand-orange group-hover:border-brand-orange transition-all duration-300">
-                      <div className="group-hover:text-white text-brand-orange transition-all">
-                        {renderServiceIcon(item.id)}
-                      </div>
-                    </div>
-                    <div>
-                      <span className="text-[9px] font-bold text-slate-500 uppercase tracking-wider block">
-                        {item.category}
-                      </span>
-                      <h3 className="text-base font-bold text-slate-900 tracking-tight mt-1 group-hover:text-brand-orange transition-colors duration-200 font-display">
-                        {item.title}
-                      </h3>
-                    </div>
-                    <p className="text-[11px] text-slate-600 font-medium leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-
-                  <button
-                    onClick={(e) => handleLinkClick(e, '#/services')}
-                    className="inline-flex items-center gap-1.5 mt-6 text-[10px] font-black uppercase tracking-widest text-slate-500 hover:text-brand-orange transition-colors cursor-pointer w-fit font-display"
-                  >
-                    <span>{data.servicesSection.cta}</span>
-                    <ChevronRight className={`h-3.5 w-3.5 stroke-[3] ${isRtl ? 'rotate-180' : ''}`} />
-                  </button>
-                </div>
-              ))}
-            </div>
-
-          </div>
-        </section>
-
-        {/* Section 5: Experience Timeline */}
-        <section id="journey-section" className="py-20 bg-transparent border-b border-slate-200/80">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className={`grid grid-cols-1 lg:grid-cols-12 gap-12 items-start ${isRtl ? 'lg:flex-row-reverse' : ''}`}>
-              
-              {/* Left Column (Section Heading with Animation) */}
-              <div 
-                className={`lg:col-span-5 flex flex-col space-y-4 transition-all duration-1000 ease-out transform ${
-                  journeyVisible 
-                    ? 'opacity-100 translate-x-0' 
-                    : 'opacity-0 -translate-x-12 pointer-events-none'
-                }`}
-              >
-                <span className="text-xs font-black uppercase tracking-widest text-brand-orange bg-brand-orange/10 border border-brand-orange/20 px-4 py-1.5 rounded-full w-fit shadow-sm font-display">
-                  {data.journey.subtitle}
+              <div className="flex items-center justify-center gap-2">
+                <span className="h-0.5 w-6 bg-brand-red" />
+                <span className="text-xs font-black uppercase tracking-widest text-brand-red">
+                  {copy.blogTag}
                 </span>
-                <h2 className="text-2xl md:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight font-display">
-                  {data.journey.title}
-                </h2>
-                <div className="w-16 h-1 bg-brand-orange rounded-full mt-2" />
+                <span className="h-0.5 w-6 bg-brand-red" />
               </div>
+              <h2 className="text-3xl lg:text-4.5xl font-black text-slate-900 tracking-tight font-display">
+                {copy.blogTitle}
+              </h2>
+            </div>
 
-              {/* Right Column (Vertical Timeline) */}
-              <div className="lg:col-span-7 flex flex-col space-y-2">
-                {data.journey.items.map((item, idx) => {
-                  const delayClass = [
-                    'delay-[100ms]',
-                    'delay-[300ms]',
-                    'delay-[500ms]',
-                    'delay-[700ms]'
-                  ][idx] || 'delay-0';
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {blogData[langKey].posts.slice(0, 3).map((item, idx) => {
+                const imagesList = [
+                  '/images/road_sweeper_riyadh.png',
+                  '/images/boom_truck_crane.png',
+                  '/images/heavy_forklift_ksa.png'
+                ];
+                const cardImage = imagesList[idx] || imagesList[0];
 
-                  return (
-                    <div 
-                      key={idx} 
-                      className={`flex gap-6 relative group transition-all duration-700 ease-out transform ${
-                        journeyVisible 
-                          ? 'opacity-100 translate-y-0' 
-                          : 'opacity-0 translate-y-8 pointer-events-none'
-                      } ${delayClass} ${isRtl ? 'flex-row-reverse text-right' : 'text-left'}`}
-                    >
-                      {/* Vertical connecting line */}
-                      {idx < data.journey.items.length - 1 && (
-                        <div className={`absolute ${isRtl ? 'right-6' : 'left-6'} top-12 bottom-0 w-0.5 bg-slate-200 group-hover:bg-brand-orange/30 transition-colors`} />
-                      )}
-                      
-                      {/* Circular Step Badge */}
-                      <div className="flex-shrink-0 h-12 w-12 rounded-full bg-slate-50 text-brand-orange border border-slate-200 font-bold text-sm flex items-center justify-center z-10 group-hover:bg-brand-orange group-hover:text-white group-hover:border-brand-orange shadow-sm transition-all duration-300">
-                        {`0${idx + 1}`}
+                return (
+                  <div 
+                    key={idx}
+                    className="bg-white border border-slate-100 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden group"
+                  >
+                    <div>
+                      {/* Image cover */}
+                      <div className="aspect-[16/10] overflow-hidden bg-slate-100 relative">
+                        <img src={cardImage} alt="News cover" className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500" />
+                        <span className="absolute bottom-4 left-4 text-[9px] font-black uppercase tracking-wider text-slate-900 bg-brand-yellow px-3 py-1 rounded shadow">
+                          {item.category}
+                        </span>
                       </div>
                       
-                      {/* Item Details */}
-                      <div className="space-y-2 pb-6">
-                        <h4 className="text-lg font-bold text-slate-900 group-hover:text-brand-orange transition-colors duration-200 font-display">
+                      {/* Details */}
+                      <div className="p-7 space-y-4">
+                        <div className={`flex items-center gap-3 text-[10px] text-slate-400 font-bold ${isRtl ? 'flex-row-reverse' : ''}`}>
+                          <div className="flex items-center gap-1">
+                            <Calendar className="h-3.5 w-3.5 text-brand-red" />
+                            <span>{item.date}</span>
+                          </div>
+                          <span className="text-slate-200">|</span>
+                          <div className="flex items-center gap-1">
+                            <User className="h-3.5 w-3.5 text-brand-red" />
+                            <span>{isRtl ? 'الإدارة' : 'Admin'}</span>
+                          </div>
+                        </div>
+
+                        <h3 className="text-base font-black text-slate-900 group-hover:text-brand-red transition-colors duration-200 font-display leading-snug">
                           {item.title}
-                        </h4>
-                        <p className="text-xs md:text-sm text-slate-650 font-medium leading-relaxed">
-                          {item.description}
+                        </h3>
+                        <p className="text-[11px] text-slate-500 leading-relaxed font-medium">
+                          {item.excerpt}
                         </p>
                       </div>
                     </div>
-                  );
-                })}
-              </div>
 
-            </div>
-          </div>
-        </section>
-
-        {/* Section 6: Our Expertise progress bars */}
-        <section id="expertise-section" className="py-20 bg-transparent border-b border-slate-200/80">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className={`grid grid-cols-1 lg:grid-cols-12 gap-12 items-center ${isRtl ? 'lg:flex-row-reverse' : ''}`}>
-              
-              {/* Left Column (Details with Animation) */}
-              <div 
-                className={`lg:col-span-5 flex flex-col space-y-4 transition-all duration-1000 ease-out transform ${
-                  expertiseVisible 
-                    ? 'opacity-100 translate-x-0' 
-                    : 'opacity-0 -translate-x-12 pointer-events-none'
-                }`}
-              >
-                <span className="text-xs font-black uppercase tracking-widest text-brand-orange bg-brand-orange/10 border border-brand-orange/20 px-3.5 py-1.5 rounded-xl w-fit">
-                  {data.expertise.subtitle}
-                </span>
-                <h2 className="text-2xl md:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight font-display">
-                  {data.expertise.title}
-                </h2>
-                <p className="text-xs md:text-sm text-slate-650 font-medium leading-relaxed">
-                  {data.expertise.description}
-                </p>
-              </div>
-
-              {/* Right Column (Progress Bars at 100% capacity) */}
-              <div className="lg:col-span-7 flex flex-col space-y-6">
-                {data.expertise.items.map((item, index) => (
-                  <div key={index} className="space-y-2">
-                    <div className={`flex justify-between text-xs font-extrabold text-slate-800 ${isRtl ? 'flex-row-reverse' : ''} font-display`}>
-                      <span>{item.label}</span>
-                      <span className="text-brand-orange">{item.value}%</span>
-                    </div>
-                    <div className="h-2.5 w-full bg-slate-100 border border-slate-200/60 rounded-full overflow-hidden">
-                      <div 
-                        className="h-full bg-gradient-to-r from-brand-orange to-amber-500 rounded-full transition-all duration-[1500ms] ease-out shadow-[0_0_8px_rgba(255,107,0,0.3)]" 
-                        style={{ width: expertiseVisible ? `${item.value}%` : '0%' }} 
-                      />
+                    <div className="px-7 pb-7">
+                      <button
+                        onClick={(e) => handleLinkClick(e, '#/blog')}
+                        className={`inline-flex items-center gap-1.5 text-[10px] font-black uppercase tracking-widest text-slate-800 hover:text-brand-red transition-colors cursor-pointer font-display ${
+                          isRtl ? 'flex-row-reverse' : ''
+                        }`}
+                      >
+                        <span>{copy.readMore}</span>
+                        <ArrowUpRight className="h-3.5 w-3.5 stroke-[2.5]" />
+                      </button>
                     </div>
                   </div>
-                ))}
-              </div>
-
-            </div>
-          </div>
-        </section>
-
-        {/* Section 7: Testimonials Slider */}
-        <section className="py-20 bg-transparent border-b border-slate-200/80">
-          <div className="max-w-7xl mx-auto px-6">
-            
-            <div className="text-center max-w-2xl mx-auto mb-12 space-y-4">
-              <span className="text-xs font-black uppercase tracking-widest text-brand-orange bg-brand-orange/10 border border-brand-orange/20 px-3 py-1.5 rounded-lg shadow-sm">
-                {data.testimonials.subtitle}
-              </span>
-              <h2 className="text-2xl md:text-4xl font-extrabold text-slate-900 tracking-tight font-display">
-                {data.testimonials.title}
-              </h2>
-            </div>
-
-            {/* Testimonials Slider Body */}
-            <div className="relative max-w-4xl mx-auto text-center px-6 mt-8 group bg-white border border-slate-200/80 rounded-3xl p-10 shadow-lg">
-              <div className="text-6xl text-brand-orange/10 font-serif absolute -top-4 left-8 pointer-events-none select-none">“</div>
-              
-              <div className="min-h-[140px] flex items-center justify-center">
-                {data.testimonials.items.map((item, idx) => (
-                  <div 
-                    key={idx}
-                    className={`transition-all duration-500 ease-in-out ${
-                      idx === activeTestimonial ? 'opacity-100 scale-100 block' : 'opacity-0 scale-95 hidden'
-                    }`}
-                  >
-                    <p className="text-base md:text-lg text-slate-700 font-medium italic leading-relaxed">
-                      "{item.quote}"
-                    </p>
-                    <h4 className="text-sm font-extrabold text-slate-950 mt-6 font-display">
-                      {item.author}
-                    </h4>
-                    <span className="text-xs text-slate-500 font-bold uppercase tracking-wider block mt-1 font-display">
-                      {item.role}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
-              {/* Dots indicators */}
-              <div className="flex items-center justify-center gap-2 mt-6">
-                {data.testimonials.items.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setActiveTestimonial(idx)}
-                    className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
-                      idx === activeTestimonial ? 'w-6 bg-brand-orange' : 'w-2 bg-slate-250 hover:bg-slate-400'
-                    }`}
-                    aria-label={`Go to slide ${idx + 1}`}
-                  />
-                ))}
-              </div>
+                );
+              })}
             </div>
 
           </div>
