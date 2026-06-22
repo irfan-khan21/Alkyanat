@@ -129,7 +129,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onPageChange }) => 
           <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 ${isRtl ? 'text-right' : 'text-left'}`}>
             
             {/* Column 1: Contact Us (4 spans) */}
-            <div className="lg:col-span-3.5 space-y-6">
+            <div className="lg:col-span-4 space-y-6">
               <h3 className="text-sm font-black uppercase tracking-wider text-white border-b-2 border-brand-yellow/30 pb-3 font-display">
                 {isRtl ? 'اتصل بنا' : 'Contact Us'}
               </h3>
@@ -192,8 +192,8 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onPageChange }) => 
               </div>
             </div>
 
-            {/* Column 2: Quick Links (2.5 spans) */}
-            <div className="lg:col-span-2.5 space-y-6">
+            {/* Column 2: Quick Links (2 spans) */}
+            <div className="lg:col-span-2 space-y-6">
               <h3 className="text-sm font-black uppercase tracking-wider text-white border-b-2 border-brand-yellow/30 pb-3 font-display">
                 {isRtl ? 'روابط سريعة' : 'Quick Links'}
               </h3>
