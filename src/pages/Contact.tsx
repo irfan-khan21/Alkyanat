@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
-import { CheckCircle, ChevronRight, Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
+import { CheckCircle, Phone, Mail, MapPin, Sparkles } from 'lucide-react';
 import contactData from '../data/contactData.json';
 
 interface ContactProps {
@@ -73,6 +73,19 @@ export const Contact: React.FC<ContactProps> = ({ currentLang, onLangChange, onP
     }
   };
 
+  const renderSweeperSVG = (bgFill: string, brushFill: string) => {
+    return (
+      <svg viewBox="0 0 64 64" className="w-12 h-12 opacity-85 shrink-0 select-none hidden sm:block">
+        <path d="M16,40 L48,40 L44,20 C43,18 41,16 38,16 L24,16 C21,16 19,18 18,20 Z" fill={bgFill} stroke="#94A3B8" strokeWidth="2" />
+        <rect x="20" y="22" width="10" height="8" rx="1" fill="#38BDF8" opacity="0.6" />
+        <circle cx="22" cy="44" r="5" fill="#1E293B" stroke="#475569" strokeWidth="1.5" />
+        <circle cx="42" cy="44" r="5" fill="#1E293B" stroke="#475569" strokeWidth="1.5" />
+        <path d="M46,38 C50,38 52,36 52,34 L50,30" stroke="#475569" strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M10,44 Q6,48 10,52 Q14,48 10,44 Z" fill={brushFill} />
+      </svg>
+    );
+  };
+
   return (
     <div className={`min-h-screen bg-premium-gradient text-slate-700 flex flex-col justify-between font-sans overflow-x-hidden ${isRtl ? 'text-right' : 'text-left'}`} dir={isRtl ? 'rtl' : 'ltr'}>
       
@@ -80,249 +93,271 @@ export const Contact: React.FC<ContactProps> = ({ currentLang, onLangChange, onP
       <Header currentLang={currentLang} onLangChange={onLangChange} activePage="contact" onPageChange={onPageChange} />
 
       {/* Main Content */}
-      <main className="flex-grow pt-[88px] relative">
+      <main className="flex-grow pt-[88px] lg:pt-[112px] relative">
         
         {/* Glow decoration */}
         <div className="absolute top-20 right-0 w-80 h-80 bg-brand-orange/5 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-40 left-0 w-[500px] h-[500px] bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
 
-        {/* Breadcrumb Header Banner (Futuristic Charcoal/Navy theme) */}
-        <section className="bg-brand-navy text-white py-20 relative overflow-hidden border-b border-white/[0.06]">
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-[0.02] pointer-events-none" />
-          <div className="max-w-7xl mx-auto px-6 relative z-10 text-center space-y-4">
-            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white font-display">
-              {data.hero.title}
+        {/* Hero Banner (Wave Bottom Cutout Style) */}
+        <section className="relative min-h-[300px] flex items-center justify-start py-20 text-white overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <img src="/images/contact_banner.png" alt="Contact" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-[#0F172A]/75 mix-blend-multiply" />
+          </div>
+
+          {/* Sparkles decoration */}
+          <div className="absolute top-10 left-12 text-sky-400 opacity-60 animate-pulse">
+            <Sparkles className="h-6 w-6" />
+          </div>
+          <div className="absolute bottom-16 right-16 text-sky-400 opacity-60 animate-pulse">
+            <Sparkles className="h-6 w-6" />
+          </div>
+
+          <div className="max-w-7xl mx-auto px-6 relative z-10 w-full text-left space-y-4">
+            <h1 className="text-4xl md:text-5xl font-black tracking-tight text-white font-display uppercase">
+              {currentLang === 'AR' ? 'اتصل بنا' : 'Contact'}
             </h1>
-            <p className="text-sm md:text-base text-slate-455 max-w-2xl mx-auto leading-relaxed font-medium">
-              {data.hero.subtitle}
-            </p>
-            {/* Breadcrumb nav */}
-            <div className={`flex items-center justify-center gap-2.5 text-xs font-bold uppercase tracking-widest pt-2`}>
-              <a href="#/home" onClick={(e) => handleLinkClick(e, 'home')} className="text-slate-400 hover:text-brand-orange transition-colors">
+            
+            {/* Breadcrumb Navigation */}
+            <div className={`flex items-center justify-start gap-2 text-xs font-black uppercase tracking-wider text-slate-350 pt-2 ${isRtl ? 'flex-row-reverse' : ''}`}>
+              <a href="#/home" onClick={(e) => handleLinkClick(e, 'home')} className="hover:text-brand-yellow transition-colors">
                 {data.hero.breadcrumbHome}
               </a>
-              <span className="text-slate-600">/</span>
-              <span className="text-brand-orange font-extrabold">
+              <span className="text-brand-red font-black">&gt;</span>
+              <span className="text-brand-yellow font-black">
                 {data.hero.breadcrumbCurrent}
               </span>
             </div>
           </div>
+
+          {/* SVG Wave bottom cutout */}
+          <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none z-10">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[40px] text-white fill-current">
+              <path d="M0,0 C150,90 350,120 600,100 C850,80 1050,90 1200,0 L1200,120 L0,120 Z"></path>
+            </svg>
+          </div>
         </section>
 
-        {/* Contact Split layout Section */}
-        <section className="py-24 bg-transparent border-b border-slate-200/80">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-              
-              {/* Contact Information (Left) */}
-              <div className="lg:col-span-5 flex flex-col space-y-8">
-                <div className="space-y-4">
-                  <span className="inline-flex items-center text-xs font-bold uppercase tracking-widest text-brand-orange bg-brand-orange/10 border border-brand-orange/20 px-3.5 py-1.5 rounded-full w-fit font-display shadow-sm">
-                    {data.info.subtitle}
-                  </span>
-                  <h2 className="text-2xl md:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight font-display">
-                    {data.info.title}
-                  </h2>
-                </div>
+        {/* Section 2: Contact Information capsules */}
+        <section className="py-24 bg-transparent">
+          <div className="max-w-7xl mx-auto px-6 space-y-12 animate-page-in">
+            <div className="text-center space-y-3">
+              <h2 className="text-3xl md:text-4xl font-black text-slate-900 font-display tracking-tight">
+                {currentLang === 'AR' ? 'معلومات الاتصال بنا' : 'Our Contact Information'}
+              </h2>
+            </div>
 
-                <div className="space-y-5">
-                  {/* Address Card */}
-                  <div className="flex gap-4 p-5 bg-white border border-slate-200/80 rounded-2xl hover:border-brand-orange/30 hover:bg-slate-50/50 hover:shadow-lg hover:shadow-brand-orange/5 transition-all duration-300 group shadow-sm">
-                    <div className="p-3 bg-slate-50 border border-slate-200 text-brand-orange rounded-xl h-11 w-11 shrink-0 flex items-center justify-center shadow-sm group-hover:bg-brand-orange group-hover:text-white transition-all duration-300">
-                      <MapPin className="h-5 w-5" />
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="text-[9px] uppercase tracking-wider font-extrabold text-slate-500">
-                        {data.info.addressLabel}
-                      </span>
-                      <span className="text-xs md:text-sm text-slate-900 font-bold mt-1.5 leading-normal font-sans">
-                        {data.info.address}
-                      </span>
-                    </div>
+            {/* Cards Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* Card 1: Address */}
+              <div className={`bg-white border border-slate-100/90 rounded-full py-4.5 px-6 shadow-[0_8px_30px_rgb(0,0,0,0.02)] flex items-center justify-between gap-4 hover:shadow-lg transition-all duration-300 ${isRtl ? 'flex-row-reverse text-right' : 'text-left'}`}>
+                <div className={`flex items-center gap-4 ${isRtl ? 'flex-row-reverse' : ''}`}>
+                  <div className="p-3 bg-red-500/10 border border-red-500/20 text-red-600 rounded-full h-12 w-12 shrink-0 flex items-center justify-center shadow-inner">
+                    <MapPin className="h-5.5 w-5.5" />
                   </div>
-
-                  {/* Phone Card */}
-                  <div className="flex gap-4 p-5 bg-white border border-slate-200/80 rounded-2xl hover:border-brand-orange/30 hover:bg-slate-50/50 hover:shadow-lg hover:shadow-brand-orange/5 transition-all duration-300 group shadow-sm">
-                    <div className="p-3 bg-slate-50 border border-slate-200 text-brand-orange rounded-xl h-11 w-11 shrink-0 flex items-center justify-center shadow-sm group-hover:bg-brand-orange group-hover:text-white transition-all duration-300">
-                      <Phone className="h-5 w-5" />
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="text-[9px] uppercase tracking-wider font-extrabold text-slate-500">
-                        {data.info.phoneLabel}
-                      </span>
-                      <a 
-                        href={`tel:${data.info.phone}`}
-                        className="text-xs md:text-sm text-slate-900 font-extrabold hover:text-brand-orange mt-1.5 transition-colors font-sans"
-                      >
-                        {data.info.phone}
-                      </a>
-                    </div>
-                  </div>
-
-                  {/* Email Card */}
-                  <div className="flex gap-4 p-5 bg-white border border-slate-200/80 rounded-2xl hover:border-brand-orange/30 hover:bg-slate-50/50 hover:shadow-lg hover:shadow-brand-orange/5 transition-all duration-300 group shadow-sm">
-                    <div className="p-3 bg-slate-50 border border-slate-200 text-brand-orange rounded-xl h-11 w-11 shrink-0 flex items-center justify-center shadow-sm group-hover:bg-brand-orange group-hover:text-white transition-all duration-300">
-                      <Mail className="h-5 w-5" />
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="text-[9px] uppercase tracking-wider font-extrabold text-slate-500">
-                        {data.info.emailLabel}
-                      </span>
-                      <a 
-                        href={`mailto:${data.info.email}`}
-                        className="text-xs md:text-sm text-slate-900 font-extrabold hover:text-brand-orange mt-1.5 transition-colors font-sans"
-                      >
-                        {data.info.email}
-                      </a>
-                    </div>
-                  </div>
-
-                  {/* WhatsApp Card */}
-                  <div className="flex gap-4 p-5 bg-white border border-slate-200/80 rounded-2xl hover:border-emerald-500/50 hover:bg-slate-50/50 hover:shadow-lg hover:shadow-emerald-500/5 transition-all duration-300 group shadow-sm">
-                    <div className="p-3 bg-emerald-50 text-emerald-500 rounded-xl h-11 w-11 shrink-0 flex items-center justify-center shadow-sm group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300">
-                      <MessageCircle className="h-5 w-5" />
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="text-[9px] uppercase tracking-wider font-extrabold text-slate-500">
-                        {data.info.whatsappLabel}
-                      </span>
-                      <a 
-                        href="https://wa.me/966557062353"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-xs md:text-sm text-slate-900 font-extrabold hover:text-emerald-500 mt-1.5 transition-colors font-sans"
-                      >
-                        {data.info.whatsappCta}
-                      </a>
-                    </div>
+                  <div className="flex flex-col">
+                    <span className="text-[10px] uppercase tracking-widest font-black text-slate-400">
+                      {data.info.addressLabel}
+                    </span>
+                    <span className="text-xs md:text-sm text-slate-700 font-extrabold mt-0.5 leading-snug">
+                      {data.info.address}
+                    </span>
                   </div>
                 </div>
+                {/* Custom SVG Sweeper illustration */}
+                {renderSweeperSVG('#E2E8F0', '#94A3B8')}
               </div>
 
-              {/* Contact Form Container (Right) */}
-              <div className="lg:col-span-7 bg-white border border-slate-200/80 rounded-3xl p-8 md:p-10 shadow-sm relative overflow-hidden">
+              {/* Card 2: Contact Number 1 */}
+              <div className={`bg-white border border-slate-100/90 rounded-full py-4.5 px-6 shadow-[0_8px_30px_rgb(0,0,0,0.02)] flex items-center justify-between gap-4 hover:shadow-lg transition-all duration-300 ${isRtl ? 'flex-row-reverse text-right' : 'text-left'}`}>
+                <div className={`flex items-center gap-4 ${isRtl ? 'flex-row-reverse' : ''}`}>
+                  <div className="p-3 bg-green-500/10 border border-green-500/20 text-green-600 rounded-full h-12 w-12 shrink-0 flex items-center justify-center shadow-inner">
+                    <Phone className="h-5.5 w-5.5" />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-[10px] uppercase tracking-widest font-black text-slate-400">
+                      {currentLang === 'AR' ? 'رقم التواصل' : 'Contact Number'}
+                    </span>
+                    <a href={`tel:${data.info.phone}`} className="text-xs md:text-sm text-slate-700 font-extrabold mt-0.5 leading-snug hover:text-brand-orange transition-colors">
+                      {data.info.phone}
+                    </a>
+                  </div>
+                </div>
+                {/* Custom SVG Sweeper illustration */}
+                {renderSweeperSVG('#DCFCE7', '#22C55E')}
+              </div>
+
+              {/* Card 3: Contact Number 2 */}
+              <div className={`bg-white border border-slate-100/90 rounded-full py-4.5 px-6 shadow-[0_8px_30px_rgb(0,0,0,0.02)] flex items-center justify-between gap-4 hover:shadow-lg transition-all duration-300 ${isRtl ? 'flex-row-reverse text-right' : 'text-left'}`}>
+                <div className={`flex items-center gap-4 ${isRtl ? 'flex-row-reverse' : ''}`}>
+                  <div className="p-3 bg-yellow-500/10 border border-yellow-500/20 text-yellow-600 rounded-full h-12 w-12 shrink-0 flex items-center justify-center shadow-inner">
+                    <Phone className="h-5.5 w-5.5" />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-[10px] uppercase tracking-widest font-black text-slate-400">
+                      {currentLang === 'AR' ? 'رقم التواصل' : 'Contact Number'}
+                    </span>
+                    <a href={`tel:+966580006668`} className="text-xs md:text-sm text-slate-700 font-extrabold mt-0.5 leading-snug hover:text-brand-orange transition-colors">
+                      {currentLang === 'AR' ? '+٩٦٦ ٥٨٠٠٠ ٦٦٦٨' : '+966 58000 6668'}
+                    </a>
+                  </div>
+                </div>
+                {/* Custom SVG Sweeper illustration */}
+                {renderSweeperSVG('#FEF3C7', '#F59E0B')}
+              </div>
+            </div>
+
+            {/* Centered Row for Email */}
+            <div className="flex justify-center w-full">
+              <div className="w-full md:max-w-xl">
+                <div className={`bg-white border border-slate-100/90 rounded-full py-4.5 px-6 shadow-[0_8px_30px_rgb(0,0,0,0.02)] flex items-center justify-between gap-4 hover:shadow-lg transition-all duration-300 ${isRtl ? 'flex-row-reverse text-right' : 'text-left'}`}>
+                  <div className={`flex items-center gap-4 ${isRtl ? 'flex-row-reverse' : ''}`}>
+                    <div className="p-3 bg-red-500/10 border border-red-500/20 text-red-600 rounded-full h-12 w-12 shrink-0 flex items-center justify-center shadow-inner">
+                      <Mail className="h-5.5 w-5.5" />
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="text-[10px] uppercase tracking-widest font-black text-slate-400">
+                        {data.info.emailLabel}
+                      </span>
+                      <div className="flex flex-col sm:flex-row sm:gap-4 mt-0.5">
+                        <a href={`mailto:${data.info.email}`} className="text-xs md:text-sm text-slate-700 font-extrabold hover:text-brand-orange transition-colors">
+                          {data.info.email}
+                        </a>
+                        <span className="hidden sm:inline text-slate-300">|</span>
+                        <a href={`mailto:project@aidecarts.com`} className="text-xs md:text-sm text-slate-700 font-extrabold hover:text-brand-orange transition-colors">
+                          project@alkyanat-almushtarika.com
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Custom SVG Sweeper illustration */}
+                  {renderSweeperSVG('#FEE2E2', '#EF4444')}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Form and Image Side-by-Side split layout */}
+        <section className="py-24 bg-transparent border-t border-slate-100">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
+              
+              {/* Contact Form Container (Left) */}
+              <div className="lg:col-span-6 bg-slate-50/70 border border-slate-100 rounded-[32px] p-8 md:p-10 shadow-sm relative overflow-hidden flex flex-col justify-between">
                 <div className="absolute -right-20 -bottom-20 w-64 h-64 bg-brand-orange/5 rounded-full blur-3xl pointer-events-none" />
                 
-                <div className="mb-8 space-y-3">
-                  <span className="text-xs font-bold uppercase tracking-widest text-brand-orange font-display">
-                    {data.form.subtitle}
-                  </span>
-                  <h3 className="text-xl md:text-3xl font-extrabold text-slate-900 tracking-tight font-display">
-                    {data.form.title}
+                <div className="mb-8 space-y-2">
+                  <h3 className="text-3xl font-black text-slate-900 tracking-tight font-display">
+                    {currentLang === 'AR' ? 'تواصل معنا' : 'Get In Touch'}
                   </h3>
                 </div>
 
                 {isSubmitted ? (
-                  <div className="flex flex-col items-center justify-center text-center py-10 space-y-4">
-                    <CheckCircle className="h-14 w-14 text-brand-orange" />
+                  <div className="flex flex-col items-center justify-center text-center py-10 space-y-4 flex-grow">
+                    <CheckCircle className="h-14 w-14 text-brand-orange animate-bounce" />
                     <h4 className="text-lg font-bold text-slate-900 font-display">
                       {data.form.success}
                     </h4>
                     <button
                       onClick={handleReset}
-                      className="px-6 py-3 bg-slate-50 border border-slate-200 hover:border-brand-orange text-slate-700 hover:text-brand-orange font-bold text-xs uppercase tracking-wider rounded-xl transition-all cursor-pointer shadow-sm font-display"
+                      className="px-6 py-3 bg-slate-50 border border-slate-200 hover:border-brand-orange text-slate-700 hover:text-brand-orange font-bold text-xs uppercase tracking-wider rounded-full transition-all cursor-pointer shadow-sm font-display"
                     >
                       {data.form.reset}
                     </button>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                      {/* Name */}
-                      <div className="flex flex-col gap-1.5">
-                        <label className="text-[10px] uppercase tracking-wider font-bold text-slate-600 font-display">
-                          {data.form.nameLabel}
-                        </label>
-                        <input
-                          required
-                          type="text"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleInputChange}
-                          placeholder={data.form.placeholderName}
-                          className="px-4 py-3.5 bg-slate-50/50 border border-slate-200 focus:border-brand-orange rounded-xl focus:outline-none text-xs font-semibold text-slate-800 placeholder-slate-400 focus:ring-1 focus:ring-brand-orange/25 transition-all"
-                        />
+                  <form onSubmit={handleSubmit} className="space-y-6 flex-grow flex flex-col justify-between">
+                    <div className="space-y-5">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        {/* Name */}
+                        <div className="flex flex-col gap-1.5">
+                          <input
+                            required
+                            type="text"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleInputChange}
+                            placeholder={data.form.nameLabel}
+                            className="px-6 py-4 bg-white border border-slate-200 focus:border-brand-yellow rounded-full focus:outline-none text-xs font-semibold text-slate-800 placeholder-slate-400 transition-all w-full shadow-sm"
+                          />
+                        </div>
+
+                        {/* Email */}
+                        <div className="flex flex-col gap-1.5">
+                          <input
+                            required
+                            type="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleInputChange}
+                            placeholder={data.form.emailLabel}
+                            className="px-6 py-4 bg-white border border-slate-200 focus:border-brand-yellow rounded-full focus:outline-none text-xs font-semibold text-slate-800 placeholder-slate-400 transition-all w-full shadow-sm"
+                          />
+                        </div>
                       </div>
 
-                      {/* Email */}
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        {/* Phone */}
+                        <div className="flex flex-col gap-1.5">
+                          <input
+                            required
+                            type="text"
+                            name="phone"
+                            value={formData.phone}
+                            onChange={handleInputChange}
+                            placeholder={data.form.phoneLabel}
+                            className="px-6 py-4 bg-white border border-slate-200 focus:border-brand-yellow rounded-full focus:outline-none text-xs font-semibold text-slate-800 placeholder-slate-400 transition-all w-full shadow-sm"
+                          />
+                        </div>
+
+                        {/* Equipment Type select dropdown */}
+                        <div className="flex flex-col gap-1.5">
+                          <select
+                            name="type"
+                            value={formData.type}
+                            onChange={handleInputChange}
+                            className="px-6 py-4 bg-white border border-slate-200 focus:border-brand-yellow rounded-full focus:outline-none text-xs font-semibold text-slate-800 cursor-pointer transition-all w-full shadow-sm appearance-none"
+                          >
+                            {data.form.options.map((opt: { id: string; label: string }) => (
+                              <option key={opt.id} value={opt.id} className="text-slate-800 bg-white">
+                                {opt.label}
+                              </option>
+                            ))}
+                          </select>
+                        </div>
+                      </div>
+
+                      {/* Inquiry message */}
                       <div className="flex flex-col gap-1.5">
-                        <label className="text-[10px] uppercase tracking-wider font-bold text-slate-600 font-display">
-                          {data.form.emailLabel}
-                        </label>
-                        <input
+                        <textarea
                           required
-                          type="email"
-                          name="email"
-                          value={formData.email}
+                          rows={5}
+                          name="message"
+                          value={formData.message}
                           onChange={handleInputChange}
-                          placeholder={data.form.placeholderEmail}
-                          className="px-4 py-3.5 bg-slate-50/50 border border-slate-200 focus:border-brand-orange rounded-xl focus:outline-none text-xs font-semibold text-slate-800 placeholder-slate-400 focus:ring-1 focus:ring-brand-orange/25 transition-all"
+                          placeholder={data.form.messageLabel}
+                          className="px-6 py-5 bg-white border border-slate-200 focus:border-brand-yellow rounded-3xl focus:outline-none text-xs font-semibold text-slate-800 placeholder-slate-400 resize-none transition-all w-full shadow-sm"
                         />
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                      {/* Phone */}
-                      <div className="flex flex-col gap-1.5">
-                        <label className="text-[10px] uppercase tracking-wider font-bold text-slate-600 font-display">
-                          {data.form.phoneLabel}
-                        </label>
-                        <input
-                          required
-                          type="text"
-                          name="phone"
-                          value={formData.phone}
-                          onChange={handleInputChange}
-                          placeholder={data.form.placeholderPhone}
-                          className="px-4 py-3.5 bg-slate-50/50 border border-slate-200 focus:border-brand-orange rounded-xl focus:outline-none text-xs font-semibold text-slate-800 placeholder-slate-400 focus:ring-1 focus:ring-brand-orange/25 transition-all"
-                        />
-                      </div>
-
-                      {/* Equipment Type */}
-                      <div className="flex flex-col gap-1.5">
-                        <label className="text-[10px] uppercase tracking-wider font-bold text-slate-600 font-display">
-                          {data.form.typeLabel}
-                        </label>
-                        <select
-                          name="type"
-                          value={formData.type}
-                          onChange={handleInputChange}
-                          className="px-4 py-3.5 bg-slate-50/50 border border-slate-200 focus:border-brand-orange rounded-xl focus:outline-none text-xs font-semibold text-slate-800 cursor-pointer transition-all"
-                        >
-                          {data.form.options.map((opt: { id: string; label: string }) => (
-                            <option key={opt.id} value={opt.id} className="text-slate-800 bg-white">
-                              {opt.label}
-                            </option>
-                          ))}
-                        </select>
-                      </div>
+                    <div className={`pt-4 ${isRtl ? 'text-right' : 'text-left'}`}>
+                      <button
+                        type="submit"
+                        className="py-4.5 px-10 bg-brand-yellow hover:bg-brand-yellow-hover text-white font-extrabold uppercase tracking-widest text-xs rounded-full shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer font-display"
+                      >
+                        <span>{currentLang === 'AR' ? 'إرسال الرسالة +' : 'SUBMIT MESSAGE +'}</span>
+                      </button>
                     </div>
-
-                    {/* Inquiry message */}
-                    <div className="flex flex-col gap-1.5">
-                      <label className="text-[10px] uppercase tracking-wider font-bold text-slate-600 font-display">
-                        {data.form.messageLabel}
-                      </label>
-                      <textarea
-                        required
-                        rows={4}
-                        name="message"
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        placeholder={data.form.placeholderMessage}
-                        className="px-4 py-3.5 bg-slate-50/50 border border-slate-200 focus:border-brand-orange rounded-xl focus:outline-none text-xs font-semibold text-slate-800 placeholder-slate-400 resize-none focus:ring-1 focus:ring-brand-orange/25 transition-all"
-                      />
-                    </div>
-
-                    <button
-                      type="submit"
-                      className="w-full py-4 px-6 bg-brand-orange hover:bg-brand-orange-hover text-white font-extrabold uppercase tracking-wider text-xs rounded-xl shadow-lg shadow-brand-orange/15 hover:shadow-brand-orange/30 transition-all flex items-center justify-center gap-2 cursor-pointer group font-display"
-                    >
-                      <span>{data.form.submitBtn}</span>
-                      <ChevronRight className={`h-4.5 w-4.5 stroke-[3.5] transition-transform duration-200 group-hover:translate-x-1 ${isRtl ? 'rotate-180 group-hover:-translate-x-1' : ''}`} />
-                    </button>
                   </form>
                 )}
+              </div>
+
+              {/* Modern Floor Sweeper Side Image (Right) */}
+              <div className="lg:col-span-6 rounded-[32px] overflow-hidden shadow-md border border-slate-100/80 relative">
+                <img src="/images/contact_sweeper.png" alt="Sweeper Machine" className="w-full h-full object-cover min-h-[400px] lg:min-h-full" />
               </div>
 
             </div>
@@ -332,7 +367,7 @@ export const Contact: React.FC<ContactProps> = ({ currentLang, onLangChange, onP
         {/* Map Section */}
         <section className="pb-24 bg-transparent">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="bg-white border border-slate-200/80 rounded-3xl p-4 md:p-6 shadow-sm overflow-hidden relative group">
+            <div className="bg-white border border-slate-200/80 rounded-[32px] p-4 md:p-6 shadow-sm overflow-hidden relative group">
               {/* Decorative background grid */}
               <div className="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:2rem_2rem] opacity-[0.2] pointer-events-none" />
               
@@ -375,3 +410,4 @@ export const Contact: React.FC<ContactProps> = ({ currentLang, onLangChange, onP
 };
 
 export default Contact;
+
