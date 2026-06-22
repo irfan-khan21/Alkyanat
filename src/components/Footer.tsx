@@ -59,42 +59,73 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onPageChange }) => 
   };
 
   return (
-    <footer className="w-full flex flex-col font-sans select-none overflow-hidden relative mt-16 bg-[#7F1D1D]">
+    <footer className="w-full flex flex-col font-sans select-none overflow-hidden relative bg-[#7F1D1D] -mt-1">
       
-      {/* Tier 1: Overlapping Social Bar (Yellow Background Capsule) */}
-      <div className="relative z-20 max-w-7xl mx-auto px-6 w-full -mb-10">
-        <div className="bg-brand-yellow rounded-[24px] md:rounded-full px-8 py-5 shadow-lg border border-brand-yellow/30 flex flex-col sm:flex-row items-center justify-between gap-4">
-          {/* Logo block */}
-          <div className="bg-[#121212] px-5 py-3 rounded-lg text-white font-extrabold text-sm uppercase tracking-wider flex items-center justify-center font-display border border-[#2d2d2d] shadow-sm select-none">
-            <span className="text-white tracking-[0.1em]">{data.logo.brandName.toUpperCase()}</span>
-          </div>
-
-          {/* Social Links in Dark Blue outline circles */}
-          <div className={`flex items-center gap-3.5 ${isRtl ? 'flex-row-reverse' : ''}`}>
-            {data.socialLinks.map((social: { platform: string; url: string }) => (
-              <a
-                key={social.platform}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full border-2 border-[#1E293B] text-[#1E293B] hover:bg-[#1E293B] hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm cursor-pointer hover:scale-110"
-                aria-label={social.platform}
-              >
-                {renderSocialIcon(social.platform)}
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Tier 2: Info Grid (Deep Red Background with faint industrial watermark) */}
-      <div className="bg-brand-red text-slate-100 pt-24 pb-12 relative overflow-hidden">
+      {/* Main Footer (Deep Red Background with faint industrial watermark) */}
+      <div className="bg-brand-red text-slate-100 pt-16 pb-12 relative overflow-hidden">
         {/* Faint industrial background overlay */}
-        <div className="absolute inset-0 z-0 opacity-[0.05] mix-blend-overlay pointer-events-none">
+        <div className="absolute inset-0 z-0 opacity-[0.12] mix-blend-overlay pointer-events-none">
           <img src="/images/contact_banner.png" alt="Footer BG" className="w-full h-full object-cover" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-6 relative z-10 space-y-12">
+          
+          {/* Social Capsule Header (Completely Inside with Red above it) */}
+          <div className="bg-brand-yellow rounded-[24px] md:rounded-full px-8 py-5 shadow-lg border border-brand-yellow/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+            {/* Logo block */}
+            <div className="bg-[#121212] px-5 py-3 rounded-lg text-white font-extrabold text-sm uppercase tracking-wider flex items-center justify-center font-display border border-[#2d2d2d] shadow-sm select-none">
+              <span className="text-white tracking-[0.1em]">{data.logo.brandName.toUpperCase()}</span>
+            </div>
+
+            {/* Social Links in Dark Blue outline circles */}
+            <div className={`flex items-center gap-3.5 ${isRtl ? 'flex-row-reverse' : ''}`}>
+              {/* Facebook */}
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full border-2 border-[#1E293B] text-[#1E293B] hover:bg-[#1E293B] hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm cursor-pointer hover:scale-110"
+                aria-label="Facebook"
+              >
+                {renderSocialIcon('Facebook')}
+              </a>
+              {/* Twitter */}
+              <a
+                href="https://x.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full border-2 border-[#1E293B] text-[#1E293B] hover:bg-[#1E293B] hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm cursor-pointer hover:scale-110"
+                aria-label="Twitter"
+              >
+                {renderSocialIcon('Twitter / X')}
+              </a>
+              {/* LinkedIn */}
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full border-2 border-[#1E293B] text-[#1E293B] hover:bg-[#1E293B] hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm cursor-pointer hover:scale-110"
+                aria-label="LinkedIn"
+              >
+                {renderSocialIcon('LinkedIn')}
+              </a>
+              {/* Instagram */}
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full border-2 border-[#1E293B] text-[#1E293B] hover:bg-[#1E293B] hover:text-white flex items-center justify-center transition-all duration-300 shadow-sm cursor-pointer hover:scale-110"
+                aria-label="Instagram"
+              >
+                {renderSocialIcon('Instagram')}
+              </a>
+            </div>
+          </div>
+
+          {/* Spacer border line */}
+          <div className="border-t border-white/10 hidden md:block"></div>
+
+          {/* Grid Columns */}
           <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 ${isRtl ? 'text-right' : 'text-left'}`}>
             
             {/* Column 1: Contact Us (4 spans) */}
@@ -297,4 +328,3 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onPageChange }) => 
 };
 
 export default Footer;
-
