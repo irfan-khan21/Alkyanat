@@ -2,7 +2,7 @@
   "en": {
     "navigation": {
       "logo": {
-        "brandName": "Al Kayanat",
+        "brandName": "Al Kyanat",
         "subtitle": "Holding Group"
       },
       "headerLinks": [
@@ -35,7 +35,7 @@
         { "platform": "Twitter / X", "url": "https://x.com", "iconName": "Twitter" },
         { "platform": "Instagram", "url": "https://instagram.com", "iconName": "Instagram" }
       ],
-      "copyright": "Al Kayanat Holding Group. All rights reserved.",
+      "copyright": "Al Kyanat Holding Group. All rights reserved.",
       "ctaBtn": "Get a Quote",
       "backToTop": "Back to top"
     },
@@ -44,19 +44,19 @@
         "tagline": "Vision 2030 Aligned Operations",
         "title": "Building the Future of Industries Across",
         "highlight": "Saudi Arabia & Beyond",
-        "subtitle": "Al Kayanat Group coordinates and supports a diverse ecosystem of industry-leading entities specializing in heavy machinery, smart logistics, premium real estate development, and breakthrough technology ventures.",
+        "subtitle": "Al Kyanat Group coordinates and supports a diverse ecosystem of industry-leading entities specializing in heavy machinery, smart logistics, premium real estate development, and breakthrough technology ventures.",
         "primaryCta": "Explore Our Entities",
         "secondaryCta": "Get in Touch"
       },
       "entitiesSection": {
         "tagline": "Corporate Portfolio",
-        "title": "The Entities of Al Kayanat",
+        "title": "The Entities of Al Kyanat",
         "subtitle": "Through strategic coordination, we provide each subsidiary with robust corporate guidance, financial stability, and shared technological assets to execute high-impact regional projects."
       },
       "entities": [
         {
           "id": "machinery",
-          "name": "Al Kayanat Heavy Equipment",
+          "name": "Al Kyanat Heavy Equipment",
           "category": "Industrial & Infrastructure Support",
           "description": "A premier fleet of well-maintained excavators, mobile cranes, loaders, and compactors, powering Saudi Arabia's major infrastructure, municipal, and commercial developments.",
           "iconName": "Truck",
@@ -68,7 +68,7 @@
         },
         {
           "id": "logistics",
-          "name": "Al Kayanat Logistics & Supply",
+          "name": "Al Kyanat Logistics & Supply",
           "category": "Smart Freight & Transportation",
           "description": "End-to-end heavy haulage, specialized cargo distribution, and site set-up logistics, connecting major industrial cities with remote project sites seamlessly.",
           "iconName": "TrendingUp",
@@ -80,7 +80,7 @@
         },
         {
           "id": "development",
-          "name": "Al Kayanat Real Estate & Dev",
+          "name": "Al Kyanat Real Estate & Dev",
           "category": "Premium Commercial & Residential",
           "description": "Crafting architectural landmarks and master-planned commercial zones that combine futuristic sustainability with luxury aesthetics and commercial utility.",
           "iconName": "Home",
@@ -92,7 +92,7 @@
         },
         {
           "id": "ventures",
-          "name": "Al Kayanat Tech Ventures",
+          "name": "Al Kyanat Tech Ventures",
           "category": "Digital Transformation & Investments",
           "description": "Investing in and incubating AI-driven prop-tech, supply-chain automation, and smart logistics platforms to future-proof our core operational entities.",
           "iconName": "Cpu",
@@ -168,7 +168,7 @@
         "messageInputLabel": "Message Details",
         "submitBtn": "Send Message Inquiry",
         "successTitle": "Inquiry Received",
-        "successDesc": "Thank you for contacting Al Kayanat Group. Your inquiry has been forwarded to the appropriate desk, and we will get back to you shortly.",
+        "successDesc": "Thank you for contacting Al Kyanat Group. Your inquiry has been forwarded to the appropriate desk, and we will get back to you shortly.",
         "successReset": "Send another message",
         "formPlaceholders": {
           "name": "Abdullah bin Fahd",
@@ -178,19 +178,19 @@
           "message": "Please describe your requirements..."
         },
         "selectOptions": [
-          { "id": "machinery", "label": "Al Kayanat Heavy Equipment" },
-          { "id": "logistics", "label": "Al Kayanat Logistics & Supply" },
-          { "id": "development", "label": "Al Kayanat Real Estate & Dev" },
-          { "id": "ventures", "label": "Al Kayanat Tech Ventures" },
+          { "id": "machinery", "label": "Al Kyanat Heavy Equipment" },
+          { "id": "logistics", "label": "Al Kyanat Logistics & Supply" },
+          { "id": "development", "label": "Al Kyanat Real Estate & Dev" },
+          { "id": "ventures", "label": "Al Kyanat Tech Ventures" },
           { "id": "general", "label": "General Group Inquiry" }
         ]
       }
     },
     "aboutPage": {
       "title": "Who We Are",
-      "subtitle": "Al Kayanat Holding Group is a cornerstone of Saudi Arabia's industrial transformation, powering infrastructure, logistics, real estate development, and technological ventures.",
+      "subtitle": "Al Kyanat Holding Group is a cornerstone of Saudi Arabia's industrial transformation, powering infrastructure, logistics, real estate development, and technological ventures.",
       "storyTitle": "Our Journey",
-      "storyText": "Founded with a vision to streamline and empower key industrial sectors in the Kingdom, Al Kayanat has grown from a single fleet operations provider into a multi-sector holding group. Today, we manage and nurture leading subsidiaries that build, move, develop, and digitize the national economy.",
+      "storyText": "Founded with a vision to streamline and empower key industrial sectors in the Kingdom, Al Kyanat has grown from a single fleet operations provider into a multi-sector holding group. Today, we manage and nurture leading subsidiaries that build, move, develop, and digitize the national economy.",
       "visionTitle": "Our Vision",
       "visionText": "To be the premier partner in Saudi Arabia's infrastructure expansion, driving operational excellence and sustainable growth in line with Vision 2030.",
       "missionTitle": "Our Mission",
@@ -198,12 +198,12 @@
     },
     "blogPage": {
       "title": "Corporate News & Insights",
-      "subtitle": "Stay updated with Al Kayanat's latest announcements, industry insights, and developmental updates across KSA.",
+      "subtitle": "Stay updated with Al Kyanat's latest announcements, industry insights, and developmental updates across KSA.",
       "readMore": "Read Article",
       "posts": [
         {
           "id": 1,
-          "title": "Al Kayanat Fleet Expands to Support NEOM Infrastructure",
+          "title": "Al Kyanat Fleet Expands to Support NEOM Infrastructure",
           "excerpt": "Our Heavy Equipment division has deployed an additional 120 units to accelerate land clearing and support development phases in NEOM.",
           "date": "June 12, 2026",
           "readTime": "4 min read",
@@ -220,7 +220,7 @@
         {
           "id": 3,
           "title": "Green Building: Incorporating Eco-Friendly Standards in Riyadh Real Estate",
-          "excerpt": "Al Kayanat Real Estate announces the adoption of LEED certification standards for all upcoming commercial developments in Riyadh.",
+          "excerpt": "Al Kyanat Real Estate announces the adoption of LEED certification standards for all upcoming commercial developments in Riyadh.",
           "date": "May 28, 2026",
           "readTime": "6 min read",
           "category": "Sustainability"

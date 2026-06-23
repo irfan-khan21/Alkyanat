@@ -73,7 +73,7 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
 
       aboutTag: "ABOUT US",
       aboutTitle: "Electric Cleaning Solutions",
-      aboutDesc: "Al Kayanat KSA supports industrial, municipal, and commercial clients by providing reliable, safe, and cost-efficient vehicle and machinery rental. We maintain public roads and gardens with exceptional precision.",
+      aboutDesc: "Al Kyanat KSA supports industrial, municipal, and commercial clients by providing reliable, safe, and cost-efficient vehicle and machinery rental. We maintain public roads and gardens with exceptional precision.",
       
       servicesTag: "OUR SERVICES",
       servicesTitle: "The Application We Provide For Our Customer",
@@ -85,7 +85,7 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
       service3Desc: "Large-scale operation: sanitation work involves a wide range of municipal roads.",
 
       whyTag: "WHY CHOOSE US",
-      whyTitle: "Choose Excellence, Choose Al Kayanat",
+      whyTitle: "Choose Excellence, Choose Al Kyanat",
       whyDesc: "We provide innovative and sustainable cleaning and lifting solutions that meet the highest standards. Our focus is on safety, performance, and efficiency.",
       whyBullet1: "Seamless Logistics",
       whyBullet1Desc: "Tailored operations based on specific project needs.",
@@ -180,7 +180,7 @@ export const Home: React.FC<HomeProps> = ({ currentLang, onLangChange, onPageCha
               <img 
                 key={img}
                 src={img} 
-                alt="Al Kayanat Heavy Fleet" 
+                alt="Al Kyanat Heavy Fleet" 
                 className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-in-out transform ${
                   idx === activeImage 
                     ? 'opacity-100 scale-100' 

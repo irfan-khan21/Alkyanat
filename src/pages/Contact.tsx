@@ -38,7 +38,7 @@ export const Contact: React.FC<ContactProps> = ({ currentLang, onLangChange, onP
     const equipmentLabel = selectedOption ? selectedOption.label : formData.type;
 
     // Construct WhatsApp message
-    const intro = currentLang === 'AR' ? 'مرحباً الكيانات، أود إرسال استفسار تشغيل:' : 'Hello Al Kayanat, I would like to submit a dispatch inquiry:';
+    const intro = currentLang === 'AR' ? 'مرحباً الكيانات، أود إرسال استفسار تشغيل:' : 'Hello Al Kyanat, I would like to submit a dispatch inquiry:';
     const nameLabel = currentLang === 'AR' ? 'الاسم' : 'Name';
     const emailLabel = currentLang === 'AR' ? 'البريد الإلكتروني' : 'Email';
     const phoneLabel = currentLang === 'AR' ? 'الهاتف' : 'Phone';
