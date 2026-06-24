@@ -105,7 +105,7 @@ function App() {
             {/* Title / Corporate Brand Text */}
             <div className="flex flex-col items-center space-y-2 text-center">
               <span className="text-2xl font-black tracking-widest text-white uppercase font-display">
-                AL KAYANAT
+                AL KYANAT
               </span>
               <span className="text-xs font-bold tracking-widest text-brand-orange uppercase font-display" dir="rtl">
                 الكيانات المشتركة

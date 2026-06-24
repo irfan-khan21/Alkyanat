@@ -1,7 +1,6 @@
 import React from 'react';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
-import { Calendar, Tag } from 'lucide-react';
 import blogData from '../data/blogData.json';
 
 interface BlogProps {
@@ -22,6 +21,19 @@ export const Blog: React.FC<BlogProps> = ({ currentLang, onLangChange, onPageCha
     }
   };
 
+  const getPostImage = (id: number) => {
+    switch (id) {
+      case 1:
+        return '/images/road_sweeper_riyadh.png';
+      case 2:
+        return '/images/heavy_forklift_ksa.png';
+      case 3:
+        return '/images/boom_truck_crane.png';
+      default:
+        return '/images/road_sweeper_riyadh.png';
+    }
+  };
+
   return (
     <div className={`min-h-screen bg-premium-gradient text-slate-700 flex flex-col justify-between font-sans overflow-x-hidden ${isRtl ? 'text-right' : 'text-left'}`} dir={isRtl ? 'rtl' : 'ltr'}>
       
@@ -29,32 +41,41 @@ export const Blog: React.FC<BlogProps> = ({ currentLang, onLangChange, onPageCha
       <Header currentLang={currentLang} onLangChange={onLangChange} activePage="blog" onPageChange={onPageChange} />
 
       {/* Main Content */}
-      <main className="flex-grow pt-[88px] relative">
+      <main className="flex-grow pt-[88px] lg:pt-[112px] relative">
         
         {/* Glow decoration */}
         <div className="absolute top-20 left-0 w-80 h-80 bg-brand-orange/5 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-40 right-0 w-[500px] h-[500px] bg-amber-500/5 rounded-full blur-3xl pointer-events-none" />
 
-        {/* Breadcrumb Header Banner (Futuristic Charcoal/Navy theme) */}
-        <section className="bg-brand-navy text-white py-20 relative overflow-hidden border-b border-white/[0.06]">
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:4rem_4rem] opacity-[0.02] pointer-events-none" />
+        {/* Hero Banner (Wave Bottom Cutout Style) */}
+        <section className="relative min-h-[300px] flex items-center justify-center py-20 text-white overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            <img src="/images/blog_banner.png" alt="Blog" className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-[#0F172A]/75 mix-blend-multiply" />
+          </div>
+
           <div className="max-w-7xl mx-auto px-6 relative z-10 text-center space-y-4">
-            <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white font-display">
-              {data.hero.title}
+            <h1 className="text-4xl md:text-5xl font-black tracking-tight text-white font-display uppercase">
+              {currentLang === 'AR' ? 'المدونة' : 'Blog'}
             </h1>
-            <p className="text-sm md:text-base text-slate-450 max-w-2xl mx-auto leading-relaxed font-medium">
-              {data.hero.subtitle}
-            </p>
-            {/* Breadcrumb nav */}
-            <div className={`flex items-center justify-center gap-2.5 text-xs font-bold uppercase tracking-widest pt-2`}>
-              <a href="#/home" onClick={(e) => handleLinkClick(e, 'home')} className="text-slate-400 hover:text-brand-orange transition-colors">
+            
+            {/* Breadcrumb Navigation */}
+            <div className={`flex items-center justify-center gap-2 text-xs font-black uppercase tracking-wider text-slate-350 pt-2 ${isRtl ? 'flex-row-reverse' : ''}`}>
+              <a href="#/home" onClick={(e) => handleLinkClick(e, 'home')} className="hover:text-brand-yellow transition-colors">
                 {data.hero.breadcrumbHome}
               </a>
-              <span className="text-slate-600">/</span>
-              <span className="text-brand-orange font-extrabold">
+              <span className="text-brand-red font-black">&gt;</span>
+              <span className="text-brand-yellow font-black">
                 {data.hero.breadcrumbCurrent}
               </span>
             </div>
+          </div>
+
+          {/* SVG Wave bottom cutout */}
+          <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none z-10">
+            <svg viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block w-full h-[40px] text-white fill-current">
+              <path d="M0,0 C150,90 350,120 600,100 C850,80 1050,90 1200,0 L1200,120 L0,120 Z"></path>
+            </svg>
           </div>
         </section>
 
@@ -65,33 +86,48 @@ export const Blog: React.FC<BlogProps> = ({ currentLang, onLangChange, onPageCha
               {data.posts.map((post) => (
                 <div 
                   key={post.id}
-                  className="bg-white border border-slate-200/80 hover:border-brand-orange/30 rounded-3xl p-8 hover:bg-slate-50/50 transition-all duration-300 flex flex-col justify-between hover:shadow-xl hover:shadow-[0_10px_30px_-15px_rgba(255,107,0,0.08)] relative overflow-hidden group shadow-sm"
+                  className="bg-white border border-slate-100/90 rounded-[32px] hover:bg-slate-50/10 transition-all duration-300 flex flex-col justify-between hover:shadow-2xl hover:-translate-y-1.5 relative overflow-hidden group shadow-md shadow-slate-200/40"
                 >
-                  {/* Subtle top indicator bar */}
-                  <div className="absolute top-0 left-0 w-full h-1.5 bg-brand-orange transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center" />
-                  
-                  <div className="space-y-5">
-                    {/* Category & Date */}
-                    <div className="flex items-center justify-between text-xs font-bold text-slate-500">
-                      <span className="inline-flex items-center gap-1.5 text-brand-orange bg-brand-orange/10 border border-brand-orange/20 px-3.5 py-1.5 rounded-full font-extrabold text-[10px] uppercase tracking-wider font-display shadow-sm">
-                        <Tag className="h-3 w-3" />
-                        {post.category}
-                      </span>
-                      <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-500">
-                        <Calendar className="h-3.5 w-3.5 opacity-85" />
+                  {/* Top Image */}
+                  <div className="aspect-[16/10] w-full overflow-hidden relative">
+                    <img 
+                      src={getPostImage(post.id)} 
+                      alt={post.title} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    {/* Subtle Category Tag Overlay */}
+                    <span className={`absolute top-4 ${isRtl ? 'left-4' : 'right-4'} inline-flex items-center gap-1.5 text-white bg-brand-red/90 px-3.5 py-1.5 rounded-full font-black text-[10px] uppercase tracking-wider font-display shadow-lg`}>
+                      {post.category}
+                    </span>
+                  </div>
+
+                  {/* Card Content */}
+                  <div className="p-8 flex flex-col justify-between flex-grow space-y-4">
+                    <div className="space-y-3">
+                      {/* Date */}
+                      <span className="text-[11px] font-black text-slate-400 uppercase tracking-widest block">
                         {post.date}
                       </span>
+                      {/* Red Title */}
+                      <h3 className="text-xl font-black text-brand-red hover:text-brand-red-dark leading-snug font-display transition-colors duration-200">
+                        {post.title}
+                      </h3>
+                      {/* Excerpt */}
+                      <p className="text-sm text-slate-500 font-medium leading-relaxed line-clamp-3">
+                        {post.excerpt}
+                      </p>
                     </div>
 
-                    {/* Title */}
-                    <h3 className="text-xl font-bold text-slate-900 tracking-tight leading-snug group-hover:text-brand-orange transition-colors duration-200 font-display">
-                      {post.title}
-                    </h3>
-
-                    {/* Excerpt */}
-                    <p className="text-sm text-slate-600 font-medium leading-relaxed">
-                      {post.excerpt}
-                    </p>
+                    {/* Read More Link */}
+                    <div className="pt-4 border-t border-slate-50 flex justify-start">
+                      <a 
+                        href={`#/blog`}
+                        onClick={(e) => e.preventDefault()}
+                        className="inline-flex items-center gap-1 text-xs font-black text-brand-red hover:text-brand-red-dark uppercase tracking-widest transition-colors duration-200 cursor-pointer"
+                      >
+                        {isRtl ? 'اقرأ المزيد +' : 'READ MORE +'}
+                      </a>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -108,3 +144,4 @@ export const Blog: React.FC<BlogProps> = ({ currentLang, onLangChange, onPageCha
 };
 
 export default Blog;
+
