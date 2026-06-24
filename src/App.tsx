@@ -118,21 +118,13 @@ function App() {
       
       {/* Global Floating Contact Sidebar (Right) */}
       <div className="fixed right-0 top-1/2 -translate-y-1/2 z-40 flex flex-col gap-0.5 select-none hidden md:flex font-sans">
-        {/* Phone 1 */}
+        {/* Phone */}
         <a 
           href="tel:+966557062353" 
           className="flex flex-col items-center py-4 px-2.5 text-white bg-brand-red hover:bg-brand-red-dark transition-all duration-300 rounded-l-lg border-l border-t border-b border-white/10 shadow-lg group"
         >
           <Phone className="h-4 w-4 text-brand-yellow group-hover:scale-110 transition-transform" />
-          <span className="text-[9.5px] font-black tracking-widest [writing-mode:vertical-rl] select-all mt-2.5">+966 55003 3692</span>
-        </a>
-        {/* Phone 2 */}
-        <a 
-          href="tel:+966557062353" 
-          className="flex flex-col items-center py-4 px-2.5 text-white bg-brand-red hover:bg-brand-red-dark transition-all duration-300 rounded-l-lg border-l border-t border-b border-white/10 shadow-lg group"
-        >
-          <Phone className="h-4 w-4 text-brand-yellow group-hover:scale-110 transition-transform" />
-          <span className="text-[9.5px] font-black tracking-widest [writing-mode:vertical-rl] select-all mt-2.5">+966 58000 6668</span>
+          <span className="text-[9.5px] font-black tracking-widest [writing-mode:vertical-rl] select-all mt-2.5">+966 55 706 2353</span>
         </a>
         {/* Email */}
         <a 

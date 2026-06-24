@@ -163,9 +163,6 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onPageChange }) => 
                       <a href={`tel:${footer.contactInfo.phone}`} className="text-white hover:text-brand-yellow transition-colors font-extrabold leading-tight">
                         {footer.contactInfo.phone}
                       </a>
-                      <a href="tel:+966580006668" className="text-white hover:text-brand-yellow transition-colors font-extrabold leading-tight mt-1">
-                        {currentLang === 'AR' ? '+٩٦٦ ٥٨٠٠٠ ٦٦٦٨' : '+966 58000 6668'}
-                      </a>
                     </div>
                   </div>
                 </div>
@@ -182,9 +179,6 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onPageChange }) => 
                     <div className="flex flex-col mt-0.5">
                       <a href={`mailto:${footer.contactInfo.email}`} className="text-white hover:text-brand-yellow transition-colors font-extrabold leading-tight">
                         {footer.contactInfo.email}
-                      </a>
-                      <a href="mailto:project@alkyanat-almushtarika.com" className="text-white hover:text-brand-yellow transition-colors font-extrabold leading-tight mt-1">
-                        project@alkyanat-almushtarika.com
                       </a>
                     </div>
                   </div>
@@ -266,7 +260,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onPageChange }) => 
                       {isRtl ? 'للاستفسارات العاجلة اتصل بنا:' : 'urgent query pls call'}
                     </span>
                     <span className="text-xs text-white/95 font-bold block mt-0.5 leading-snug">
-                      mobile/WhatsApp: <a href="tel:+966557062353" className="hover:underline">+966 55003 3692</a> / <a href="tel:+966557062353" className="hover:underline">+966 58000 6668</a>
+                      mobile/WhatsApp: <a href="tel:+966557062353" className="hover:underline">+966 55 706 2353</a>
                     </span>
                   </div>
                   <div>
@@ -274,7 +268,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onPageChange }) => 
                       {isRtl ? 'للاستفسارات العاجلة راسلنا:' : 'urgent query pls email'}
                     </span>
                     <span className="text-[11px] text-white/95 font-bold block mt-0.5 leading-snug">
-                      email: <a href="mailto:info@alkyanat-almushtarika.com" className="hover:underline">info@alkyanat-almushtarika.com</a> ; <a href="mailto:project@alkyanat-almushtarika.com" className="hover:underline">project@alkyanat-almushtarika.com</a>
+                      email: <a href="mailto:info@alkyanat-almushtarika.com" className="hover:underline">info@alkyanat-almushtarika.com</a>
                     </span>
                   </div>
                 </div>

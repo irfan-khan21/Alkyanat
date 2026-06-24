@@ -188,52 +188,23 @@ export const Contact: React.FC<ContactProps> = ({ currentLang, onLangChange, onP
                 {renderSweeperSVG('#DCFCE7', '#22C55E')}
               </div>
 
-              {/* Card 3: Contact Number 2 */}
+              {/* Card 3: Email Us */}
               <div className={`bg-white border border-slate-100/90 rounded-full py-4.5 px-6 shadow-[0_8px_30px_rgb(0,0,0,0.02)] flex items-center justify-between gap-4 hover:shadow-lg transition-all duration-300 ${isRtl ? 'flex-row-reverse text-right' : 'text-left'}`}>
                 <div className={`flex items-center gap-4 ${isRtl ? 'flex-row-reverse' : ''}`}>
-                  <div className="p-3 bg-yellow-500/10 border border-yellow-500/20 text-yellow-600 rounded-full h-12 w-12 shrink-0 flex items-center justify-center shadow-inner">
-                    <Phone className="h-5.5 w-5.5" />
+                  <div className="p-3 bg-red-500/10 border border-red-500/20 text-red-600 rounded-full h-12 w-12 shrink-0 flex items-center justify-center shadow-inner">
+                    <Mail className="h-5.5 w-5.5" />
                   </div>
                   <div className="flex flex-col">
                     <span className="text-[10px] uppercase tracking-widest font-black text-slate-400">
-                      {currentLang === 'AR' ? 'رقم التواصل' : 'Contact Number'}
+                      {data.info.emailLabel}
                     </span>
-                    <a href={`tel:+966580006668`} className="text-xs md:text-sm text-slate-700 font-extrabold mt-0.5 leading-snug hover:text-brand-orange transition-colors">
-                      {currentLang === 'AR' ? '+٩٦٦ ٥٨٠٠٠ ٦٦٦٨' : '+966 58000 6668'}
+                    <a href={`mailto:${data.info.email}`} className="text-xs md:text-sm text-slate-700 font-extrabold mt-0.5 leading-snug hover:text-brand-orange transition-colors">
+                      {data.info.email}
                     </a>
                   </div>
                 </div>
                 {/* Custom SVG Sweeper illustration */}
-                {renderSweeperSVG('#FEF3C7', '#F59E0B')}
-              </div>
-            </div>
-
-            {/* Centered Row for Email */}
-            <div className="flex justify-center w-full">
-              <div className="w-full md:max-w-xl">
-                <div className={`bg-white border border-slate-100/90 rounded-full py-4.5 px-6 shadow-[0_8px_30px_rgb(0,0,0,0.02)] flex items-center justify-between gap-4 hover:shadow-lg transition-all duration-300 ${isRtl ? 'flex-row-reverse text-right' : 'text-left'}`}>
-                  <div className={`flex items-center gap-4 ${isRtl ? 'flex-row-reverse' : ''}`}>
-                    <div className="p-3 bg-red-500/10 border border-red-500/20 text-red-600 rounded-full h-12 w-12 shrink-0 flex items-center justify-center shadow-inner">
-                      <Mail className="h-5.5 w-5.5" />
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="text-[10px] uppercase tracking-widest font-black text-slate-400">
-                        {data.info.emailLabel}
-                      </span>
-                      <div className="flex flex-col sm:flex-row sm:gap-4 mt-0.5">
-                        <a href={`mailto:${data.info.email}`} className="text-xs md:text-sm text-slate-700 font-extrabold hover:text-brand-orange transition-colors">
-                          {data.info.email}
-                        </a>
-                        <span className="hidden sm:inline text-slate-300">|</span>
-                        <a href={`mailto:project@aidecarts.com`} className="text-xs md:text-sm text-slate-700 font-extrabold hover:text-brand-orange transition-colors">
-                          project@alkyanat-almushtarika.com
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  {/* Custom SVG Sweeper illustration */}
-                  {renderSweeperSVG('#FEE2E2', '#EF4444')}
-                </div>
+                {renderSweeperSVG('#FEE2E2', '#EF4444')}
               </div>
             </div>
           </div>
