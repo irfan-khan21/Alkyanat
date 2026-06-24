@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Phone, Mail, Send } from 'lucide-react';
+import { MapPin, Phone, Mail } from 'lucide-react';
 import navigationData from '../data/navigationData.json';
 
 interface FooterProps {
@@ -238,36 +238,13 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onPageChange }) => 
               </ul>
             </div>
 
-            {/* Column 4: Newsletter & Info (3 spans) */}
+            {/* Column 4: Working Hours & Support (3 spans) */}
             <div className="lg:col-span-3 space-y-6">
               <h3 className="text-sm font-black uppercase tracking-wider text-white border-b-2 border-brand-yellow/30 pb-3 font-display">
-                {isRtl ? 'النشرة البريدية' : 'Newsletter'}
+                {isRtl ? 'ساعات العمل والدعم' : 'Working Hours & Support'}
               </h3>
+              
               <div className="space-y-5">
-                <span className="text-xs text-slate-200 leading-relaxed block font-medium">
-                  {isRtl ? 'اشترك في نشرتنا البريدية للحصول على آخر الأخبار.' : 'Subscribe to our Newsletter'}
-                </span>
-
-                {/* Newsletter Form */}
-                <form className="relative flex items-center w-full" onSubmit={(e) => e.preventDefault()}>
-                  <input
-                    type="email"
-                    placeholder={isRtl ? 'بريدك الإلكتروني' : 'Enter Email'}
-                    className={`w-full px-6 py-3.5 bg-white text-slate-800 rounded-full focus:outline-none text-xs font-semibold placeholder-slate-400 shadow-sm ${
-                      isRtl ? 'pl-12 text-right' : 'pr-12 text-left'
-                    }`}
-                  />
-                  <button
-                    type="submit"
-                    className={`absolute p-2 bg-brand-red text-white hover:bg-brand-red-dark rounded-full transition-colors cursor-pointer flex items-center justify-center ${
-                      isRtl ? 'left-1.5' : 'right-1.5'
-                    }`}
-                    aria-label="Send"
-                  >
-                    <Send className="w-3.5 h-3.5 fill-current" />
-                  </button>
-                </form>
-
                 {/* Working Hours */}
                 <div className="pt-2">
                   <span className="text-[10px] font-black uppercase text-brand-yellow tracking-widest block mb-1">
@@ -283,7 +260,7 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onPageChange }) => 
                 </div>
 
                 {/* Urgent Query call and email */}
-                <div className="space-y-3 pt-4 border-t border-white/10 mt-4 text-slate-200">
+                <div className="space-y-3 pt-4 border-t border-white/10 text-slate-200">
                   <div>
                     <span className="text-[10px] font-black uppercase text-brand-yellow tracking-widest block">
                       {isRtl ? 'للاستفسارات العاجلة اتصل بنا:' : 'urgent query pls call'}
