@@ -2,58 +2,96 @@
   "en": {
     "hero": {
       "title": "Our Services",
-      "subtitle": "Technical specs of road sweeping trucks (Elgin, Johnston, ScaraB), garden sweepers, boom trucks, forklifts, and cranes.",
+      "subtitle": "Professional fleet rental, municipal cleaning sweepers, light and heavy staff transport, and manpower supply across the Kingdom of Saudi Arabia.",
       "breadcrumbHome": "Home",
       "breadcrumbCurrent": "Services"
     },
     "intro": {
       "subtitle": "Core Service Fields",
-      "title": "Providing Any Type of Machines Involved in Projects",
-      "paragraph": "Al Kyanat KSA operates a diverse fleet of heavy machinery and cleaning sweepers. We support governmental and non-governmental clients by deploying top-of-the-line mechanical assets alongside certified, experienced operators to ensure compliance, safety, and operational precision.",
-      "getQuote": "Get a Quote"
+      "title": "Providing Any Type of Machines & Resources Involved in Construction & Cleaning",
+      "paragraph": "Al Kyanat KSA operates a diverse, modern fleet of mechanical sweeping trucks, passenger buses, cargo forklifts, pump trucks, and water supply tankers. We also supply qualified workforce personnel and manage construction project contracts to support commercial and governmental infrastructure developments.",
+      "getQuote": "Inquire Now"
     },
     "servicesList": [
-      {
-        "id": "sweepers",
-        "title": "Road Sweeper Trucks",
-        "category": "Municipal Sanitation",
-        "description": "We offer heavy duty street sweepers in three specialized brands: Elgin (mechanical broom sweeping for large debris), Johnston (high-suction vacuum sweepers for dust control), and ScaraB (advanced compact sweepers for main roads and urban zones). Ideal for cleaning roads and highway projects.",
-        "specs": ["Brands: Elgin, Johnston, ScaraB", "Vacuum & Mechanical Action", "Water Spray Dust Control", "Municipal Tenders Approved"]
-      },
-      {
-        "id": "gardens",
-        "title": "Garden Sweepers & Small Equipment",
-        "category": "Landscaping & Parks",
-        "description": "Compact ride-on sweepers, walk-behind cleaning machines, and garden maintenance equipment. Perfectly suited for cleaning roads in residential compounds, parks, walk-ways, gardens, and public walkways.",
-        "specs": ["Compact ride-on models", "Walk-behind leaf sweepers", "Eco-friendly low emission", "Garden project cleanup"]
-      },
-      {
-        "id": "boomtrucks",
-        "title": "Boom Trucks (10, 12, 15 Tons)",
-        "category": "Logistics & Transport",
-        "description": "Truck-mounted telescoping cranes in 10-Ton, 12-Ton, and 15-Ton lifting capacities. Ideal for loading, long-distance regional transport, and erecting site structural cargo.",
-        "specs": ["Capacities: 10T, 12T, 15T", "Hydraulic telescoping boom", "Flatbed cargo area", "Vision 2030 project certified"]
-      },
       {
         "id": "forklifts",
         "title": "Industrial Forklifts",
         "category": "Material Handling",
+        "image": "/images/forklift_service.png",
         "description": "High-capacity diesel, electric, and gas forklifts for cargo loading/unloading, warehouse operations, logistics centers, and industrial yard tasks.",
         "specs": ["Capacities: 3T to 16T", "Diesel & Electric options", "High reach masts", "Pallet and cargo handling"]
       },
       {
-        "id": "cranes",
-        "title": "Heavy Mobile Cranes",
-        "category": "Heavy Erection",
-        "description": "Premium hydraulic mobile cranes and crawler cranes designed for structural steel erection, concrete column lifting, and large-scale industrial projects.",
-        "specs": ["Capacities: 50T to 500T", "Telescoping & Lattice boom", "All-terrain operational bases", "Certified operators provided"]
+        "id": "pumptrucks",
+        "title": "Pump Trucks (10, 12, 15 Tons)",
+        "category": "Construction Logistics",
+        "image": "/images/pump_truck_service.png",
+        "description": "Heavy-duty pump and boom trucks in 10-Ton, 12-Ton, and 15-Ton capacities, designed for high-reach operations, concrete pumping, and logistics support.",
+        "specs": ["Capacities: 10T, 12T, 15T", "Hydraulic pumping systems", "Stabilizer support legs", "Safety certified operators"]
       },
       {
-        "id": "construction",
-        "title": "Heavy Duty Construction Vehicles",
-        "category": "Infrastructure Support",
-        "description": "Excavators, wheel loaders, road rollers, and dump trucks. We provide fully operated construction machinery for government and private infrastructure developments.",
-        "specs": ["Excavators & Wheel loaders", "Compactors & Rollers", "Operated by licensed experts", "Civil works compliance"]
+        "id": "watertankers",
+        "title": "Water Tankers (Water Supply)",
+        "category": "Liquid Logistics",
+        "image": "/images/water_tanker_service.png",
+        "description": "High-capacity water tanker trucks supplying clean water for municipal cleaning, construction dust suppression, and commercial support.",
+        "specs": ["Large capacity tanks", "Clean water delivery", "Dust suppression spraying", "Flexible rental terms"]
+      },
+      {
+        "id": "buses",
+        "title": "Passenger Buses",
+        "category": "Staff Transport",
+        "image": "/images/bus_service.png",
+        "description": "Large passenger buses for daily worker transport, site logistics, and group travel across construction developments and offices.",
+        "specs": ["High seating capacity", "Air-conditioned cabins", "Safety-belt equipped", "Professional licensed drivers"]
+      },
+      {
+        "id": "hiace",
+        "title": "Hiace Vans",
+        "category": "Light Transport",
+        "image": "/images/hiace_service.png",
+        "description": "Toyota Hiace vans for light staff transport, express courier cargo, and quick logistical deployments between offices and project sites.",
+        "specs": ["12-15 Seats capacity", "Air-conditioned cabins", "Compact & fast maneuverability", "Reliable commercial vans"]
+      },
+      {
+        "id": "coasters",
+        "title": "Coaster Buses",
+        "category": "Medium Transport",
+        "image": "/images/coaster_service.png",
+        "description": "Medium-sized Toyota Coaster passenger buses, perfect for transporting medium work crews, executive tours, and site visits.",
+        "specs": ["22-30 Seating capacity", "Frosted glass & AC comfort", "High durability for rugged sites", "Experienced operators"]
+      },
+      {
+        "id": "manpower",
+        "title": "Labor & Manpower Supplying",
+        "category": "Human Resources",
+        "image": "/images/manpower_service.png",
+        "description": "Supplying certified skilled and unskilled manpower, site workers, operators, and safety staff to governmental and private developments.",
+        "specs": ["Skilled & general labor", "Certified equipment operators", "Strict HSE training compliance", "Flexible deployment contracts"]
+      },
+      {
+        "id": "contracts",
+        "title": "Construction Project Contracts",
+        "category": "Civil Works",
+        "image": "/images/construction_service.png",
+        "description": "Managing and executing complete construction contracts, civil works, foundation building, infrastructure, and heavy machinery grading.",
+        "specs": ["Civil contracting & grading", "Infrastructure construction", "Qualified engineering teams", "Full safety standard adherence"]
+      },
+      {
+        "id": "road_sweepers",
+        "title": "Road Sweepers (Main Roads)",
+        "category": "Municipal Cleaning",
+        "image": "/images/sweeper_delivery.png",
+        "description": "Heavy street sweepers (Elgin, Johnston, ScaraB) optimized for highway debris cleanup, dust vacuuming, and cleaning municipal main roads.",
+        "specs": ["High capacity vacuum & sweep", "Dual gutter brooms", "Water dust control systems", "Municipal standard approved"]
+      },
+      {
+        "id": "garden_sweepers",
+        "title": "Garden Sweepers (Gardens)",
+        "category": "Park Maintenance",
+        "image": "/images/sweeper_truck.png",
+        "description": "Compact, highly maneuverable ride-on sweepers designed to clean compound roads, public walkways, parks, and gardens without damaging surfaces.",
+        "specs": ["Compact ride-on sweepers", "Walk-behind leaf sweepers", "Eco-friendly low emission", "Garden project cleanup"]
       }
     ],
     "process": {
@@ -68,7 +106,7 @@
         {
           "number": "02",
           "title": "Fleet Customization",
-          "description": "Selecting the correct sweeper models (Elgin, Johnston, ScaraB) or lifting capacity (10T to 15T boom trucks, cranes)."
+          "description": "Selecting the correct sweeper models, transport vehicles, or lifting capacity matching your project scope."
         },
         {
           "number": "03",
@@ -104,75 +142,101 @@
           "description": "Clear instructions, pricing, and rental procedures."
         }
       ]
-    },
-    "quoteForm": {
-      "title": "Request Custom Quotation",
-      "subtitle": "Get a quote for road sweeping or machinery rental",
-      "nameLabel": "Your Name",
-      "emailLabel": "Email Address",
-      "phoneLabel": "Phone Number",
-      "typeLabel": "Equipment Type",
-      "durationLabel": "Rental Duration",
-      "messageLabel": "Project Scope & Description",
-      "submitBtn": "Submit Quote Request",
-      "success": "Quotation request submitted! We will contact you with details shortly."
     }
   },
   "ar": {
     "hero": {
       "title": "الخدمات المقدمة",
-      "subtitle": "المواصفات الفنية لكناسات الطرق (إلجين، وجونستون، وسكاراب)، معدات الحدائق، شاحنات البوم، والرافعات.",
+      "subtitle": "تأجير أسطول فني متكامل، كناسات الشوارع البلدية، وسائل نقل الكوادر الخفيفة والثقيلة، وتوريد الأيدي العاملة في المملكة العربية السعودية.",
       "breadcrumbHome": "الرئيسية",
       "breadcrumbCurrent": "الخدمات"
     },
     "intro": {
       "subtitle": "مجالات الخدمة الرئيسية",
-      "title": "توفير كافة الآليات المطلوبة لتنفيذ المشاريع الكبرى",
-      "paragraph": "تدير مجموعة الكيانات أسطولاً متنوعاً من المعدات الثقيلة وكناسات النظافة العامة. نحن ندعم عملاءنا في القطاعين الحكومي والخاص بتوفير أفضل الأصول التشغيلية مع مشغلين معتمدين لضمان الكفاءة والأمان والدقة.",
-      "getQuote": "طلب عرض سعر"
+      "title": "توفير كافة الآليات والموارد البشرية للمشاريع الإنشائية والنظافة العامة",
+      "paragraph": "تدير مجموعة الكيانات أسطولاً حديثاً ومتنوعاً من الكناسات الميكانيكية، حافلات الركاب، الرافعات الشوكية، شاحنات المضخات، وناقلات المياه، بالإضافة لتوريد الكوادر المؤهلة وإدارة عقود المشاريع الإنشائية لدعم خطط التنمية والبنية التحتية.",
+      "getQuote": "استفسر الآن"
     },
     "servicesList": [
-      {
-        "id": "sweepers",
-        "title": "كناسات الطرق والشوارع",
-        "category": "النظافة البلدية وصيانة الطرق",
-        "description": "نوفر كناسات طرق ثقيلة من ثلاث علامات رائدة: إلجين (الكنس الميكانيكي للمخلفات الكبيرة)، وجونستون (الكنس المفرغ من الهواء للتحكم بالأتربة)، وسكاراب (الكنس المدمج للطرق السريعة). مثالية لمشاريع الطرق والبلديات.",
-        "specs": ["الماركات: إلجين، جونستون، سكاراب", "عمل ميكانيكي ومفرغ من الهواء", "رشاشات مياه للتحكم بالغبار", "معتمدة للمناقصات والأمانات"]
-      },
-      {
-        "id": "gardens",
-        "title": "كنّاسات ومعدات الحدائق الصغيرة",
-        "category": "تجميل ونظافة الحدائق",
-        "description": "مركبات كنس مدمجة للركوب، وآلات تنظيف يدوية، ومعدات حدائق متخصصة. تناسب تمامًا نظافة الطرق والممرات بالمجمعات السكنية، والحدائق العامة، والمماشي.",
-        "specs": ["موديلات مدمجة للركوب", "كناسات أوراق الشجر اليدوية", "انبعاثات منخفضة وصديقة للبيئة", "تنظيف وتجميل الحدائق والممرات"]
-      },
-      {
-        "id": "boomtrucks",
-        "title": "شاحنات البوم (10، 12، 15 طن)",
-        "category": "الخدمات اللوجستية والنقل",
-        "description": "شاحنات ذراع رافعة هيدروليكية بحمولات ١٠ أطنان، و١٢ طنًا، و١٥ طنًا. ممتازة لأعمال التحميل، والنقل الإقليمي لمسافات طويلة، وتركيب المعدات الإنشائية.",
-        "specs": ["الحمولات المتاحة: ١٠، ١٢، ١٥ طن", "ذراع هيدروليكي تلسكوبي", "سطح شحن مسطح", "معتمدة لمشاريع رؤية ٢٠٣٠"]
-      },
       {
         "id": "forklifts",
         "title": "الرافعات الشوكية الصناعية",
         "category": "الرفع ومناولة المواد",
+        "image": "/images/forklift_service.png",
         "description": "رافعات شوكية تعمل بالديزل أو الكهرباء أو الغاز بقدرات عالية، مخصصة لعمليات التحميل، التخزين، والمستودعات اللوجستية.",
         "specs": ["حمولة من ٣ إلى ١٦ طن", "خيارات ديزل وكهرباء", "صواري رفع بارتفاعات عالية", "مناولة الطبالي والشحنات بدقة"]
       },
       {
-        "id": "cranes",
-        "title": "الرافعات المتنقلة الضخمة",
-        "category": "أعمال الرفع والتركيب الثقيلة",
-        "description": "رافعات هيدروليكية متنقلة ورافعات جنزير لرفع الهياكل المعدنية والخرسانية الجاهزة بالمشاريع الإنشائية والصناعية الكبرى.",
-        "specs": ["حمولة من ٥٠ إلى ٥٠٠ طن", "أذرع تلسكوبية وشبكية", "آليات تناسب كافة تضاريس الموقع", "يتم التوريد مع مشغلين مرخصين"]
+        "id": "pumptrucks",
+        "title": "شاحنات المضخات (10، 12، 15 طن)",
+        "category": "لوجستيات البناء والضخ",
+        "image": "/images/pump_truck_service.png",
+        "description": "شاحنات مضخات ورافعات ثقيلة بسعات تشغيلية ١٠ أطنان، و١٢ طناً، و١٥ طناً، مصممة لعمليات الضخ والارتفاعات العالية ودعم المشاريع.",
+        "specs": ["الحمولات المتاحة: ١٠، ١٢، ١٥ طن", "أنظمة ضخ ورافعات هيدروليكية", "دعامات تثبيت وهيكل قوي", "معتمدة للأمن والسلامة الإنشائية"]
       },
       {
-        "id": "construction",
-        "title": "آليات ومعدات التشييد الثقيلة",
-        "category": "دعم مشاريع البنية التحتية",
-        "description": "الحفارات، واللوادر، ومداحل الطرق، والقلابات. نوفر معدات بناء مشغلة بالكامل للمخططات الإنشائية الحكومية والخاصة.",
-        "specs": ["حفارات ولوادر متطورة", "مداحل وراصات إسفلت", "مشغلة بواسطة خبراء مرخصين", "مطابقة لمواصفات الأشغال العامة"]
+        "id": "watertankers",
+        "title": "ناقلات المياه (وايتات المياه)",
+        "category": "لوجستيات توريد السوائل",
+        "image": "/images/water_tanker_service.png",
+        "description": "ناقلات مياه بسعات كبيرة لتوريد المياه النظيفة للكنس البلدي، ومقاومة الغبار بمواقع البناء، وتلبية الاحتياجات التجارية.",
+        "specs": ["خزانات مياه بسعات ضخمة", "توريد مياه صالحة ونظيفة", "أنظمة رش للتحكم بالغبار", "خيارات تأجير مرنة للمشاريع"]
+      },
+      {
+        "id": "buses",
+        "title": "حافلات نقل الركاب",
+        "category": "نقل الموظفين والعمال",
+        "image": "/images/bus_service.png",
+        "description": "حافلات ركاب كبيرة مخصصة للنقل اليومي للعمالة، لوجستيات المواقع، والتنقل الجماعي بين مواقع المشاريع والمكاتب.",
+        "specs": ["سعة مقاعد عالية ومريحة", "كابينات مكيفة بالكامل", "مجهزة بأحزمة الأمان", "نوفر مشغلين وسائقين مرخصين"]
+      },
+      {
+        "id": "hiace",
+        "title": "باصات هايس (Hiace)",
+        "category": "النقل الخفيف واللوجستي",
+        "image": "/images/hiace_service.png",
+        "description": "حافلات تويوتا هايس مدمجة لنقل الكوادر الإدارية والعمالة الخفيفة، واللوجستيات السريعة بين المكاتب ومواقع المشاريع.",
+        "specs": ["سعة من ١٢ إلى ١٥ راكباً", "مكيفة بالكامل ومريحة", "سهولة تنقل وحجم مدمج", "مركبات تجارية عالية الاعتمادية"]
+      },
+      {
+        "id": "coasters",
+        "title": "حافلات كوستر (Coasters)",
+        "category": "النقل المتوسط",
+        "image": "/images/coaster_service.png",
+        "description": "حافلات تويوتا كوستر متوسطة الحجم، مثالية لنقل فرق العمل المتوسطة، الجولات الميدانية للمشرفين وزيارات المواقع الإنشائية.",
+        "specs": ["سعة من ٢٢ إلى ٣٠ مقعداً", "نوافذ مظللة وتكييف ممتاز", "عالية التحمل للمناطق الوعرة", "سائقون محترفون وذوو خبرة"]
+      },
+      {
+        "id": "manpower",
+        "title": "توريد العمالة والأيدي العاملة",
+        "category": "الموارد البشرية والتشغيل",
+        "image": "/images/manpower_service.png",
+        "description": "توريد الكوادر والأيدي العاملة الفنية والمساعدة، مشغلي المعدات المرخصين، وموظفي السلامة للمشاريع الحكومية والخاصة.",
+        "specs": ["عمالة فنية وعامة متخصصة", "مشغلو معدات مرخصون ومعتمدون", "مطابقة تامة لمعايير السلامة المهنية", "عقود توريد مرنة ومرخصة"]
+      },
+      {
+        "id": "contracts",
+        "title": "عقود مقاولات المشاريع الإنشائية",
+        "category": "الأعمال المدنية والإنشائية",
+        "image": "/images/construction_service.png",
+        "description": "إدارة وتنفيذ عقود المشاريع الإنشائية المتكاملة، الأعمال المدنية، بناء القواعد وتأسيس البنية التحتية باستخدام أحدث الآليات.",
+        "specs": ["مقاولات أعمال مدنية وتسويه", "تنفيذ أعمال البنية التحتية", "فرق هندسية وإشرافية مؤهلة", "التزام صارم بجودة البناء والسلامة"]
+      },
+      {
+        "id": "road_sweepers",
+        "title": "كناسات الطرق الرئيسية",
+        "category": "النظافة البلدية وصيانة الطرق",
+        "image": "/images/sweeper_delivery.png",
+        "description": "كناسات طرق ثقيلة (إلجين، وجونستون، وسكاراب) مجهزة ومحسنة لتنظيف الطرق السريعة والشوارع العامة الكبرى وإزالة المخلفات الإنشائية.",
+        "specs": ["أجهزة شفط وكنس عالية القدرة", "فرش كنس مزدوجة للأرصفة", "أنظمة رش المياه للتحكم بالأتربة", "مطابقة تامة لمعايير أمانات المدن"]
+      },
+      {
+        "id": "garden_sweepers",
+        "title": "كناسات تنظيف الحدائق",
+        "category": "صيانة ونظافة المنتزهات",
+        "image": "/images/sweeper_truck.png",
+        "description": "عربات كنس مدمجة فائقة الحركة مخصصة لتنظيف طرق المجمعات السكنية، والمماشي، والحدائق دون إلحاق أي ضرر بالأرصفة والمسطحات الخضراء.",
+        "specs": ["مركبات كنس مدمجة للركوب", "كناسات يدوية لأوراق الشجر", "محركات منخفضة الانبعاثات وصديقة للبيئة", "تنظيف وتجميل ممرات الحدائق"]
       }
     ],
     "process": {
@@ -187,7 +251,7 @@
         {
           "number": "02",
           "title": "تخصيص المعدات",
-          "description": "اختيار كناسات الشوارع المناسبة (إلجين، جونستون، سكاراب) أو سعات شاحنات البوم (10-15 طن)."
+          "description": "اختيار كناسات الشوارع المناسبة أو سعات مركبات النقل أو حمولات شاحنات المضخات المناسبة لمشروعك."
         },
         {
           "number": "03",
@@ -223,18 +287,6 @@
           "description": "إرشادات واضحة للأسعار وإجراءات وعقود الاستئجار."
         }
       ]
-    },
-    "quoteForm": {
-      "title": "طلب عرض أسعار مخصص",
-      "subtitle": "احصل على عرض سعر لخدمات كنس الطرق أو استئجار الآليات",
-      "nameLabel": "الاسم الكريم",
-      "emailLabel": "البريد الإلكتروني",
-      "phoneLabel": "رقم الجوال",
-      "typeLabel": "فئة المعدة المطلوبة",
-      "durationLabel": "مدة الاستئجار المتوقعة",
-      "messageLabel": "تفاصيل المشروع ونطاق العمل",
-      "submitBtn": "إرسال طلب عرض السعر",
-      "success": "تم استلام طلبك بنجاح! سيقوم مكتب العمليات لدينا بإعداد عرض السعر والتواصل معك قريباً."
     }
   }
 }
