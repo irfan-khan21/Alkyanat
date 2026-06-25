@@ -101,17 +101,25 @@ export const Header: React.FC<HeaderProps> = ({ currentLang, onLangChange, activ
         <div className="max-w-7xl mx-auto px-6">
           <div className={`flex items-center justify-between h-16 ${isRtl ? 'flex-row-reverse' : ''}`}>
             
-            {/* Logo Group (Image Logo Style) */}
+            {/* Logo Group (Image Logo Style with text) */}
             <a
               href="#/home"
               onClick={(e) => handleLinkClick(e, '#/home')}
-              className="flex items-center group relative z-50"
+              className="flex items-center group relative z-50 gap-3"
             >
               <img 
                 src="/images/logo.png" 
                 alt="Al Kyanat" 
                 className="h-12 md:h-14 w-auto object-contain transition-all duration-300 group-hover:scale-105"
               />
+              <div className={`flex flex-col font-display ${isRtl ? 'items-end text-right' : 'items-start text-left'}`}>
+                <span className="text-sm md:text-base font-black text-brand-navy leading-none tracking-wider">
+                  {currentLang === 'AR' ? 'الكيانات المشتركة' : 'AL KYANAT'}
+                </span>
+                <span className="text-[8px] md:text-[9px] font-extrabold text-brand-red uppercase tracking-widest mt-1">
+                  {currentLang === 'AR' ? 'للمقاولات العامة والتطوير العقاري' : 'Al Mushtarika'}
+                </span>
+              </div>
             </a>
      
             {/* Desktop Navigation Links */}

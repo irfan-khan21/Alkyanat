@@ -73,12 +73,20 @@ export const Footer: React.FC<FooterProps> = ({ currentLang, onPageChange }) => 
           {/* Social Capsule Header (Completely Inside with Red above it) */}
           <div className="bg-brand-yellow rounded-[24px] md:rounded-full px-8 py-5 shadow-lg border border-brand-yellow/30 flex flex-col sm:flex-row items-center justify-between gap-4">
             {/* Logo block */}
-            <div className="flex items-center justify-center select-none bg-white/90 px-4 py-2 rounded-2xl shadow-sm border border-slate-100/50">
+            <div className={`flex items-center select-none bg-white/90 px-5 py-2.5 rounded-2xl shadow-sm border border-slate-100/50 gap-3 ${isRtl ? 'flex-row-reverse' : ''}`}>
               <img 
                 src="/images/logo.png" 
                 alt="Al Kyanat" 
                 className="h-10 w-auto object-contain"
               />
+              <div className={`flex flex-col font-display ${isRtl ? 'items-end text-right' : 'items-start text-left'}`}>
+                <span className="text-xs md:text-sm font-black text-brand-navy leading-none tracking-wider">
+                  {currentLang === 'AR' ? 'الكيانات المشتركة' : 'AL KYANAT'}
+                </span>
+                <span className="text-[7.5px] md:text-[8px] font-extrabold text-brand-red uppercase tracking-widest mt-0.5">
+                  {currentLang === 'AR' ? 'للمقاولات العامة والتطوير العقاري' : 'Al Mushtarika'}
+                </span>
+              </div>
             </div>
 
             {/* Social Links in Dark Blue outline circles */}

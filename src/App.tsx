@@ -102,7 +102,7 @@ function App() {
               <span className="text-2xl font-black tracking-widest text-white uppercase font-display">
                 AL KYANAT
               </span>
-              <span className="text-xs font-bold tracking-widest text-brand-orange uppercase font-display" dir="rtl">
+              <span className="text-xs font-bold tracking-widest text-brand-yellow uppercase font-display" dir="rtl">
                 الكيانات المشتركة
               </span>
             </div>
