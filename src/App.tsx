@@ -89,18 +89,13 @@ function App() {
           }`}
         >
           <div className="flex flex-col items-center space-y-6 animate-logo-pulse">
-            {/* Logo SVG */}
-            <div className="p-3 bg-white/[0.03] border border-white/[0.08] rounded-3xl shadow-2xl">
-              <svg viewBox="0 0 100 100" className="w-16 h-16">
-                {/* Top Diamond (Neon Orange) */}
-                <path d="M 50,12 L 66,28 L 50,44 L 34,28 Z" fill="#FF6B00" />
-                {/* Left Diamond (Amber) */}
-                <path d="M 32,30 L 48,46 L 32,62 L 16,46 Z" fill="#F59E0B" />
-                {/* Right Diamond (Amber) */}
-                <path d="M 68,30 L 84,46 L 68,62 L 52,46 Z" fill="#F59E0B" />
-                {/* Bottom Diamond (Neon Orange) */}
-                <path d="M 50,48 L 66,64 L 50,80 L 34,64 Z" fill="#FF6B00" />
-              </svg>
+            {/* Logo Image */}
+            <div className="p-4 bg-white rounded-3xl shadow-2xl">
+              <img 
+                src="/images/logo.png" 
+                alt="Al Kyanat" 
+                className="w-24 h-24 object-contain"
+              />
             </div>
             {/* Title / Corporate Brand Text */}
             <div className="flex flex-col items-center space-y-2 text-center">

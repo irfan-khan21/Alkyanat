@@ -101,18 +101,17 @@ export const Header: React.FC<HeaderProps> = ({ currentLang, onLangChange, activ
         <div className="max-w-7xl mx-auto px-6">
           <div className={`flex items-center justify-between h-16 ${isRtl ? 'flex-row-reverse' : ''}`}>
             
-            {/* Logo Group (Black block logo style) */}
+            {/* Logo Group (Image Logo Style) */}
             <a
               href="#/home"
               onClick={(e) => handleLinkClick(e, '#/home')}
               className="flex items-center group relative z-50"
             >
-              <div className="bg-[#121212] hover:bg-brand-red px-5 py-2.5 rounded-lg text-white font-extrabold text-base tracking-wider transition-all duration-300 shadow-md flex items-center justify-center font-display border border-[#2d2d2d]">
-                <div className="flex flex-col items-center">
-                  <span className="text-sm font-black leading-none text-white tracking-[0.1em]">{data.logo.brandName.toUpperCase()}</span>
-                  <span className="text-[7px] text-brand-yellow font-bold uppercase tracking-[0.2em] mt-1">{data.logo.subtitle}</span>
-                </div>
-              </div>
+              <img 
+                src="/images/logo.png" 
+                alt="Al Kyanat" 
+                className="h-12 md:h-14 w-auto object-contain transition-all duration-300 group-hover:scale-105"
+              />
             </a>
      
             {/* Desktop Navigation Links */}
